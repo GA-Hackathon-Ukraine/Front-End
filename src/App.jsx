@@ -6,6 +6,9 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import JobForm from './pages/JobForm/JobForm'
+import Saved from './pages/Saved/Saved'
+import About from './pages/About/About'
 import * as authService from './services/authService'
 
 const App = () => {
@@ -35,6 +38,19 @@ const App = () => {
           path="/login"
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
         />
+        <Route
+          path="/jobform"
+          element={<JobForm />}
+        />
+        <Route
+          path="/saved"
+          element={<Saved />}
+        />
+        <Route
+          path="/About"
+          element={<About />}
+        />
+
         <Route
           path="/profiles"
           element={user ? <Profiles /> : <Navigate to="/login" />}
