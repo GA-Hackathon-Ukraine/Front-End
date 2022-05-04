@@ -6,12 +6,8 @@ import messageIcon from '../../../src/message.svg'
 import savedUnfilled from '../../../src/saved-unfilled.svg'
 
 
-
 const JobsMap = ({newJobs}) => {
-    const mappedData = newJobs.map((elem, idx) => {
-        // const imgDivStyle = {
-        //     width: 90 %;
-        // }
+    const mappedData = newJobs.map((elem,idx)=>{
         return (
             <div className='card-wrapper'>
                 <Link className='card-wrapper-container' key={`job-${idx}`} to={`/job/${elem.id}`}>
