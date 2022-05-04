@@ -4,9 +4,10 @@ const jobs = [
 		company: 'Google',
 		url: 'www.google.ca',
 		position: 'UX Designer',
-		location: 'Seattle',
+		city: 'Seattle',
+		state: 'WA',
 		status: 'full-time',
-		compensation: '90,000',
+		compensation: '24',
 		contact_name: 'John Doe',
 		description:
 			'A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. '
@@ -16,9 +17,10 @@ const jobs = [
 		company: 'Amazon',
 		position: 'UX Designer',
 		url: 'www.amazon.ca',
-		location: 'Seattle',
+		city: 'Seattle',
+		state: 'WA',
 		status: 'full-time',
-		compensation: '90,000',
+		compensation: '15',
 		contact_name: 'John Doe',
 		description:
 			'A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. '
@@ -28,9 +30,10 @@ const jobs = [
 		company: 'Twitter',
 		position: 'UX Designer',
 		url: 'www.twitter.com',
-		location: 'Tacoma',
+		city: 'Tacoma',
+		state: 'WA',
 		status: 'full-time',
-		compensation: '90,000',
+		compensation: '30',
 		contact_name: 'John Doe',
 		description:
 			'A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. '
@@ -40,9 +43,10 @@ const jobs = [
 		company: 'Microsoft',
 		position: 'UX Designer',
 		url: 'www.microsoft.ca',
-		location: 'Tacoma',
+		city: 'Tacoma',
+		state: 'WA',
 		status: 'full-time',
-		compensation: '90,000',
+		compensation: '65',
 		contact_name: 'John Doe',
 		description:
 			'A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. '
@@ -52,9 +56,10 @@ const jobs = [
 		company: 'JPMorgan',
 		position: 'UX Designer',
 		url: 'www.jpMorgan.com',
-		location: 'Tacoma',
+		city: 'Tacoma',
+		state: 'WA',
 		status: 'full-time',
-		compensation: '90,000',
+		compensation: '43',
 		contact_name: 'John Doe',
 		description:
 			'A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. '
@@ -64,9 +69,10 @@ const jobs = [
 		company: 'Square',
 		position: 'UX Designer',
 		url: 'www.square.ca',
-		location: 'Seattle',
+		city: 'Seattle',
+		state: 'WA',
 		status: 'full-time',
-		compensation: '90,000',
+		compensation: '21',
 		contact_name: 'John Doe',
 		description:
 			'A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. '
@@ -76,9 +82,10 @@ const jobs = [
 		company: 'lululemon',
 		position: 'UX Designer',
 		url: 'www.lululemon.ca',
-		location: 'Tacoma',
+		city: 'Tacoma',
+		state: 'WA',
 		status: 'full-time',
-		compensation: '90,000',
+		compensation: '35',
 		contact_name: 'John Doe',
 		description:
 			'A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. '
