@@ -31,7 +31,7 @@ const Landing = ({ user, jobs, setJobs }) => {
   const getFilteredLocation = () => {
     let searchTerm = location.toLowerCase()
     return jobs.filter(v => {
-			let lowerCaseName = v.location.toLowerCase()
+			let lowerCaseName = v.city.toLowerCase()
       return lowerCaseName.includes(searchTerm)
     })
   }
@@ -64,12 +64,8 @@ const Landing = ({ user, jobs, setJobs }) => {
       <h1>hello, {user ? user.name : 'friend'}</h1>
       <SearchForm setLocation={setLocation} setSearch={setSearch} search={search} position={position} setPosition={setPosition}/>
       <JobsMap newJobs={combinedFilteredSearch}/>
-      
     </main>
   )
 }
 
 export default Landing
-
-
-// let filteredParties = currentParties.filter(party => party.partyName.toLowerCase().trim().includes(search.toLowerCase().trim()))

@@ -9,6 +9,7 @@ const defaultFormFieds = {
   state: '',
   contact: "",
   description: "",
+  compensation: "",
   datePosted: "",
   address: "",
   companyWebsite: "",
@@ -22,7 +23,7 @@ const JobForm = () => {
 
   const [form, setForm] = useState(defaultFormFieds)
 
-  const { companyName, jobTitle, fullTime, city, state, contact, description, datePosted, address, companyWebsite } = form
+  const { companyName, jobTitle, fullTime, city, state, contact, description, compensation, datePosted, address, companyWebsite } = form
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -110,6 +111,16 @@ const JobForm = () => {
           placeholder="Description"
           name="description"></input>
         
+        <label htmlFor="company-website">Compensation</label>
+        <input 
+        type="text"
+          value={compensation}
+          onChange={handleChange}
+          required
+          placeholder="Compensation"
+          name="compensation">
+        </input>
+
         <label htmlFor="date-posted">Date Posted:</label>
         <input 
         // 
