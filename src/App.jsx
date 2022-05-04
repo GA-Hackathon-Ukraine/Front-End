@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
+import { Routes, Route, useNavigate, Navigate, BrowserRouter } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
@@ -14,6 +14,7 @@ import JobDetails from './pages/JobDetails/JobDetails'
 import dummydata from '../src/components/JobsMap/dummydata.js'
 import './App.css'
 import axios from 'axios'
+
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -58,6 +59,7 @@ const App = () => {
 
 
   return (
+
     <div className='mainContainer'>
       {/* <button onClick={handleData}>Get data</button> */}
       <NavBar user={user} handleLogout={handleLogout} />
