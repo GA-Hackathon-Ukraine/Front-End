@@ -8,6 +8,7 @@ const Landing = ({ user, jobs, setJobs }) => {
 
   const [search, setSearch] = useState("")
   const [location, setLocation] = useState("")
+  const [position, setPosition] = useState("")
 
   let filteredJobs = jobs.filter(job => job.position.toLowerCase().trim().includes(search.toLowerCase().trim()))
 
@@ -20,14 +21,14 @@ const Landing = ({ user, jobs, setJobs }) => {
     );
   });
 
-  const getFilteredJobs = (e) => {
+  const getFilteredJobs = () => {
     let searchTerm = search.toLowerCase()
     return jobs.filter(v => {
 			let lowerCaseName = v.company.toLowerCase()
       return lowerCaseName.includes(searchTerm)
     })
   }
-  const getFilteredLocation = (e) => {
+  const getFilteredLocation = () => {
     let searchTerm = location.toLowerCase()
     return jobs.filter(v => {
 			let lowerCaseName = v.location.toLowerCase()
@@ -35,12 +36,21 @@ const Landing = ({ user, jobs, setJobs }) => {
     })
   }
 
+  const getFilteredPosition = () => {
+    let searchTerm = position.toLowerCase()
+    return jobs.filter(v => {
+			let lowerCaseName = v.position.toLowerCase()
+      return lowerCaseName.includes(searchTerm)
+    })
+  }
   
   const filteredJobs1 = getFilteredJobs()
   const filteredLocation1 = getFilteredLocation()
+  // const filteredPosition1 = getFilteredPosition()
   // const arr = [...filteredJobs1, ...filteredLocation1]
   // const doubleFiltered = [...new Set([...filteredJobs1, ...filteredLocation1])]
-  
+ 
+
   const combinedFilteredSearch = [];
 
   filteredJobs1.forEach((job) => {
@@ -49,31 +59,10 @@ const Landing = ({ user, jobs, setJobs }) => {
     }
   })
 
-  // console.log('search', search)
-  // console.log('location', location)
-  // const daa = doubleFiltered.includes(r => r.company === search && r.location === location)
-
-  // const func = doubleFiltered.forEach((item) => {
-  //   let sime = []
-  //   if (item.location === location && item.company === search) {
-  //     sime.push(item)
-  //   } 
-  //   return item
-  // })
-
-  // const f = doubleFiltered.forEach((r) => console.log(r))
-  // console.log(func)
-  // console.log(doubleFiltered)
-
-
-
-
-  
-
   return (
     <main className={styles.container}>
       <h1>hello, {user ? user.name : 'friend'}</h1>
-      <SearchForm setLocation={setLocation} setSearch={setSearch} search={search}/>
+      <SearchForm setLocation={setLocation} setSearch={setSearch} search={search} position={position} setPosition={setPosition}/>
       <JobsMap newJobs={combinedFilteredSearch}/>
       
     </main>

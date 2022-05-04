@@ -76,7 +76,7 @@ const jobs = [
     contact_name: "John Doe",
     description: "A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. ",
   },
-];
 
+];
 
 export default jobs;

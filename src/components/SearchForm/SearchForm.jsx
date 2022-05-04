@@ -1,10 +1,10 @@
+
 import './SearchForm.css';
 import locationIcon from './locationicon.png'
 import searchIcon from './searchicon.png'
-function SearchForm({ setLocation, search, setSearch, getFilteredVillagers }) {
-  const handleChange = (e) => {
-    setSearch(e.target.value);
-  };
+
+function SearchForm({setLocation, search, setSearch, position, setPosition }) {
+
 
   const handleSetLocation = (e) => {
     setLocation(e.target.value);
@@ -31,6 +31,7 @@ function SearchForm({ setLocation, search, setSearch, getFilteredVillagers }) {
       </form>
     </div>
   );
+
 }
 
 export default SearchForm;
