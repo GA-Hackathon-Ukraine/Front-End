@@ -2,6 +2,7 @@ const jobs = [
   {
     id:"1298371489",
     company: "Google",
+    url: "www.google.ca",
     position: "UX Designer",
     location: "Seattle",
     status: "full-time",
@@ -13,6 +14,7 @@ const jobs = [
     id:"120398123",
     company: "Amazon",
     position: "UX Designer",
+    url:"www.amazon.ca",
     location: "Seattle",
     status: "full-time",
     compensation: "90,000",
@@ -23,6 +25,7 @@ const jobs = [
     id:"12937129",
     company: "Twitter",
     position: "UX Designer",
+    url: "www.twitter.com",
     location: "Tacoma",
     status: "full-time",
     compensation: "90,000",

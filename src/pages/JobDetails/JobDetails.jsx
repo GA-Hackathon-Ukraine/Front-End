@@ -1,34 +1,43 @@
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-function JobDetails({jobs}) {
+function JobDetails({ jobs }) {
+  const { id } = useParams();
 
+  
+  
+  
+  const filteredJob = jobs.filter((elem, idx) => elem.id === id);
 
-    const {id} = useParams()
+  
+  const mappedFilteredJob = filteredJob.map((elem, idx) => {
+      
+      const handleClick = () => {
+        window.open(`${elem.url}`);
+      };
 
-    const filteredJob = jobs.filter((elem,idx)=>elem.id === id)
+    const url = elem.url
+    return (
+      <div key={`job-detail-${idx}`}>
+        <h3>{elem.company}</h3>
+        <h3>{elem.position}</h3>
+        <h3>{elem.location}</h3>
+        <h3>{elem.description}</h3>
+        <button onClick={handleClick}>Apply now</button>
 
-    console.log(filteredJob) // job id
+        {/* <Link to="route" target="_blank" onClick={(event) => {event.preventDefault(); window.open(makeHref({url}));}} >Apply</Link> */}
+      </div>
+    );
+  });
 
-    const mappedFilteredJob = filteredJob.map((elem,idx)=>{
-
-        return(
-            <div key={`job-detail-${idx}`}>
-                <h3>{elem.company}</h3>
-                <h3>{elem.position}</h3>
-                <h3>{elem.location}</h3>
-                <h3>{elem.description}</h3>
-            </div>
-        )
-    })
-
-
-    return ( 
-        <>
-        {mappedFilteredJob}
-        <Link to="/">Back</Link>
-        </>
-     );
+  return (
+    <>
+      {mappedFilteredJob}
+      
+      <button id="favorite">Favorite</button>
+      <Link to="/">Back</Link>
+    </>
+  );
 }
 
 export default JobDetails;
