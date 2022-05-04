@@ -35,13 +35,29 @@ const Landing = ({ user, jobs, setJobs }) => {
     })
   }
 
-  console.log(getFilteredJobs(), getFilteredLocation())
 
+  
+  console.log(getFilteredJobs(), getFilteredLocation())
+  
   const filteredJobs1 = getFilteredJobs()
   const filteredLocation1 = getFilteredLocation()
   const arr = [...filteredJobs1, ...filteredLocation1]
-  console.log(arr)
-  // const doubleFiltered = [...new Set([...filteredJobs1, ...filteredLocation1])]
+  const doubleFiltered = [...new Set([...filteredJobs1, ...filteredLocation1])]
+  
+  // console.log('search', search)
+  // console.log('location', location)
+  // const daa = doubleFiltered.includes(r => r.company === search && r.location === location)
+
+  // const func = doubleFiltered.forEach((item) => {
+  //   let sime = []
+  //   if (item.location === location && item.company === search) {
+  //     sime.push(item)
+  //   } 
+  //   return item
+  // })
+
+  // const f = doubleFiltered.forEach((r) => console.log(r))
+  // console.log(func)
   // console.log(doubleFiltered)
 
 
