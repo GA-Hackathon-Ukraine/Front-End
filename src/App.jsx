@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
+import { Routes, Route, useNavigate, Navigate, BrowserRouter } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
@@ -12,6 +12,8 @@ import About from './pages/About/About'
 import * as authService from './services/authService'
 import JobDetails from './pages/JobDetails/JobDetails'
 import dummydata from '../src/components/JobsMap/dummydata.js'
+// import Dropdown from './components/NavBar/Dropdown'
+// import Resources from './pages/Resources/Resources'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -41,6 +43,7 @@ const App = () => {
 
   return (
     <>
+
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing setJobs={setJobs} jobs={jobs} user={user} />} />
