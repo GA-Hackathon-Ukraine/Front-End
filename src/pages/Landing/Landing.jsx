@@ -68,7 +68,6 @@ const Landing = ({ user, jobs, setJobs }) => {
   return (
     <main className={styles.container}>
       <h1>hello, {user ? user.name : 'friend'}</h1>
-      <a target="_blank" href="google.ca">go to google</a>
       <SearchForm setLocation={setLocation} setSearch={setSearch} search={search}/>
       <JobsMap newJobs={filteredLocation1}/>
       
