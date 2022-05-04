@@ -5,6 +5,9 @@ import searchIcon from './searchicon.png'
 
 function SearchForm({setLocation, search, setSearch, position, setPosition }) {
 
+    const handleChange = (e) => {
+        setPosition(e.target.value)   
+    }
 
   const handleSetLocation = (e) => {
     setLocation(e.target.value);
@@ -12,11 +15,11 @@ function SearchForm({setLocation, search, setSearch, position, setPosition }) {
 
   return (
     <div className="searchContainer">
-      <form onSubmit={getFilteredVillagers}>
+      <form>
         <div className='searchContainerLocation'>
         <img src={searchIcon}/>
         
-          <input className='searchInput' type="text" onChange={handleChange} value={search}/>
+          <input className='searchInput' type="text" onChange={handleChange} value={position}/>
         </div>
         <div className='searchContainerSearch'>
         <img src={locationIcon}/>

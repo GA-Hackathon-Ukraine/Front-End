@@ -3,7 +3,7 @@ const jobs = [
 		id: '1298371489',
 		company: 'Google',
 		url: 'www.google.ca',
-		position: 'UX Designer',
+		position: 'Designer',
 		city: 'Seattle',
 		state: 'WA',
 		status: 'full-time',
@@ -15,7 +15,7 @@ const jobs = [
 	{
 		id: '120398123',
 		company: 'Amazon',
-		position: 'UX Designer',
+		position: 'Cleaner',
 		url: 'www.amazon.ca',
 		city: 'Seattle',
 		state: 'WA',
@@ -28,7 +28,7 @@ const jobs = [
 	{
 		id: '12937129',
 		company: 'Twitter',
-		position: 'UX Designer',
+		position: 'Driver',
 		url: 'www.twitter.com',
 		city: 'Tacoma',
 		state: 'WA',

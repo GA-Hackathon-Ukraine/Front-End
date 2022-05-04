@@ -21,13 +21,13 @@ const Landing = ({ user, jobs, setJobs }) => {
     );
   });
 
-  const getFilteredJobs = () => {
-    let searchTerm = search.toLowerCase()
-    return jobs.filter(v => {
-			let lowerCaseName = v.company.toLowerCase()
-      return lowerCaseName.includes(searchTerm)
-    })
-  }
+  // const getFilteredJobs = () => {
+  //   let searchTerm = search.toLowerCase()
+  //   return jobs.filter(v => {
+	// 		let lowerCaseName = v.company.toLowerCase()
+  //     return lowerCaseName.includes(searchTerm)
+  //   })
+  // }
   const getFilteredLocation = () => {
     let searchTerm = location.toLowerCase()
     return jobs.filter(v => {
@@ -44,7 +44,7 @@ const Landing = ({ user, jobs, setJobs }) => {
     })
   }
   
-  const filteredJobs1 = getFilteredJobs()
+  const filteredPosition1 = getFilteredPosition()
   const filteredLocation1 = getFilteredLocation()
   // const filteredPosition1 = getFilteredPosition()
   // const arr = [...filteredJobs1, ...filteredLocation1]
@@ -53,7 +53,7 @@ const Landing = ({ user, jobs, setJobs }) => {
 
   const combinedFilteredSearch = [];
 
-  filteredJobs1.forEach((job) => {
+  filteredPosition1.forEach((job) => {
     if (filteredLocation1.includes(job)) {
       combinedFilteredSearch.push(job)
     }
