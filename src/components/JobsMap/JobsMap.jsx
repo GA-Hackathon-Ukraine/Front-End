@@ -9,7 +9,7 @@ import savedUnfilled from '../../../src/saved-unfilled.svg'
 const JobsMap = ({newJobs}) => {
     const mappedData = newJobs.map((elem,idx)=>{
         return (
-            <div className='card-wrapper'>
+            <div key={idx} className='card-wrapper'>
                 <Link className='card-wrapper-container' key={`job-${idx}`} to={`/job/${elem.id}`}>
                     <div className='image-container'>
                         <div style={{ marginLeft: "5px",width: "90px", height: "90px", backgroundColor: 'grey', borderRadius: "7px"}} />

@@ -1,37 +1,44 @@
 import { Link } from 'react-router-dom'
-
+import { slide as Menu } from 'react-burger-menu'
+import './navbar.css'
 const NavBar = ({ user, handleLogout }) => {
-  
+  const showSettings = (event)=> {
+    event.preventDefault();
+
+  }
+
+
   return (
-    <>
+    <Menu value={{
+      isMenuOpen: menuOpenState,
+      toggleMenu: () => setMenuOpenState(!menuOpenState),
+      stateChangeHandler: (newState) => setMenuOpenState(newState.isOpen)
+    }}>
       {user ?
         <nav>
+          <div>
+            <h3>Welcome, {user.name}</h3>
+            <Link className="menu-item" to="/"><h3>Home</h3></Link>
+            <Link className="menu-item" to="/profiles"><h3>Profiles</h3></Link>
+            <Link className="menu-item" to="" onClick={handleLogout}><h3>Log out</h3></Link>
+            <Link className="menu-item" to="/resources"><h3>Resources</h3></Link>
+            <Link className="menu-item" to="/about"><h3>About</h3></Link>
+            <Link className="menu-item" to="/jobform"><h3>Post a job</h3></Link>
 
-          <ul>
-            <li>Welcome, {user.name}</li>
-            {/* <Link>☰</Link> */}
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/profiles">Profiles</Link></li>
-            <li><Link to="" onClick={handleLogout}>Log out</Link></li>
-            <li><Link to="/changePassword">Change Password</Link></li>
-            <li><Link to="/resources">Resources</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/jobform">List a job</Link></li>
-
-          </ul>
+          </div>
         </nav>
       :
         <nav>
-          <ul>
-            <li><Link to="/login">Log In</Link></li>
-            <li><Link to="/signup">Sign Up</Link></li>
-            <li><Link to="/resources">Resources</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/jobform">List a job</Link></li>
-          </ul>
+          <div>
+            <Link className="menu-item" to="/login"><h3>Log In</h3></Link>
+            <Link className="menu-item" to="/signup"><h3>Sign Up</h3></Link>
+            <Link className="menu-item" to="/resources"><h3>Resources</h3></Link>
+            <Link className="menu-item" to="/about"><h3>About</h3></Link>
+            <Link className="menu-item" to="/jobform"><h3>Post a job</h3></Link>
+          </div>
         </nav>
       }
-    </>
+      </Menu>
   )
 }
 
