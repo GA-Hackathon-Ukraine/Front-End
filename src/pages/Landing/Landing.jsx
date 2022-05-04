@@ -35,15 +35,20 @@ const Landing = ({ user, jobs, setJobs }) => {
     })
   }
 
-
-  
-  console.log(getFilteredJobs(), getFilteredLocation())
   
   const filteredJobs1 = getFilteredJobs()
   const filteredLocation1 = getFilteredLocation()
-  const arr = [...filteredJobs1, ...filteredLocation1]
-  const doubleFiltered = [...new Set([...filteredJobs1, ...filteredLocation1])]
+  // const arr = [...filteredJobs1, ...filteredLocation1]
+  // const doubleFiltered = [...new Set([...filteredJobs1, ...filteredLocation1])]
   
+  const combinedFilteredSearch = [];
+
+  filteredJobs1.forEach((job) => {
+    if (filteredLocation1.includes(job)) {
+      combinedFilteredSearch.push(job)
+    }
+  })
+
   // console.log('search', search)
   // console.log('location', location)
   // const daa = doubleFiltered.includes(r => r.company === search && r.location === location)
@@ -69,7 +74,7 @@ const Landing = ({ user, jobs, setJobs }) => {
     <main className={styles.container}>
       <h1>hello, {user ? user.name : 'friend'}</h1>
       <SearchForm setLocation={setLocation} setSearch={setSearch} search={search}/>
-      <JobsMap newJobs={filteredLocation1}/>
+      <JobsMap newJobs={combinedFilteredSearch}/>
       
     </main>
   )
