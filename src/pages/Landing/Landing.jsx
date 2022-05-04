@@ -7,6 +7,7 @@ import { useState } from 'react'
 const Landing = ({ user, jobs, setJobs }) => {
 
   const [search, setSearch] = useState("")
+  const [location, setLocation] = useState("")
 
   let filteredJobs = jobs.filter(job => job.position.toLowerCase().trim().includes(search.toLowerCase().trim()))
 
@@ -19,15 +20,6 @@ const Landing = ({ user, jobs, setJobs }) => {
     );
   });
 
-  console.log('ad', jobs)
-  
-  const getJobs=()=>{
-    console.log(filteredJobs)
-  }
-
-  console.log(filteredJobs)
-
-
   const getFilteredJobs = (e) => {
     let searchTerm = search.toLowerCase()
     return jobs.filter(v => {
@@ -35,13 +27,34 @@ const Landing = ({ user, jobs, setJobs }) => {
       return lowerCaseName.includes(searchTerm)
     })
   }
+  const getFilteredLocation = (e) => {
+    let searchTerm = location.toLowerCase()
+    return jobs.filter(v => {
+			let lowerCaseName = v.location.toLowerCase()
+      return lowerCaseName.includes(searchTerm)
+    })
+  }
+
+  console.log(getFilteredJobs(), getFilteredLocation())
+
+  const filteredJobs1 = getFilteredJobs()
+  const filteredLocation1 = getFilteredLocation()
+  const arr = [...filteredJobs1, ...filteredLocation1]
+  console.log(arr)
+  // const doubleFiltered = [...new Set([...filteredJobs1, ...filteredLocation1])]
+  // console.log(doubleFiltered)
+
+
+
+
+  
 
   return (
     <main className={styles.container}>
       <h1>hello, {user ? user.name : 'friend'}</h1>
       <a target="_blank" href="google.ca">go to google</a>
-      <SearchForm  setSearch={setSearch} search={search}/>
-      <JobsMap newJobs={getFilteredJobs()}/>
+      <SearchForm setLocation={setLocation} setSearch={setSearch} search={search}/>
+      <JobsMap newJobs={filteredLocation1}/>
       
     </main>
   )
