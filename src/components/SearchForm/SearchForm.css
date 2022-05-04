@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.searchContainer{
+    font-family: 'Inter', sans-serif;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 0 25px;
+}
+.searchContainerLocation{
+    display: flex;
+    align-items: center;
+    border-radius: 15px 15px 0px 0px;
+    border-bottom: #a32d2d;
+    height: 50px;
+    background-color: white;
+    padding: 2px 12px;
+}
+.searchContainerSearch{
+    display: flex;
+    align-items: center;
+    border-radius: 0px 0px 15px 15px;
+    border-bottom: #a32d2d;
+    height: 50px;
+    background-color: white;
+    padding: 2px 12px;
+    margin-top: 3px;
+}
+.searchInput{
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    border: none;
+    margin-left: 12px;
+    width: auto;
+    width: 100%;
+}
+.locationInput{
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    border: none;
+    margin-left: 12px;
+    width: auto;
+    width: 100%;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    background-image: url("./downarrowicon.png");
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 5px;
+    margin-right: 10px;
+  }
