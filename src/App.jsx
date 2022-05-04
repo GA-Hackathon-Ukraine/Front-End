@@ -12,15 +12,14 @@ import About from './pages/About/About'
 import * as authService from './services/authService'
 import JobDetails from './pages/JobDetails/JobDetails'
 import dummydata from '../src/components/JobsMap/dummydata.js'
-// import Dropdown from './components/NavBar/Dropdown'
-// import Resources from './pages/Resources/Resources'
+import './App.css'
+import axios from 'axios'
+
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
 
   const [jobs, setJobs] = useState([])
-
-  console.log(dummydata)
 
   useEffect(()=>{
 
@@ -41,9 +40,28 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  return (
-    <>
+  // useEffect(()=>{
 
+  // fetchData()
+
+  // },[])
+
+  // const fetchData = async()=>{
+
+  //   const response = await axios.get(`http://localhost:3001/api/profiles/`)
+  //   console.log(response.data)
+
+  // }
+
+
+
+ 
+
+
+  return (
+
+    <div className='mainContainer'>
+      {/* <button onClick={handleData}>Get data</button> */}
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing setJobs={setJobs} jobs={jobs} user={user} />} />
@@ -78,7 +96,7 @@ const App = () => {
           element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <Navigate to="/login" />}
         />
       </Routes>
-    </>
+    </div >
   )
 }
 
