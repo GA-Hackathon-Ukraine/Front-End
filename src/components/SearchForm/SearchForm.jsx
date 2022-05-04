@@ -1,15 +1,19 @@
-function SearchForm({setLocation, search, setSearch, getFilteredVillagers }) {
+function SearchForm({setLocation, search, setSearch, position, setPosition }) {
 
     const handleChange = (e) => {
         setSearch(e.target.value)
     }
+
+    // const handleChangePosition = (e) => {
+    //     setPosition(e.target.value)
+    // }
 
     const handleSetLocation=(e)=>{
         setLocation(e.target.value)
     }
     return ( 
         <>
-        <form onSubmit={getFilteredVillagers}>
+        <form>
             <label>Location:</label>
             <select onChange={handleSetLocation} type="text">
                 <option value="none" selected disabled hidden>Please Select</option>

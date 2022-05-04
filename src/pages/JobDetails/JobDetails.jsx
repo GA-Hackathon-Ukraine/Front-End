@@ -3,10 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 
 function JobDetails({ jobs }) {
-  const { id } = useParams();
-
- 
-  
+  const { id } = useParams();  
   
   const filteredJob = jobs.filter((elem, idx) => elem.id === id);
 
