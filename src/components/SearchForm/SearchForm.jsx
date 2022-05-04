@@ -1,7 +1,12 @@
-function SearchForm() {
+function SearchForm({ search, setSearch, getFilteredVillagers }) {
+
+    const handleChange = (e) => {
+        setSearch(e.target.value)
+    }
+
     return ( 
         <>
-        <form>
+        <form onSubmit={getFilteredVillagers}>
             <label>Location:</label>
             <select type="text">
                 <option>Tacoma</option>
@@ -9,7 +14,11 @@ function SearchForm() {
             </select>
             <br/>
             <label>Filter by job title/Company:</label>
-            <input type="text"></input>
+                <input
+                    type="text"
+                    onChange={handleChange}
+                    value={search}
+                ></input>
         </form>
         </>
      );

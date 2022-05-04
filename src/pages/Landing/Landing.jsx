@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import SearchForm from '../../components/SearchForm/SearchForm'
 import JobsMap from '../../components/JobsMap/JobsMap'
 import { useState } from 'react'
-import { useEffect } from 'react/cjs/react.production.min'
 
 const Landing = ({ user, jobs, setJobs }) => {
 
@@ -20,7 +19,7 @@ const Landing = ({ user, jobs, setJobs }) => {
     );
   });
 
-
+  console.log('ad', jobs)
   
   const getJobs=()=>{
     console.log(filteredJobs)
@@ -28,15 +27,22 @@ const Landing = ({ user, jobs, setJobs }) => {
 
   console.log(filteredJobs)
 
+
+  const getFilteredJobs = (e) => {
+    let searchTerm = search.toLowerCase()
+    return jobs.filter(v => {
+			let lowerCaseName = v.company.toLowerCase()
+      return lowerCaseName.includes(searchTerm)
+    })
+  }
+
   return (
     <main className={styles.container}>
       <h1>hello, {user ? user.name : 'friend'}</h1>
       <a target="_blank" href="google.ca">go to google</a>
-      <SearchForm/>
-      <JobsMap/>
-      {listJobs}
-      {/* form component */}
-      {/* jobs map */}
+      <SearchForm  setSearch={setSearch} search={search}/>
+      <JobsMap newJobs={getFilteredJobs()}/>
+      
     </main>
   )
 }

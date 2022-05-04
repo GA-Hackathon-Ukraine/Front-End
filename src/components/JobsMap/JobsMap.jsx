@@ -1,12 +1,12 @@
 import dummydata from './dummydata'
 import { Link } from 'react-router-dom';
 
-function JobsMap() {
+function JobsMap({newJobs}) {
 
 
     
 
-    const mappedData = dummydata.map((elem,idx)=>{
+    const mappedData = newJobs.map((elem,idx)=>{
         return (
             <Link key={`job-${idx}`} to={`/job/${elem.id}`}>
             <div style={{display:"flex", justifyContent: "space-between"}}>
