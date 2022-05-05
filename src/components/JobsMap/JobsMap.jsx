@@ -7,8 +7,7 @@ import savedUnfilled from '../../../src/saved-unfilled.svg';
 import constructionIcon from '../../../src/construction.svg';
 import technologyIcon from '../../../src/technology.svg';
 import foodandbeveragesIcon from '../../../src/food.svg'
-
-
+//comment
 const JobsMap = ({ allJobs }) => {
   const mappedData = allJobs.map((elem, idx) => {
 
@@ -100,7 +99,6 @@ const JobsMap = ({ allJobs }) => {
                     </span>
                   </div>
                 </div>
-
                 <div></div>
               </div>
             </div>
