@@ -23,13 +23,13 @@ ___________
 Search page<br>
 
 
-<img src ="https://i.imgur.com/qPD3PJg.png" alt="search" width="400"/>
+<img src ="https://i.imgur.com/qPD3PJg.png" alt="search" width="150"/>
 <br>
 <br>
 
 About page
 
-<img src ="https://i.imgur.com/IMn7oax.png" alt="search" width="400"/>
+<img src ="https://i.imgur.com/IMn7oax.png" alt="search" width="150"/>
 <br>
 <br>
 
@@ -54,7 +54,7 @@ Roman Protouliuk <br>
 
 Anthony Kowalkowski <br>
 Daniel Ribuffo <br>
-Renée Skibinski <br><br>
+Renée Skibinski <br><br><br>
 
 
 ### TECH USED 
