@@ -26,8 +26,6 @@ const JobForm = () => {
   const { company, position, full_time, city, state, contact, description, compensation, address, url } = form
 
   const handleSubmit = async (event) => {
-    console.log(localStorage.token)
-    console.log(form)
     event.preventDefault()
     try{
 
@@ -141,9 +139,10 @@ const JobForm = () => {
           value={compensation}
           onChange={handleChange}
           required
-          placeholder="Compensation"
+          placeholder="Hourly Compensation (ex: 60)"
           name="compensation"
           className="job-input"
+          maxLength="3"
           ></input>
 
         {/* address */}
