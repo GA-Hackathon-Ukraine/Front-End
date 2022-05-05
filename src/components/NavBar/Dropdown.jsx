@@ -14,7 +14,7 @@ const Dropdown = props => {
             onClick={() => setOpenMenu(!openMenu)}>
                 ☰dropdown
             </div>
-            <div className='resources' onClick={() => pushToRoute("/resources")}>
+            <div className='resources' onClick={() => pushToRoute("/resources") }>
                 Resources
                 </div>
 
