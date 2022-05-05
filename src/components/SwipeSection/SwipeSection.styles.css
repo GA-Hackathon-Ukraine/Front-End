@@ -29,7 +29,7 @@
 .swipesection-btn-wrapper {
   display: flex;
   justify-content: center;
-  display: none;
+  /* display: none; */
 }
 
 .inner-section-swipe-section {

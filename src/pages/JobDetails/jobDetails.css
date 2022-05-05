@@ -2,6 +2,7 @@
 .jobDetailsContainer{
     margin: 0px 25px 10px 25px;
     font-family: 'Inter', sans-serif;
+    padding-top: 110px;
 }
 .jobDetailsMini{
     display:flex;
@@ -14,7 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #959595;
+    background-color: #FFCC00;
     height: 100px;
     border-radius: 15px;
     margin-bottom: 15px;
@@ -24,6 +25,7 @@
     font-size: 20px;
     margin-bottom: 0px;
     margin-top: 0;
+    color: white;
 }
 .companyLocationDiv{
     display: flex;
@@ -33,6 +35,9 @@
     font-weight: 100;
     font-size: 13px;
     margin-top: 0 auto;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 0;
 }
 .locationDiv{
     display: flex;
@@ -42,20 +47,27 @@
 
 }
 .location{
-    font-weight: 100;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-size: 10px;
 }
 .descriptionDiv{
     background-color: white;
     border-radius: 15px;
-    padding: 20px 25px;
+    padding: 18px 18px;
 }
 .description{
     font-family: 'Inter', sans-serif;
     font-size: 15px;
     margin-top: 0;
+    padding: 0;
 }
 .descriptionText{
     font-size: 13px;
+    padding: 0;
+    margin-bottom: 0;
 }
 
 .acessoriesDiv{
@@ -70,25 +82,27 @@
     justify-content: center;
     align-items:center;
     gap:13px;
-    background-color: #959595;
+    background-color: #FFCC00;
     border-radius: 15px;
     box-shadow: none;
     border: none;
     margin-top: 30px;
     font-size: 20px;
-    color: white;
+    color: #004FA3;
     height: 50px;
     font-weight: 100;
 }
 .contactButtonText{
     font-weight: 500;
     letter-spacing: .5px;
+    margin-bottom: 0;
 }
 .wage{
     margin-top: 0px;
+    color: white;
 }
 .hour{
     font-size: 14px;
-    color: #4B4B4B;
+    color: white;
 }
 

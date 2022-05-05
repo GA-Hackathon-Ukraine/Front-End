@@ -1,35 +1,45 @@
 import './JobForm.styles.css'
 import { useState } from 'react'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const defaultFormFieds = {
-  companyName:"",
-  jobTitle: "",
-  fullTime: '',
+  company:"",
+  position: "",
+  full_time: '',
   city: "",
   state: '',
   contact: "",
   description: "",
   compensation: "",
-  datePosted: "",
   address: "",
-  companyWebsite: "",
+  url: "",
 }
 
 
 
 const JobForm = () => {
 
-
+  const navigate = useNavigate()
 
   const [form, setForm] = useState(defaultFormFieds)
 
-  const { companyName, jobTitle, fullTime, city, state, contact, description, compensation, datePosted, address, companyWebsite } = form
+  const { company, position, full_time, city, state, contact, description, compensation, address, url } = form
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
+    try{
 
-    // post axios call
-    console.log(form)
+    const response = await axios.post(`${process.env.REACT_APP_BACKEND_SERVER_URL}/api/jobs/`, form)
+
+    console.log(response.data)
+
+    navigate('/')
+
+
+  } catch(err){
+    console.log()
+  }
   }
 
   const handleChange = (event) => {
@@ -44,21 +54,21 @@ const JobForm = () => {
         
         <label htmlFor="company-name">Company Name:</label>
         <input 
-          value={companyName}
+          value={company}
           onChange={handleChange}
           placeholder="Company name"
           required
-          name="companyName"
+          name="company"
           type='text'
         />
 
         <label htmlFor="position">Job title:</label>
         <input
-          value={jobTitle}
+          value={position}
           onChange={handleChange}
           placeholder="Job title"
           required
-          name="jobTitle"
+          name="position"
           type='text'
         >
         </input>
@@ -66,10 +76,10 @@ const JobForm = () => {
         <label htmlFor="status">Status:</label>
         <input
           type="text"
-          value={fullTime}
+          value={full_time}
           onChange={handleChange}
           placeholder="Full time"
-          name="fullTime"
+          name="full_time"
           >
         </input>
 
@@ -111,7 +121,7 @@ const JobForm = () => {
           placeholder="Description"
           name="description"></input>
         
-        <label htmlFor="company-website">Compensation</label>
+        <label htmlFor="compensation">Compensation</label>
         <input 
         type="text"
           value={compensation}
@@ -120,16 +130,7 @@ const JobForm = () => {
           placeholder="Compensation"
           name="compensation">
         </input>
-
-        <label htmlFor="date-posted">Date Posted:</label>
-        <input 
-        // 
-        type="text"
-          value={datePosted}
-          onChange={handleChange}
-          placeholder="Date Posted"
-          name="datePosted"></input>
-        
+       
         <label htmlFor="address">Address:</label>
         <input 
 
@@ -141,10 +142,10 @@ const JobForm = () => {
         <label htmlFor="company-website">Company Website:</label>
         <input 
         type="text"
-          value={companyWebsite}
+          value={url}
           onChange={handleChange}
           placeholder="Company Website"
-          name="companyWebsite">
+          name="url">
         </input>
 
         <input type="submit" value="submit"/>

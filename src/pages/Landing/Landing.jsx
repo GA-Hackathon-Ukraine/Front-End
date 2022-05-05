@@ -4,7 +4,8 @@ import SearchForm from '../../components/SearchForm/SearchForm'
 import JobsMap from '../../components/JobsMap/JobsMap'
 import ListCareers from '../../components/ListCareers/ListCareers'
 import SwipeSection from '../../components/SwipeSection/SwipeSection'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const Landing = ({ user, jobs, setJobs }) => {
 
@@ -23,6 +24,7 @@ const Landing = ({ user, jobs, setJobs }) => {
       </div>
     );
   });
+
 
   const getFilteredLocation = () => {
     let searchTerm = location.toLowerCase()
@@ -67,7 +69,7 @@ const Landing = ({ user, jobs, setJobs }) => {
       <h1>hello, {user ? user.name : 'friend'}</h1>
       <SearchForm setLocation={setLocation} setSearch={setSearch} search={search} position={position} setPosition={setPosition} setComponentShow={setComponentShow} compomentShow={compomentShow}/>
       
-      { compomentShow ? <JobsMap newJobs={combinedFilteredSearch}/> :  <span style={{width: "100vw"}}> <SwipeSection /> <ListCareers /> </span> }
+      { compomentShow ? <JobsMap allJobs={combinedFilteredSearch}/> :  <span style={{width: "100vw"}}> <SwipeSection /> <ListCareers /> </span> }
       
 
     </main>
