@@ -4,7 +4,7 @@ import { Navbar, NavDropdown, Form, FormControl, Button, Nav } from 'react-boots
 import Logo from './logo.svg';
 import Favorite from './favorite.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './navbar.css';
+import './NavBar.css';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useNavigate } from 'react-router-dom';
 const NavBar = ({ user, handleLogout }) => {
