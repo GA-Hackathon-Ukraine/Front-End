@@ -1,3 +1,124 @@
-h1 {
-  font-size: large;
+@media only screen and (max-width: 700px) {
+
+  div.mainContainer {
+    background-image: #FFCC00;
+  }
+
+  div.resourcesPage {
+    background-color: #FFCC00;
+    color: white;
+    text-align: center;
+  }
+
+  div.card{
+    padding: 15px;
+    background-color: white;
+    margin:15px;
+    border-radius: 10px;
+  }
+
+  h1 {
+    padding-top: 20px; 
+    padding-left: 25px;
+    padding-bottom: 20px;
+  }
+
+  h2 {
+    padding: 5px;
+    color: #373D3F;
+  }
+
+  h3 {
+    padding: 5px;
+    color: #373D3F;
+  }
+
+  p {
+    color: #2D4FA3;
+    padding-bottom: 10px;
+    font-size: 10px;
+    text-align: justify;
+    text-justify: inter-word;
+    align-content: center;
+  }
+
+  a:link {
+    color: #2D4FA3;
+  }
+
+  a:visited {
+    color: #373D3F;
+  }
+
+  a:hover {
+    color: black;
+  }
+
+  a:active {
+    color: #FFCC00;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+
+  div.resourcesPage {
+    background-color: #FFCC00;
+    color: white;
+    text-align: center;
+  }
+  
+  div.cardContainer {
+    display: flex;
+    display: inline-block;
+    text-align: center;
+    width: 30;
+  }
+
+  div.card{
+    padding: 15px;
+    background-color: white;
+    margin:15px;
+    border-radius: 10px;
+  }
+  
+  h1 {
+    padding-top: 20px; 
+    padding-left: 25px;
+    padding-bottom: 20px;
+  }
+  
+  h2 {
+    padding: 5px;
+    color: #373D3F;
+  }
+  
+  h3 {
+    padding: 5px;
+    color: #373D3F;
+  }
+  
+  p {
+    color: #2D4FA3;
+    padding-bottom: 10px;
+    font-size: 10px;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  
+  a:link {
+    color: #2D4FA3;
+  }
+  
+  a:visited {
+    color: #373D3F;
+  }
+  
+  a:hover {
+    color: black;
+  }
+  
+  a:active {
+    color: #FFCC00;
+  }
+
 }

@@ -1,40 +1,33 @@
 @media only screen and (max-width: 700px) {
 
   div.mainContainer {
-    background-image: #FFCC00;
+    background-color: #174FA3;
   }
 
-  div.aboutPage {
-    background-color: #FFCC00;
+  div.savedjobsPage {
+    background-color: #174FA3;
     color: white;
     text-align: center;
   }
 
-  nav.navbar{
-    background-color: white;
-  }
-
-  div.card{
+  div.card-body{
     padding: 15px;
     background-color: white;
     margin:15px;
     border-radius: 10px;
   }
 
-  h1 {
-    padding-top: 20px; 
-    padding-left: 25px;
-    padding-bottom: 20px;
+  div.card-text{
+    padding: 15px;
+    color: black;
+    margin:15px;
+    border-radius: 10px;
   }
 
   h2 {
-    padding: 5px;
-    color: #2D4FA3;
-  }
-
-  h3 {
-    padding: 5px;
-    color: #2D4FA3;
+    padding-top: 20px; 
+    padding-left: 25px;
+    padding-bottom: 20px;
   }
 
   p {
@@ -48,13 +41,13 @@
 
 @media only screen and (min-width: 700px) {
 
-  div.aboutPage {
-    background-color: #FFCC00;
+  div.savedjobsPage {
+    background-color: #174FA3;
     color: white;
     text-align: center;
   }
   
-  div.cardContainer {
+  div.card-body{
     /* background-color: red; */
     display: flex;
     display: inline-block;
@@ -66,33 +59,19 @@
     background-color: white;
   }
   
-  div.card{
+  div.card-body{
     padding: 15px;
     background-color: white;
     margin:15px;
     border-radius: 10px;
   }
   
-  h1 {
+  h2 {
     padding-top: 20px; 
     padding-left: 25px;
     padding-bottom: 20px;
   }
-  
-  .card-img{
-    padding: 15px;
-  }
-  
-  h2 {
-    padding: 5px;
-    color: #2D4FA3;
-  }
-  
-  h3 {
-    padding: 5px;
-    color: #2D4FA3;
-  }
-  
+
   p {
     color: #373D3F;
     padding: 10px;
