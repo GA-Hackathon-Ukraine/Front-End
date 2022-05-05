@@ -1,42 +1,46 @@
 @media only screen and (max-width: 700px) {
-
   div.mainContainer {
-    background-image: #FFCC00;
+    background-image: #ffcc00;
   }
 
   div.resourcesPage {
     padding-top: 100px;
-    background-color: #FFCC00;
+    background-color: #ffcc00;
     color: white;
     text-align: center;
   }
 
-  div.card{
+  div.card {
     padding: 15px;
     background-color: white;
-    margin:15px;
+    margin: 15px;
     border-radius: 10px;
   }
 
+  .card-text {
+    font-weight: bold;
+  }
+
   h1 {
-    padding-top: 20px; 
+    padding-top: 20px;
     padding-left: 25px;
     padding-right: 25px;
     padding-bottom: 20px;
+    font-weight: bold;
   }
 
   h2 {
     padding: 5px;
-    color: #373D3F;
+    color: #373d3f;
   }
 
   h3 {
     padding: 5px;
-    color: #373D3F;
+    color: #373d3f;
   }
 
   p {
-    color: #2D4FA3;
+    color: #2d4fa3;
     padding-bottom: 10px;
     font-size: 10px;
     text-align: justify;
@@ -45,11 +49,12 @@
   }
 
   a:link {
-    color: #2D4FA3;
+    color: #2d4fa3;
+    font-size: 14px;
   }
 
   a:visited {
-    color: #373D3F;
+    color: #373d3f;
   }
 
   a:hover {
@@ -57,18 +62,17 @@
   }
 
   a:active {
-    color: #FFCC00;
+    color: #ffcc00;
   }
 }
 
 @media only screen and (min-width: 700px) {
-
   div.resourcesPage {
-    background-color: #FFCC00;
+    background-color: #ffcc00;
     color: white;
     text-align: center;
   }
-  
+
   div.cardContainer {
     display: flex;
     display: inline-block;
@@ -76,51 +80,50 @@
     width: 30;
   }
 
-  div.card{
+  div.card {
     padding: 15px;
     background-color: white;
-    margin:15px;
+    margin: 15px;
     border-radius: 10px;
   }
-  
+
   h1 {
-    padding-top: 20px; 
+    padding-top: 20px;
     padding-left: 25px;
     padding-bottom: 20px;
   }
-  
+
   h2 {
     padding: 5px;
-    color: #373D3F;
+    color: #373d3f;
   }
-  
+
   h3 {
     padding: 5px;
-    color: #373D3F;
+    color: #373d3f;
   }
-  
+
   p {
-    color: #2D4FA3;
+    color: #2d4fa3;
     padding-bottom: 10px;
     font-size: 10px;
     text-align: justify;
     text-justify: inter-word;
   }
-  
+
   a:link {
-    color: #2D4FA3;
+    color: #2d4fa3;
   }
-  
+
   a:visited {
-    color: #373D3F;
+    color: #373d3f;
   }
-  
+
   a:hover {
     color: black;
   }
-  
-  a:active {
-    color: #FFCC00;
-  }
 
+  a:active {
+    color: #ffcc00;
+  }
 }
