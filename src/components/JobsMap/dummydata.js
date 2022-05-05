@@ -7,6 +7,7 @@ const jobs = [
 		city: 'Seattle',
 		state: 'WA',
 		status: 'full-time',
+		industry: 'technology',
 		compensation: '24',
 		contact_name: 'John Doe',
 		description:
@@ -20,6 +21,7 @@ const jobs = [
 		city: 'Seattle',
 		state: 'WA',
 		status: 'full-time',
+		industry: 'cleaning',
 		compensation: '15',
 		contact_name: 'John Doe',
 		description:
@@ -33,6 +35,7 @@ const jobs = [
 		city: 'Tacoma',
 		state: 'WA',
 		status: 'full-time',
+		industry: 'transportation',
 		compensation: '30',
 		contact_name: 'John Doe',
 		description:
@@ -46,6 +49,7 @@ const jobs = [
 		city: 'Tacoma',
 		state: 'WA',
 		status: 'full-time',
+		industry: 'construction',
 		compensation: '65',
 		contact_name: 'John Doe',
 		description:
@@ -54,11 +58,12 @@ const jobs = [
 	{
 		id: '129371299566',
 		company: 'JPMorgan',
-		position: 'UX Designer',
+		position: 'Cook',
 		url: 'www.jpMorgan.com',
 		city: 'Tacoma',
 		state: 'WA',
 		status: 'full-time',
+		industry: 'food/beverage',
 		compensation: '43',
 		contact_name: 'John Doe',
 		description:
@@ -67,10 +72,11 @@ const jobs = [
 	{
 		id: '1203981239',
 		company: 'Square',
-		position: 'UX Designer',
+		position: 'Landscaper',
 		url: 'www.square.ca',
 		city: 'Seattle',
 		state: 'WA',
+		industry: 'gardening',
 		status: 'full-time',
 		compensation: '21',
 		contact_name: 'John Doe',
@@ -80,10 +86,11 @@ const jobs = [
 	{
 		id: '129371299',
 		company: 'lululemon',
-		position: 'UX Designer',
+		position: 'Yoga teacher',
 		url: 'www.lululemon.ca',
 		city: 'Tacoma',
 		state: 'WA',
+		industry: 'education',
 		status: 'full-time',
 		compensation: '35',
 		contact_name: 'John Doe',
