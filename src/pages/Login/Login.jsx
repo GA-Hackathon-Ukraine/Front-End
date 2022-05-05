@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import LoginForm from '../../components/LoginForm/LoginForm'
-import './Login.module.css'
+import './login.css'
 
 const LoginPage = props => {
   const [message, setMessage] = useState([''])
@@ -10,7 +10,7 @@ const LoginPage = props => {
   }
 
   return (
-    <main className="container">
+    <main className="sign-in-container">
       <div className="signin-header-box">
         <h1 className="signin-header-text">Sign In</h1>
       </div>

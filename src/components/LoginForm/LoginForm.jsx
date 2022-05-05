@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import './LoginForm.module.css'
+import './loginform.css'
 import * as authService from '../../services/authService'
 
 const LoginForm = props => {
@@ -43,6 +43,7 @@ const LoginForm = props => {
           name="email"
           placeholder='Email'
           onChange={handleChange}
+          className="sign-in-input"
         />
       </div>
       {/* sign in field */}
@@ -56,6 +57,7 @@ const LoginForm = props => {
           name="pw"
           placeholder='Password'
           onChange={handleChange}
+          className="sign-in-input"
         />
       </div>
       {/* forget password */}
