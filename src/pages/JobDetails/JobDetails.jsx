@@ -30,9 +30,10 @@ function JobDetails({ jobs, setFavorites, favorites}) {
       default:
         industry = constructionIcon;
     }
-    // const handleClick = () => {
-    //   window.open(`${elem.url}`);
-    // };
+    function weblink(){
+      // window.location=`${elem.url}`;
+      window.location.href('www.google.com');
+    };
 
     const handleFavorite = ()=>{
       document.getElementById("favbutton")
@@ -88,14 +89,14 @@ function JobDetails({ jobs, setFavorites, favorites}) {
             <h2 className="description">Description</h2>
             <p className="descriptionText">{elem.description}</p>
           </div>
-        <button className='contactButton'>
+        <a id="emailMe" href={"mailto:"+`${elem.contact}`}><button className='contactButton'>
             <img src={mailIcon}/>
             <h4 className='contactButtonText'>Contact</h4>
-        </button>
-        <button className='contactButton'>
+        </button> </a>
+        <a id="applyHere" target="_blank" href={"https://" + `${elem.url}`}><button className='applyButton'>
             <img src={apply}/>
-            <h4 className='contactButtonText'>Apply</h4>
-        </button>
+            <h4 className='applyButtonText'>Apply</h4>
+        </button></a>
         </div>
       </div>
     );

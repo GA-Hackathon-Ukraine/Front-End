@@ -73,7 +73,7 @@
   gap: 20px;
   margin-bottom: 20px;
 }
-.contactButton {
+.contactButton, .applyButton {
   font-family: 'Inter', sans-serif;
   width: 100%;
   display: flex;
@@ -89,8 +89,9 @@
   color: #004fa3;
   height: 50px;
   font-weight: 100;
+  text-decoration: none;
 }
-.contactButtonText {
+.contactButtonText, .applyButtonText {
   font-weight: 500;
   letter-spacing: 0.5px;
   margin-bottom: 0;
@@ -107,4 +108,8 @@
 #favbutton:hover {
   background-color: #ffcc00;
   cursor: pointer;
+}
+
+#applyHere, #emailMe {
+  text-decoration: none;
 }
