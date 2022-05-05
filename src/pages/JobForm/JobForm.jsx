@@ -19,11 +19,9 @@ const defaultFormFieds = {
 
 const JobForm = () => {
 
-
-
   const [form, setForm] = useState(defaultFormFieds)
 
-  const { companyName, jobTitle, fullTime, city, state, contact, description, compensation, datePosted, address, companyWebsite } = form
+  const { companyName, jobTitle, fullTime, city, state, contact, description, compensation, address, companyWebsite } = form
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -38,42 +36,44 @@ const JobForm = () => {
   }
 
   return (
-    <>
-      <form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column", width:"300px", margin: "0 auto"}}>
-        <h1>Job Form</h1>
+    <div className="full-div">
+      <h1>Post a Job</h1>
+      <form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column", width:"100%", margin: "0 auto"}}>
+        <h3>Job Form</h3>
+        <p>Fill out the fields below to post a job!</p>
         
-        <label htmlFor="company-name">Company Name:</label>
+        <label htmlFor="company-name"></label>
         <input 
           value={companyName}
           onChange={handleChange}
-          placeholder="Company name"
+          placeholder="Company Name"
           required
           name="companyName"
           type='text'
         />
 
-        <label htmlFor="position">Job title:</label>
+        <label htmlFor="position"></label>
         <input
           value={jobTitle}
           onChange={handleChange}
-          placeholder="Job title"
+          placeholder="Job Title"
           required
           name="jobTitle"
           type='text'
         >
         </input>
 
-        <label htmlFor="status">Status:</label>
+        <label htmlFor="status"></label>
         <input
           type="text"
           value={fullTime}
           onChange={handleChange}
-          placeholder="Full time"
+          placeholder="Full-time / Part-time"
           name="fullTime"
           >
         </input>
 
-        <label htmlFor="city">City:</label>
+        <label htmlFor="city"></label>
         <input
           type="text"
           value={city}
@@ -82,7 +82,7 @@ const JobForm = () => {
           required
           name="city"
         ></input>
-        <label htmlFor="state">State:</label>
+        <label htmlFor="state"></label>
         <input
           type="text"
           value={state}
@@ -90,28 +90,20 @@ const JobForm = () => {
           placeholder="State"
           required
           name="state"
-// 
+ 
         ></input>
-        <label htmlFor="contact">Contact:</label>
+        <label htmlFor="contact"></label>
         <input 
         
         type="text"
           value={contact}
           onChange={handleChange}
-          placeholder="contact"
+          placeholder="Contact"
           required
           name="contact"
         ></input>
-        <label htmlFor="description">Description:</label>
-        <input 
         
-        type="text"
-          value={description}
-          onChange={handleChange}
-          placeholder="Description"
-          name="description"></input>
-        
-        <label htmlFor="company-website">Compensation</label>
+        <label htmlFor="company-website"></label>
         <input 
         type="text"
           value={compensation}
@@ -121,16 +113,7 @@ const JobForm = () => {
           name="compensation">
         </input>
 
-        <label htmlFor="date-posted">Date Posted:</label>
-        <input 
-        // 
-        type="text"
-          value={datePosted}
-          onChange={handleChange}
-          placeholder="Date Posted"
-          name="datePosted"></input>
-        
-        <label htmlFor="address">Address:</label>
+        <label htmlFor="address"></label>
         <input 
 
         type="text"
@@ -138,7 +121,7 @@ const JobForm = () => {
           onChange={handleChange}
           placeholder="Address"
           name="address"></input>
-        <label htmlFor="company-website">Company Website:</label>
+        <label htmlFor="company-website"></label>
         <input 
         type="text"
           value={companyWebsite}
@@ -147,9 +130,19 @@ const JobForm = () => {
           name="companyWebsite">
         </input>
 
-        <input type="submit" value="submit"/>
+        <label htmlFor="description"></label>
+        <textarea 
+        wrap="hard"
+        className="description-box"
+        type="text"
+          value={description}
+          onChange={handleChange}
+          placeholder="Job Description"
+          name="description"></textarea>
+
+        <input type="submit" value="Submit" className="submit"/>
       </form>
-    </>
+    </div>
   )
 }
 
