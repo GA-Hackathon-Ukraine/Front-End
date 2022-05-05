@@ -49,10 +49,10 @@ const SwipeSection = () => {
             <div className='slider-card-wrapper-bottom'>
                 <div className='slider-card-wrapper-bottom-upper'>
                   <div className='slider-card-wrapper-bottom-upper-title'>
-                    <div><h4 className='position-title'>Position</h4></div>
+                    <div><h4 className='position-title'>Construction Manager</h4></div>
                     <div className='slider-card-wrapper-bottom-upper-location'><span><img className='location-img-slider' src={locationImg} /></span><h5 className='location-wa'>Tacoma, WA</h5></div>
                   </div>
-                  <div><h5 className='company-title'>Company</h5></div>
+                  <div><h5 className='company-title'>Barry's Builders</h5></div>
                 </div>
             </div>
                 <div className='slider-card-wrapper-bottom-bottom'>
@@ -70,10 +70,10 @@ const SwipeSection = () => {
             <div className='slider-card-wrapper-bottom'>
                 <div className='slider-card-wrapper-bottom-upper'>
                   <div className='slider-card-wrapper-bottom-upper-title'>
-                    <div><h4 className='position-title'>Position</h4></div>
+                    <div><h4 className='position-title'>Housekeeper</h4></div>
                     <div className='slider-card-wrapper-bottom-upper-location'><span><img className='location-img-slider' src={locationImg} /></span><h5 className='location-wa'>Renton, WA</h5></div>
                   </div>
-                  <div><h5 className='company-title'>Company</h5></div>
+                  <div><h5 className='company-title'>Tidy Homes</h5></div>
                 </div>
             </div>
                 <div className='slider-card-wrapper-bottom-bottom'>
