@@ -15,6 +15,7 @@ import JobDetails from './pages/JobDetails/JobDetails'
 import dummydata from '../src/components/JobsMap/dummydata.js'
 import axios from 'axios'
 import './App.css'
+import Favorites from './pages/Favorites/Favorites'
 // import axios from 'axios'
 
 
@@ -78,6 +79,11 @@ const App = () => {
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
+        />
+
+        <Route
+          path="/favorites"
+          element={<Favorites favorites={favorites} />}
         />
         <Route
           path="/login"
