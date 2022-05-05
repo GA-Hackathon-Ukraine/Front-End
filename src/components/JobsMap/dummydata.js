@@ -10,12 +10,18 @@ const jobs = [
     industry: 'technology',
     compensation: '50',
     contact_name: 'John Doe',
-    description:
-      'A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. A full time role for a UX Signer. '
+    description: `Technical Recruiter Responsibilities:
+
+      As a Technical Recruiter, your day to day will consist of:
+      
+      Identifying qualified IT professionals, through various sourcing techniques (applications, job boards, database, social media, referrals etc.) and serve as the main point of contact for all candidates throughout the entire recruiting cycle.
+      Build and maintain relationships with active and passive candidates and match them with job openings that meet their preferences and career goals.
+      Reaching out to a minimum of 50 candidates per day via phone, as well as outreach via email, text, LinkedIn etc.
+      Negotiating compensation and communicating all incentives to attract and hire the best candidates for our clients.`
   },
   {
     id: '120398123',
-    company: 'Amazon',
+    company: 'You`ve Got Maids',
     position: 'Housekeeper',
     url: 'www.amazon.ca',
     city: 'Seattle',
