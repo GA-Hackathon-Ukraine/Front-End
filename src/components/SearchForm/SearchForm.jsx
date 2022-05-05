@@ -3,7 +3,7 @@ import './SearchForm.css';
 import locationIcon from './locationicon.png'
 import searchIcon from './searchicon.png'
 
-function SearchForm({setLocation, search, setSearch, position, setPosition }) {
+function SearchForm({setLocation, position, setPosition, setComponentShow, compomentShow}) {
 
     const handleChange = (e) => {
         setPosition(e.target.value)   
@@ -13,9 +13,13 @@ function SearchForm({setLocation, search, setSearch, position, setPosition }) {
     setLocation(e.target.value);
   };
 
+  const handleClickRender = () => {
+    setComponentShow(true)
+  }
+    
   return (
     <div className="searchContainer">
-      <form>
+      <form onClick={handleClickRender}>
         <div className='searchContainerLocation'>
         <img src={searchIcon}/>
         
@@ -27,8 +31,19 @@ function SearchForm({setLocation, search, setSearch, position, setPosition }) {
             <option value="DEFAULT" disabled hidden>
               Please Select
             </option>
-            <option  value='1'>Tacoma</option>
-            <option  value="2">Seattle</option>
+
+            <option>Tacoma</option>
+            <option>Seattle</option>
+            <option>Olympia</option>
+            <option>Vancouver</option>
+            <option>Bellevue</option>
+            <option>Kent</option>
+            <option>Federal Way</option>
+            <option>Auburn</option>
+            <option>Lakewood</option>
+            <option>Gig Harbor</option>
+            
+
           </select>
         </div>
       </form>

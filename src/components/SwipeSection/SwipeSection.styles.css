@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.swipe-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* align-items: center; */
+  margin-top: 60px;
+  height: 27vh;
+  width: 100%;
+}
+
+.slider-card-wrapper {
+  height: 20vh;
+}
+
+.slider-card {
+  padding: 12px;
+  margin: 0 auto;
+  width: 80%;
+  /* height: 100%; */
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+}
+
+.swipesection-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+
+.inner-section-swipe-section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.slider-card-wrapper-upper {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  background-color: #FFDE5C;
+  border-radius: 10px;
+}
+
+.image-clean-forswipe {
+  width: 30px;
+}
+
+.slider-card-wrapper-bottom-upper-title {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-card-wrapper-bottom-upper-location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-img-slider {
+  width: 15px;
+  padding-right: 7px;
+}
+
+.slider-card-wrapper-bottom-bottom {
+  /* padding: 0px 4px 0px 4px; */
+  margin-top: 20px;
+}
+
+.hourly-rate {
+  /* margin-top: 25px; */
+}
+
+.slider-card-wrapper-bottom-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.save-btn-swipe-section {
+  width: 15px;
+}
+
+.slide-to-see-more-wrapper {
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+  margin: 0 auto;
+}
+
+.slide-to-see-more {
+  display: flex;
+  justify-self: flex-end;
+}
+
+.swipe-right-section {
+  margin-right: 6px;
+  color: white;
+}
+
+.position-title {
+  font-family: Inter;
+  font-weight: 800;
+}
+
+.company-title {
+  font-family: Inter;
+  font-weight: 300;
+}
+
+.location-wa {
+  font-size: 10px;
+  font-family: Inter;
+  font-weight: 300;
+}
+
+.compensation {
+  font-size: 18px;
+  font-family: Inter;
+  font-weight: 800;
+  color: #0A81FF;
+}
+
+.per-hour {
+  font-size: 10px;
+  font-family: Inter;
+  font-weight: 800;
+  color: #0A81FF;
+}
+
+.swipe-right-section {
+  font-size: 14px;
+  font-family: Inter;
+  font-weight: 500;
+  color: #4691E0;
+}
