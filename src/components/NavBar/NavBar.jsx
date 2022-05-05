@@ -35,16 +35,16 @@ const NavBar = ({ user, handleLogout }) => {
         {
           user ? (
             <Nav className="mr-auto">
-              <Link to="/" className="nav-link">
+              <Nav.Link as={Link} to="/" className="nav-link">
                 Home
-              </Link>
+              </Nav.Link>
               <Link data-bs-toggle="collapse" to="/">
                 <div className="collapse">Home</div>
               </Link>
-              <Link to="/profiles">Profiles</Link>
-              <Link to="/resources">Resources</Link>
-              <Link to="/about">About</Link>
-              <Link onClick={handleLogout}>Log out</Link>
+              <Nav.Link as={Link} to="/profiles">Profiles</Nav.Link>
+              <Nav.Link as={Link} to="/resources">Resources</Nav.Link>
+              <Nav.Link as={Link} to="/about">About</Nav.Link>
+              <Nav.Link as={Link} onClick={handleLogout}>Log out</Nav.Link>
             </Nav>
           ) : (
             <Nav className="mr-auto">
