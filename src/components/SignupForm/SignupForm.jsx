@@ -105,7 +105,7 @@ const SignupForm = props => {
         </button>
       </div>
       {/* link to make an account */}
-      <p className="have-account">Already have an account?<Link to="/login">Sign In</Link></p>
+      <p className="have-account">Already have an account? <Link class="signin" to="/login">Sign In</Link></p>
     </form>
   )
 }

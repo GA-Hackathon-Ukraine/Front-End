@@ -17,7 +17,7 @@ const LoginPage = props => {
       <div className="sign-form-area">
         <h3 className='sign-in-salutation'>Welcome Back</h3>
         <p className='sign-in-salutation-subtitle'>Hello, sign in to continue!</p>
-        <p>{message}</p>
+        {/* <p>{message}</p> */}
         <LoginForm
           handleSignupOrLogin={props.handleSignupOrLogin}
           updateMessage={updateMessage}

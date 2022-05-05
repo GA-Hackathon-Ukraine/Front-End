@@ -67,7 +67,7 @@ const LoginForm = props => {
         <button className="signin-button">Sign In</button>
       </div>
       {/* link to make an account */}
-      <p className="need-account">Don't have an account? <Link to="/signup">Sign Up</Link></p>
+      <p className="need-account">Don't have an account? <Link className="signup" to="/signup">Sign Up</Link></p>
     </form>
   )
 }

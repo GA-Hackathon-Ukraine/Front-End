@@ -1,18 +1,19 @@
 .form-full-div {
-  background-color: #FFCC00;
+  background-color: #ffcc00;
   color: white;
 }
 
 .form-h1 {
-  padding-top: 20px; 
+  padding-top: 120px;
   padding-left: 25px;
   padding-bottom: 20px;
+  font-weight: bold;
 }
 
 .job-form {
   border-radius: 15px 15px 0px 0px;
   background: white;
-  color: #373D3F;
+  color: #373d3f;
   padding-left: auto;
   padding-right: auto;
 }
@@ -21,19 +22,20 @@
   padding-top: 10%;
   padding-left: 10%;
   padding-bottom: 2%;
-  color: #727D83;
+  color: #727d83;
+  font-weight: bold;
 }
 
 .job-form-sub-statement {
   padding-bottom: 5%;
   padding-left: 10%;
-  font-size: 10px;
+  font-size: 15px;
 }
 
 .job-input {
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   border-radius: 10px;
-  border: 5px solid #EEEEEE;
+  border: 5px solid #eeeeee;
   color: black;
   padding-left: 10px;
   padding-top: 10px;
@@ -44,9 +46,9 @@
 }
 
 .job-description-box {
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   border-radius: 10px;
-  border: 5px solid #EEEEEE;
+  border: 5px solid #eeeeee;
   color: black;
   padding-left: 10px;
   padding-top: 10px;
@@ -55,11 +57,11 @@
   margin-left: 10%;
   margin-right: 10%;
   height: 100px;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .job-form-submit {
-  background-color: #0050A3;
+  background-color: #0050a3;
   color: white;
   font-weight: bold;
   border: 0px;
@@ -81,7 +83,6 @@
   top: 0;
   left: 0;
 }
- 
 .box {
   position: relative;
   width: 70%;
@@ -95,7 +96,6 @@
   border: 1px solid #999;
   overflow: auto;
 }
- 
 .close-icon {
   content: 'x';
   cursor: pointer;
@@ -113,9 +113,9 @@
 }
 
 b {
-    color: black;
+  color: black;
 }
 
 .close-icon {
-    color: black;
+  color: black;
 }

@@ -1,7 +1,7 @@
-.sign-in-input{
-  background-color: #EEEEEE;
+.sign-in-input {
+  background-color: #eeeeee;
   border-radius: 10px;
-  border: 5px solid #EEEEEE;
+  border: 5px solid #eeeeee;
   color: black;
   padding-left: 10px;
   padding-top: 10px;
@@ -13,14 +13,16 @@
 }
 
 .forgot-password {
-  margin-top: 5%;
+  /* margin-top: 5%; */
   margin-bottom: 5%;
   margin-left: 10%;
   font-size: 10px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .signin-button {
-  background-color: #0050A3;
+  background-color: #0050a3;
   color: white;
   font-weight: bold;
   border: 0px;
@@ -28,7 +30,7 @@
   padding-left: 10px;
   padding-top: 15px;
   padding-bottom: 15px;
-  margin-bottom: 80%;
+  margin-bottom: 25%;
   margin-left: 10%;
   margin-right: 10%;
   width: 80%;
