@@ -44,12 +44,13 @@ const JobForm = () => {
   }
 
   return (
-    <div className="full-div">
-      <h1>Post a Job</h1>
-      <form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column", width:"100%", margin: "0 auto"}}>
-        <h3>Job Form</h3>
-        <p>Fill out the fields below to post a job!</p>
+    <div className="form-full-div">
+      <h1 className="form-h1">Post a Job</h1>
+      <form onSubmit={handleSubmit} className="job-form" style={{display: "flex", flexDirection: "column", width:"100%", margin: "0 auto"}}>
+        <h3 className="job-form-sub-title">Job Form</h3>
+        <p className="job-form-sub-statement">Fill out the fields below to post a job!</p>
         
+        {/* company name */}
         <label htmlFor="company-name"></label>
         <input 
           value={companyName}
@@ -58,8 +59,10 @@ const JobForm = () => {
           required
           name="companyName"
           type='text'
+          className="job-input"
         />
 
+        {/* position */}
         <label htmlFor="position"></label>
         <input
           value={jobTitle}
@@ -68,9 +71,11 @@ const JobForm = () => {
           required
           name="jobTitle"
           type='text'
+          className="job-input"
         >
         </input>
 
+        {/* status */}
         <label htmlFor="status"></label>
         <input
           type="text"
@@ -78,9 +83,11 @@ const JobForm = () => {
           onChange={handleChange}
           placeholder="Full-time / Part-time"
           name="fullTime"
+          className="job-input"
           >
         </input>
 
+        {/* city */}
         <label htmlFor="city"></label>
         <input
           type="text"
@@ -89,7 +96,10 @@ const JobForm = () => {
           placeholder="City"
           required
           name="city"
+          className="job-input"
         ></input>
+
+        {/* state */}
         <label htmlFor="state"></label>
         <input
           type="text"
@@ -98,57 +108,67 @@ const JobForm = () => {
           placeholder="State"
           required
           name="state"
- 
+          className="job-input"
         ></input>
+
+        {/* contact */}
         <label htmlFor="contact"></label>
         <input 
-        
         type="text"
           value={contact}
           onChange={handleChange}
           placeholder="Contact"
           required
           name="contact"
+          className="job-input"
         ></input>
         
-        <label htmlFor="company-website"></label>
+        {/* compensation */}
+        <label htmlFor="compensation"></label>
         <input 
         type="text"
           value={compensation}
           onChange={handleChange}
           required
           placeholder="Compensation"
-          name="compensation">
-        </input>
+          name="compensation"
+          className="job-input"
+          ></input>
 
+        {/* address */}
         <label htmlFor="address"></label>
         <input 
-
-        type="text"
+          type="text"
           value={address}
           onChange={handleChange}
           placeholder="Address"
-          name="address"></input>
+          name="address"
+          className="job-input"
+          ></input>
+
+        {/* company website */}
         <label htmlFor="company-website"></label>
         <input 
         type="text"
           value={companyWebsite}
           onChange={handleChange}
           placeholder="Company Website"
-          name="companyWebsite">
-        </input>
+          name="companyWebsite"
+          className="job-input"
+          ></input>
 
+        {/* job description box */}
         <label htmlFor="description"></label>
         <textarea 
         wrap="hard"
-        className="description-box"
+        className="job-description-box"
         type="text"
           value={description}
           onChange={handleChange}
           placeholder="Job Description"
           name="description"></textarea>
 
-        <input type="submit" value="Submit" className="submit" onClick={togglePopup}/>
+        <input type="submit" value="Submit" className="job-form-submit" onClick={togglePopup}/>
       </form>
       {isOpen && <Popup content={<>
         <b>You submitted a job!</b>

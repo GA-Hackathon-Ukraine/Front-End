@@ -1,15 +1,15 @@
-.full-div {
+.form-full-div {
     background-color: #FFCC00;
     color: white;
 }
 
-h1 {
+.form-h1 {
     padding-top: 20px; 
     padding-left: 25px;
     padding-bottom: 20px;
 }
 
-form {
+.job-form {
     border-radius: 15px 15px 0px 0px;
     background: white;
     color: #373D3F;
@@ -17,20 +17,20 @@ form {
     padding-right: auto;
 }
 
-h3 {
+.job-form-sub-title {
     padding-top: 10%;
     padding-left: 10%;
     padding-bottom: 2%;
     color: #727D83;
 }
 
-p {
+.job-form-sub-statement {
     padding-bottom: 5%;
     padding-left: 10%;
     font-size: 10px;
 }
 
-input {
+.job-input {
     background-color: #EEEEEE;
     border-radius: 10px;
     border: 5px solid #EEEEEE;
@@ -43,7 +43,7 @@ input {
     margin-right: 10%;
 }
 
-.description-box {
+.job-description-box {
     background-color: #EEEEEE;
     border-radius: 10px;
     border: 5px solid #EEEEEE;
@@ -58,11 +58,18 @@ input {
     font-family:Arial, Helvetica, sans-serif;
 }
 
-.submit {
+.job-form-submit {
     background-color: #0050A3;
     color: white;
     font-weight: bold;
     border: 0px;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 15px;
 }
 
 /* Popup style */
