@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { slide as Menu } from 'react-burger-menu';
 import { Navbar, NavDropdown, Form, FormControl, Button, Nav } from 'react-bootstrap'
-import Logo from './logo.svg';
+import Logo from './logon.png';
 import Favorite from './favorite.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './navbar.css';
@@ -30,7 +30,7 @@ const NavBar = ({ user, handleLogout }) => {
       
     >
       <Navbar.Brand onClick={handleHome}>
-        <img src={Logo} className="logoImg" height="100"></img>
+        <img src={Logo} className="logo-image-main" height="100"></img>
       </Navbar.Brand>
       <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
         <div >

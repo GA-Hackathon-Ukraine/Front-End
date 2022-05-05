@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './SwipeSection.styles.css'
 import React from 'react';
 import ReactSwipe from 'react-swipe';
@@ -19,7 +20,8 @@ const SwipeSection = () => {
         className="carousel"
         swipeOptions={{ continuous: true }}
         ref={el => (reactSwipeEl = el)}
-      >
+        >
+        <Link to={"/job/129371299"}>
         <div className="slider-card-wrapper">
           <div className='slider-card'>
             <div className='slider-card-wrapper-upper'>
@@ -40,7 +42,7 @@ const SwipeSection = () => {
                 </div>
           </div>
           </div>
-
+          </Link>
           <div className="slider-card-wrapper">
           <div className='slider-card'>
             <div className='slider-card-wrapper-upper'>

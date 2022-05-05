@@ -64,3 +64,9 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
 }
+
+.logo-image-main {
+  height: auto;
+  width: 170px;
+  padding: 20px;
+}

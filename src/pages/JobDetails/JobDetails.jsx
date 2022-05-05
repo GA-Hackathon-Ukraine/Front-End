@@ -4,13 +4,19 @@ import { useState } from 'react';
 import './jobDetails.css';
 import locationIcon from './smalllocationicon.svg';
 import favoriteButton from './favoriteButton.svg';
+import favred from './icons/redfav.svg'
 import mailIcon from './mailicon.png'
 import childCare from './childcard.png'
 import partTime from './parttime.svg'
 import apply from './apply.svg'
 import constructionIcon from './icons/construction.svg';
+import caregive from './icons/caretaking.svg'
 import technologyIcon from './icons/technology.svg';
 import foodandbeveragesIcon from './icons/food.svg'
+import landscape from './icons/landscaping.svg'
+import transport from './icons/transportation.svg'
+import cleaning from './icons/nclean.svg'
+
 
 function JobDetails({ jobs, setFavorites, favorites}) {
   const { id } = useParams();
@@ -21,6 +27,18 @@ function JobDetails({ jobs, setFavorites, favorites}) {
 
     let industry;
     switch (elem.industry) {
+      case 'cleaning':
+        industry = cleaning;
+        break;
+      case 'transportation':
+        industry = transport;
+        break;
+      case 'landscaping':
+        industry = landscape;
+        break;
+      case 'caretaking':
+        industry = caregive;
+        break;
       case 'technology':
         industry = technologyIcon;
         break;
@@ -47,6 +65,8 @@ function JobDetails({ jobs, setFavorites, favorites}) {
 
 
       setFavorites([...favorites, job])
+      document.getElementById("favbutton").src = favred
+
     }
 
     const url = elem.url;
@@ -58,7 +78,7 @@ function JobDetails({ jobs, setFavorites, favorites}) {
           <div className="jobDetailsMini">
             <div className="jobDetailsLeft">
               <div className="positionDiv">
-                <h3 className="positionn">{elem.position}</h3>
+                <h3 style={{color: "white"}} className="positionn">{elem.position}</h3>
               </div>
               <div className="companyLocationDiv">
                 <h3 className="company">{elem.company}</h3>
@@ -82,6 +102,10 @@ function JobDetails({ jobs, setFavorites, favorites}) {
               </div>
             </div>
             <div className="jobDetailsRight">
+              {/* {favorites.forEach((fav) => {
+                fav.id === elem.id ? <img onClick={()=>handleOnClick(elem)} id="favbutton" src={favoriteButton}></img> : <img onClick={()=>handleOnClick(elem)} id="favbutton" src={favred}></img>
+              })} */}
+              
               <img onClick={()=>handleOnClick(elem)} id="favbutton" src={favoriteButton}></img>
             </div>
           </div>
