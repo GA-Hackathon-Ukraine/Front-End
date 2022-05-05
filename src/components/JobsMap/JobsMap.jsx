@@ -11,23 +11,6 @@ import foodandbeveragesIcon from '../../../src/food.svg'
 const JobsMap = ({ allJobs }) => {
   const mappedData = allJobs.map((elem, idx) => {
 
-
-    let industry;
-    switch (elem.industry) {
-      case 'technology':
-        industry = technologyIcon;
-        break;
-      case 'food/beverage':
-        industry = foodandbeveragesIcon;
-        break;
-      default:
-        industry = constructionIcon;
-    }
-
-
-const JobsMap = ({ allJobs }) => {
-  const mappedData = allJobs.map((elem, idx) => {
-
     let industry;
     switch (elem.industry) {
       case 'technology':

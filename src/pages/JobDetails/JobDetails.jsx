@@ -32,7 +32,7 @@ function JobDetails({ jobs }) {
           <div className="jobDetailsMini">
             <div className="jobDetailsLeft">
               <div className="positionDiv">
-                <h3 className="position">{elem.position}</h3>
+                <h3 className="positionn">{elem.position}</h3>
               </div>
               <div className="companyLocationDiv">
                 <h3 className="company">{elem.company}</h3>
