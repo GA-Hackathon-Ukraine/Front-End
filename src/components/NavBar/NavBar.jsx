@@ -34,7 +34,7 @@ const NavBar = ({ user, handleLogout }) => {
       </Navbar.Brand>
       <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
         <div >
-          <img onClick={handleGoToFaves} src={Favorite}></img>
+          {user ? <img onClick={handleGoToFaves} src={Favorite}></img> :<></>}
         </div>
         <Navbar.Toggle
           style={{border: "hidden"}}

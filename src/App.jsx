@@ -83,7 +83,7 @@ const App = () => {
 
         <Route
           path="/favorites"
-          element={<Favorites favorites={favorites} />}
+          element={<Favorites user={user} favorites={favorites} />}
         />
         <Route
           path="/login"

@@ -65,7 +65,6 @@ const Landing = ({ user, jobs, setJobs }) => {
     //   <br />
 
     <main className={styles.container}>
-      <h1>hello, {user ? user.name : 'friend'}</h1>
       <SearchForm setLocation={setLocation} setSearch={setSearch} search={search} position={position} setPosition={setPosition} setComponentShow={setComponentShow} compomentShow={compomentShow}/>
       
       { compomentShow ? <JobsMap allJobs={combinedFilteredSearch}/> :  <span style={{width: "100vw"}}> <SwipeSection /> <ListCareers /> </span> }

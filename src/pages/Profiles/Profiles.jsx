@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import * as profileService from '../../services/profileService'
 
-const Profiles = () => {
+const Profiles = ({user}) => {
   const [profiles, setProfiles] = useState([])
 
   useEffect(()=> {
@@ -10,8 +10,8 @@ const Profiles = () => {
   }, [])
 
   return (
-    <>
-      <h1>Hello. This is a list of all the profiles.</h1>
+    <div style={{paddingTop: "75px"}}>a
+      <h1>Hello {user.name}, your profiles are below.</h1>
       {profiles.length ? 
         <>
           {profiles.map(profile=>
@@ -21,7 +21,7 @@ const Profiles = () => {
       :
         <p>No profiles yet</p>
       }
-    </>
+    </div>
   )
 }
  

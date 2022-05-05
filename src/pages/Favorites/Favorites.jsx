@@ -7,7 +7,7 @@ import messageIcon from '../../../src/message.svg';
 import savedfilled from '../../../src/savedred.svg';
 
 
-const Favorites = ({ favorites }) => {
+const Favorites = ({ favorites, user }) => {
   const mappedData = favorites.map((elem, idx) => {
 
     let industry;
@@ -114,7 +114,8 @@ const Favorites = ({ favorites }) => {
     );
   });
 
-  return <div style={{ paddingTop: "100px"}}>{mappedData}</div>;
+  return <div style={{ paddingTop: "75px"}}>
+    <h1 style={{textAlign: "center", color: "white"}}>Saved Jobs</h1>{mappedData}</div>;
 };
 
 export default Favorites;
