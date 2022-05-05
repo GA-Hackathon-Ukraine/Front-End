@@ -17,7 +17,7 @@ function JobDetails({ jobs }) {
 
     const url = elem.url;
     return (
-      <>
+      <div >
         <div className="jobDetailsContainer" key={`job-detail-${idx}`}>
           <div className='industry'>Icon</div>
           <div className="jobDetailsMini">
@@ -59,7 +59,7 @@ function JobDetails({ jobs }) {
             <h4 className='contactButtonText'>Apply</h4>
         </button>
         </div>
-      </>
+      </div>
     );
   });
 

@@ -13,7 +13,7 @@ const NavBar = ({ user, handleLogout }) => {
 
   return (
     <Navbar
-      style={{ padding: '0 10px' }}
+      style={{ padding: '0 10px'}}
       expand="xxxl"
       bg="light"
       variant="light"
@@ -35,20 +35,15 @@ const NavBar = ({ user, handleLogout }) => {
         {
           user ? (
             <Nav className="mr-auto">
-              <Nav.Link as={Link} to="/" className="nav-link">
-                Home
-              </Nav.Link>
-              <Link data-bs-toggle="collapse" to="/">
-                <div className="collapse">Home</div>
-              </Link>
-              <Nav.Link as={Link} to="/profiles">Profiles</Nav.Link>
-              <Nav.Link as={Link} to="/resources">Resources</Nav.Link>
-              <Nav.Link as={Link} to="/about">About</Nav.Link>
-              <Nav.Link as={Link} onClick={handleLogout}>Log out</Nav.Link>
+              <Nav.Link as={Link} className="nav-link" to="/">Home</Nav.Link>
+              <Nav.Link as={Link} className="nav-link" to="/profiles">Profiles</Nav.Link>
+              <Nav.Link as={Link} className="nav-link" to="/resources">Resources</Nav.Link>
+              <Nav.Link as={Link} className="nav-link" to="/about">About</Nav.Link>
+              <Nav.Link className="nav-link" onClick={handleLogout}>Log out</Nav.Link>
             </Nav>
           ) : (
             <Nav className="mr-auto">
-              <Nav.Link as={Link} to="/login">Log In</Nav.Link>
+              <Nav.Link as={Link} className="nav-link" to="/login">Log In</Nav.Link>
               <Nav.Link as={Link} className="nav-link" to="/signup">Sign Up</Nav.Link>
               <Nav.Link as={Link} className="nav-link" to="/resources">Resources</Nav.Link>
               <Nav.Link as={Link} className="nav-link" to="/about">About</Nav.Link>

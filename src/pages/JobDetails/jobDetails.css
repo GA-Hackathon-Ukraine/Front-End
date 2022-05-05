@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 .jobDetailsContainer{
-    margin: 10px 25px;
+    margin: 0px 25px 10px 25px;
     font-family: 'Inter', sans-serif;
 }
 .jobDetailsMini{
@@ -91,3 +91,4 @@
     font-size: 14px;
     color: #4B4B4B;
 }
+

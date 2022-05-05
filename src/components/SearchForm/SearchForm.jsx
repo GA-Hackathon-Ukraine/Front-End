@@ -23,12 +23,12 @@ function SearchForm({setLocation, search, setSearch, position, setPosition }) {
         </div>
         <div className='searchContainerSearch'>
         <img src={locationIcon}/>
-          <select className='locationInput' onChange={handleSetLocation} type="text">
-            <option value="none" selected disabled hidden>
+          <select defaultValue={'DEFAULT'} className='locationInput' onChange={handleSetLocation} type="text">
+            <option value="DEFAULT" disabled hidden>
               Please Select
             </option>
-            <option>Tacoma</option>
-            <option>Seattle</option>
+            <option  value='1'>Tacoma</option>
+            <option  value="2">Seattle</option>
           </select>
         </div>
       </form>
