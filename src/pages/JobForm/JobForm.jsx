@@ -48,7 +48,7 @@ const JobForm = () => {
   }
 
   return (
-    <>
+    <><br />
       <form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column", width:"300px", margin: "0 auto"}}>
         <h1>Job Form</h1>
         
@@ -150,6 +150,8 @@ const JobForm = () => {
 
         <input type="submit" value="submit"/>
       </form>
+      <br />
+      <br />
     </>
   )
 }
