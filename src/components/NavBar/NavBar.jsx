@@ -49,10 +49,10 @@ const NavBar = ({ user, handleLogout }) => {
           ) : (
             <Nav className="mr-auto">
               <Nav.Link as={Link} to="/login">Log In</Nav.Link>
-              <Link className="nav-link" to="/signup">Sign Up</Link>
-              <Link className="nav-link" to="/resources">Resources</Link>
-              <Link className="nav-link" to="/about">About</Link>
-              <Link className="nav-link" to="/jobform">Post a job</Link>
+              <Nav.Link as={Link} className="nav-link" to="/signup">Sign Up</Nav.Link>
+              <Nav.Link as={Link} className="nav-link" to="/resources">Resources</Nav.Link>
+              <Nav.Link as={Link} className="nav-link" to="/about">About</Nav.Link>
+              <Nav.Link as={Link} className="nav-link" to="/jobform">Post a job</Nav.Link>
             </Nav>
           )
         }
