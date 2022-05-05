@@ -3,7 +3,7 @@ import './Resources.styles.css'
 const Resources = () => {
   return (
   <div className="resourcesPage">
-  <h1>Resources</h1>
+  <h1 className='titleee'>Resources</h1>
     <div className="cardContainer">
       <div className="card">
         <h3 className="card-text">General Immigration Services</h3>

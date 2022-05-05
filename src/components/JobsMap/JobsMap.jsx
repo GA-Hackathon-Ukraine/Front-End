@@ -8,6 +8,22 @@ import constructionIcon from '../../../src/construction.svg';
 import technologyIcon from '../../../src/technology.svg';
 import foodandbeveragesIcon from '../../../src/food.svg'
 
+const JobsMap = ({ allJobs }) => {
+  const mappedData = allJobs.map((elem, idx) => {
+
+
+    let industry;
+    switch (elem.industry) {
+      case 'technology':
+        industry = technologyIcon;
+        break;
+      case 'food/beverage':
+        industry = foodandbeveragesIcon;
+        break;
+      default:
+        industry = constructionIcon;
+    }
+
 
 const JobsMap = ({ allJobs }) => {
   const mappedData = allJobs.map((elem, idx) => {
@@ -23,7 +39,6 @@ const JobsMap = ({ allJobs }) => {
       default:
         industry = constructionIcon;
     }
-
     console.log(industry);
     return (
       <div key={idx} className="card-wrapper">
@@ -100,7 +115,6 @@ const JobsMap = ({ allJobs }) => {
                     </span>
                   </div>
                 </div>
-
                 <div></div>
               </div>
             </div>

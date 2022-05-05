@@ -21,7 +21,7 @@ const jobs = [
 		city: 'Seattle',
 		state: 'WA',
 		status: 'full-time',
-		industry: 'cleaning',
+		industry: "cleaning",
 		compensation: '15',
 		contact_name: 'John Doe',
 		description:
@@ -35,7 +35,7 @@ const jobs = [
 		city: 'Tacoma',
 		state: 'WA',
 		status: 'full-time',
-		industry: 'transportation',
+		industry: "transportation",
 		compensation: '30',
 		contact_name: 'John Doe',
 		description:
@@ -63,7 +63,7 @@ const jobs = [
 		city: 'Tacoma',
 		state: 'WA',
 		status: 'full-time',
-		industry: 'food/beverage',
+		industry: "food/beverage",
 		compensation: '43',
 		contact_name: 'John Doe',
 		description:
@@ -90,7 +90,7 @@ const jobs = [
 		url: 'www.lululemon.ca',
 		city: 'Tacoma',
 		state: 'WA',
-		industry: 'education',
+		industry: "education",
 		status: 'full-time',
 		compensation: '35',
 		contact_name: 'John Doe',

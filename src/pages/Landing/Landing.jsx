@@ -5,6 +5,7 @@ import JobsMap from '../../components/JobsMap/JobsMap'
 import ListCareers from '../../components/ListCareers/ListCareers'
 import SwipeSection from '../../components/SwipeSection/SwipeSection'
 import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const Landing = ({ user, jobs, setJobs }) => {
 
@@ -22,6 +23,7 @@ const Landing = ({ user, jobs, setJobs }) => {
       </div>
     );
   });
+
 
   const getFilteredLocation = () => {
     let searchTerm = location.toLowerCase()

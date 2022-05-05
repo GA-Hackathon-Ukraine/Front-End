@@ -13,6 +13,7 @@ import Resources from './pages/Resources/Resources'
 import * as authService from './services/authService'
 import JobDetails from './pages/JobDetails/JobDetails'
 import dummydata from '../src/components/JobsMap/dummydata.js'
+import axios from 'axios'
 import './App.css'
 // import axios from 'axios'
 
@@ -25,6 +26,12 @@ const App = () => {
   useEffect(()=>{
 
     setJobs(dummydata)
+    // const jobs = axios.get(`${process.env.REACT_APP_BACKEND_SERVER_URL}/api/jobs`)
+    // .then(res=>{
+    //   setJobs(res.data)
+    //   console.log(res.data)
+    // })
+
 
   },[])
 
