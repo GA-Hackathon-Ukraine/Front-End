@@ -18,11 +18,14 @@ const defaultFormFieds = {
 
 
 const JobForm = () => {
-
+  //use states
   const [form, setForm] = useState(defaultFormFieds)
+  const [isOpen, setIsOpen] = useState(false);
 
+  //variables
   const { companyName, jobTitle, fullTime, city, state, contact, description, compensation, address, companyWebsite } = form
 
+  //handle functions
   const handleSubmit = (event) => {
     event.preventDefault()
 
@@ -33,6 +36,11 @@ const JobForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target
     setForm({...form, [name]: value})
+  }
+
+  //toggle popup function
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
   }
 
   return (
@@ -140,10 +148,26 @@ const JobForm = () => {
           placeholder="Job Description"
           name="description"></textarea>
 
-        <input type="submit" value="Submit" className="submit"/>
+        <input type="submit" value="Submit" className="submit" onClick={togglePopup}/>
       </form>
+      {isOpen && <Popup content={<>
+        <b>You submitted a job!</b>
+      </>} handleClose={togglePopup}/>}
     </div>
   )
 }
 
 export default JobForm
+
+
+//popup component
+const Popup = props => {
+  return (
+    <div className='popup-box'>
+      <div className='box'>
+        <span className='close-icon' onClick={props.handleClose}>X</span>
+        {props.content}
+      </div>
+    </div>
+  )
+}
