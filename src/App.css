@@ -1,13 +1,15 @@
-
 * {
   margin-bottom: 0rem;
 }
-.mainContainer{
-  background-color:#004FA3 ;
-  height: auto;  
+.mainContainer {
+  background-color: #004fa3;
+  height: auto;
   box-sizing: border-box;
 }
-body{
-  background-color:#004FA3 ;
+body {
+  background-color: #004fa3;
 }
 
+img:hover {
+  cursor: pointer;
+}
