@@ -1,10 +1,7 @@
 import { Link } from 'react-router-dom';
-
 import constructionIcon from '../../../src/construction.svg';
 import technologyIcon from '../../../src/technology.svg';
 import foodandbeveragesIcon from '../../../src/food.svg'
-
-
 import locationIcon from '../../../src/location.svg';
 import messageIcon from '../../../src/message.svg';
 import savedfilled from '../../../src/savedred.svg';
@@ -41,7 +38,7 @@ const Favorites = ({ favorites }) => {
                 backgroundColor: '#FFCC00',
                 borderRadius: '7px',
                 backgroundImage: `url(
-                             ${industry}
+                              ${industry}
                             )`,
                 backgroundPosition: '50% 50%',
                 backgroundSize: 'cover',

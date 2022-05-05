@@ -30,7 +30,7 @@ const NavBar = ({ user, handleLogout }) => {
       
     >
       <Navbar.Brand onClick={handleHome}>
-        <img src={Logo}></img>
+        <img src={Logo} className="logoImg" height="100"></img>
       </Navbar.Brand>
       <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
         <div >
