@@ -127,7 +127,7 @@ const JobForm = () => {
         type="text"
           value={contact}
           onChange={handleChange}
-          placeholder="Contact"
+          placeholder="Contact email"
           required
           name="contact"
           className="job-input"
