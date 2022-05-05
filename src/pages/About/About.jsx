@@ -3,7 +3,7 @@ import './About.styles.css'
 const About = () => {
   return (
     <div className="aboutPage">
-      <h1 className='titleee'>About</h1>
+      <h1 className='title'>About</h1>
       <div className="cardContainer">
         <div className="card">
           <img src="Bulls_Eye.svg" alt="bulls eye" className="card-img"with="75" height="75"></img>

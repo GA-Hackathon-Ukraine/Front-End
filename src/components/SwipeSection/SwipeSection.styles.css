@@ -29,7 +29,7 @@
 .swipesection-btn-wrapper {
   display: flex;
   justify-content: center;
-  /* display: none; */
+  display: none;
 }
 
 .inner-section-swipe-section {
@@ -94,11 +94,15 @@
   justify-content: flex-end;
   margin-right: 20px;
   margin: 0 auto;
+  
 }
 
 .slide-to-see-more {
   display: flex;
   justify-self: flex-end;
+  position: relative;
+  top:12px;
+
 }
 
 .swipe-right-section {
