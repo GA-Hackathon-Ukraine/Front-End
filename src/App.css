@@ -1,4 +1,7 @@
 
+* {
+  margin-bottom: 0rem;
+}
 .mainContainer{
   background-color:#004FA3 ;
   height: auto;  
@@ -7,3 +10,4 @@
 body{
   background-color:#004FA3 ;
 }
+

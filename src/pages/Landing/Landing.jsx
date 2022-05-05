@@ -15,7 +15,6 @@ const Landing = ({ user, jobs, setJobs }) => {
   const [position, setPosition] = useState("")
 
   let filteredJobs = jobs.filter(job => job.position.toLowerCase().trim().includes(search.toLowerCase().trim()))
-
     
   const listJobs = filteredJobs.map((element, idx) => {
     return (      

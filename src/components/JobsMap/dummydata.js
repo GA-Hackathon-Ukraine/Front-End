@@ -7,7 +7,7 @@ const jobs = [
 		city: 'Seattle',
 		state: 'WA',
 		status: 'full-time',
-		industry: "technology",
+		industry: 'technology',
 		compensation: '24',
 		contact_name: 'John Doe',
 		description:
@@ -49,7 +49,7 @@ const jobs = [
 		city: 'Tacoma',
 		state: 'WA',
 		status: 'full-time',
-		industry: "Technology",
+		industry: 'construction',
 		compensation: '65',
 		contact_name: 'John Doe',
 		description:
@@ -76,7 +76,7 @@ const jobs = [
 		url: 'www.square.ca',
 		city: 'Seattle',
 		state: 'WA',
-		industry: "gardening",
+		industry: 'gardening',
 		status: 'full-time',
 		compensation: '21',
 		contact_name: 'John Doe',
