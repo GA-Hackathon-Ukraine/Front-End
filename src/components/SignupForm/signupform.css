@@ -1,0 +1,39 @@
+.sign-up-input-container {
+    margin-bottom: 1rem;
+    width:100%;
+}
+
+.sign-up-input {
+    background-color: #EEEEEE;
+    border-radius: 10px;
+    border: 5px solid #EEEEEE;
+    color: black;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 75%;
+}
+
+.sign-up-button {
+    background-color: #0050A3;
+    color: white;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 50%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 50px;
+    width: 80%;
+}
+
+.have-account {
+    font-size: 10px;
+    text-align: center;
+    padding-bottom: 10%;
+}
