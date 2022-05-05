@@ -9,11 +9,12 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import JobForm from './pages/JobForm/JobForm'
 import Saved from './pages/Saved/Saved'
 import About from './pages/About/About'
+import Resources from './pages/Resources/Resources'
 import * as authService from './services/authService'
 import JobDetails from './pages/JobDetails/JobDetails'
 import dummydata from '../src/components/JobsMap/dummydata.js'
 import './App.css'
-import axios from 'axios'
+// import axios from 'axios'
 
 
 const App = () => {
@@ -80,13 +81,19 @@ const App = () => {
         />
         <Route
           path="/saved"
-          element={<Saved />}
+          element={<Saved
+            jobs={jobs}
+
+            />}
         />
         <Route
-          path="/About"
+          path="/about"
           element={<About />}
         />
-
+        <Route
+          path="/resources"
+          element={<Resources />}
+        />
         <Route
           path="/profiles"
           element={user ? <Profiles /> : <Navigate to="/login" />}

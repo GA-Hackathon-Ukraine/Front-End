@@ -60,10 +60,12 @@ const Landing = ({ user, jobs, setJobs }) => {
   })
 
   return (
-    <main className={styles.container}>
-      <h1>hello, {user ? user.name : 'friend'}</h1>
+    <main className={styles.container}><br />
+      {/* <h1>hello, {user ? user.name : 'friend'}</h1> */}
       <SearchForm setLocation={setLocation} setSearch={setSearch} search={search} position={position} setPosition={setPosition}/>
       <JobsMap newJobs={combinedFilteredSearch}/>
+      <br />
+      <br />
     </main>
   )
 }
