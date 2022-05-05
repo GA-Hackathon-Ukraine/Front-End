@@ -5,9 +5,10 @@
   }
 
   .titleee{
-    padding-top: 100px;
+    /* padding-top: 100px; */
   }
   div.aboutPage {
+    padding-top: 90px;
     background-color: #FFCC00;
     color: white;
     text-align: center;
