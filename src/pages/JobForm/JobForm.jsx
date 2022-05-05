@@ -54,17 +54,11 @@ const JobForm = () => {
   }
 
   return (
-
     <div className="form-full-div">
       <h1 className="form-h1">Post a Job</h1>
       <form onSubmit={handleSubmit} className="job-form" style={{display: "flex", flexDirection: "column", width:"100%", margin: "0 auto"}}>
         <h3 className="job-form-sub-title">Job Form</h3>
         <p className="job-form-sub-statement">Fill out the fields below to post a job!</p>
-
-    <><br />
-      <form onSubmit={handleSubmit} style={{display: "flex", flexDirection: "column", width:"300px", margin: "0 auto"}}>
-        <h1>Job Form</h1>
-
         
         {/* company name */}
         <label htmlFor="company-name"></label>
@@ -190,9 +184,6 @@ const JobForm = () => {
         <b>You submitted a job!</b>
       </>} handleClose={togglePopup}/>}
     </div>
-      <br />
-      <br />
-    </>
   )
 }
 
