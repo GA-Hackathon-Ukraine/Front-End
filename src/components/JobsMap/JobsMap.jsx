@@ -7,6 +7,12 @@ import savedUnfilled from '../../../src/saved-unfilled.svg';
 import constructionIcon from '../../../src/construction.svg';
 import technologyIcon from '../../../src/technology.svg';
 import foodandbeveragesIcon from '../../../src/food.svg'
+import transportationIcon from '../../../src/transportation.svg'
+import caretakingIcon from '../../../src/caretaking.svg'
+import educationIcon from '../../../src/education.svg'
+import cleaningIcon from '../../../src/cleaning.svg'
+
+
 
 const JobsMap = ({ allJobs }) => {
   const mappedData = allJobs.map((elem, idx) => {
@@ -18,6 +24,18 @@ const JobsMap = ({ allJobs }) => {
         break;
       case 'food/beverage':
         industry = foodandbeveragesIcon;
+        break;
+      case 'transportation':
+        industry = transportationIcon;
+        break;
+      case 'caretaking':
+        industry = caretakingIcon;
+        break;
+      case 'education':
+        industry = educationIcon;
+        break;
+      case 'cleaning':
+        industry = cleaningIcon;
         break;
       default:
         industry = constructionIcon;
