@@ -16,7 +16,7 @@ import dummydata from '../src/components/JobsMap/dummydata.js'
 import axios from 'axios'
 import './App.css'
 import Favorites from './pages/Favorites/Favorites'
-// import axios from 'axios'
+
 
 
 const App = () => {

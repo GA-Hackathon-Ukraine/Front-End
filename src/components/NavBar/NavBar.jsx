@@ -4,7 +4,7 @@ import { Navbar, NavDropdown, Form, FormControl, Button, Nav } from 'react-boots
 import Logo from './logo.svg';
 import Favorite from './favorite.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './NavBar.css';
+import './navbar.css';
 import { LinkContainer } from 'react-router-bootstrap';
 import { useNavigate } from 'react-router-dom';
 const NavBar = ({ user, handleLogout }) => {
@@ -30,7 +30,7 @@ const NavBar = ({ user, handleLogout }) => {
       
     >
       <Navbar.Brand onClick={handleHome}>
-        <img src={Logo}></img>
+        <img src={Logo} className="logoImg" height="100"></img>
       </Navbar.Brand>
       <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
         <div >
