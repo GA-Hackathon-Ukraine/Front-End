@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 
-import constructionIcon from './icons/construction.svg';
-import technologyIcon from './icons/technology.svg';
-import foodandbeveragesIcon from './icons/food.svg'
+import constructionIcon from '../../../src/construction.svg';
+import technologyIcon from '../../../src/technology.svg';
+import foodandbeveragesIcon from '../../../src/food.svg'
 
 
 import locationIcon from '../../../src/location.svg';
 import messageIcon from '../../../src/message.svg';
-import savedUnfilled from '../../../src/saved-unfilled.svg';
+import savedfilled from '../../../src/savedred.svg';
 
 
 const Favorites = ({ favorites }) => {
@@ -26,7 +26,7 @@ const Favorites = ({ favorites }) => {
     }
     console.log(industry);
     return (
-      <div key={idx} style={{margin: "0 auto", padding: '0', gap: "30px"}} className="card-wrapper">
+      <div key={idx} style={{margin: "0 auto", padding: '10px', gap: "30px", marginBottom: "20px"}} className="card-wrapper">
         <Link
           className="card-wrapper-container"
           key={`job-${idx}`}
@@ -61,21 +61,21 @@ const Favorites = ({ favorites }) => {
             <div className="card-wrapper-info-top">
               <div className="card-wrapper-info-top-header">
                 <div>
-                  <h2 className="position">{elem.position}</h2>
+                  <h2 style={{paddingLeft: "0"}} className="position">{elem.position}</h2>
                 </div>
                 <div className="hourly-rate">
                   <h3 className="compensation">${elem.compensation}</h3>
                   <span className="per-hour">/Hour</span>
                 </div>
               </div>
-              <div className="card-wrapper-info-top-lower">
+              <div  className="card-wrapper-info-top-lower">
                 <div>
                   {' '}
-                  <h4 className="company-jobsmap">{elem.company}</h4>{' '}
+                  <h4  className="company-jobsmap">{elem.company}</h4>{' '}
                 </div>
                 <div className="location-wrapper-jobsmap">
                   <img className="img-jobsmap" src={locationIcon} />
-                  <h4 className="location-jobsmap">{elem.city}</h4>,
+                  <h4 className="location-jobsmap">{elem.city},</h4>
                   <h4 className="location-jobsmap">{elem.state}</h4>
                 </div>
               </div>
@@ -95,7 +95,7 @@ const Favorites = ({ favorites }) => {
                       {' '}
                       <img
                         className="save-btn-swipe-section"
-                        src={savedUnfilled}
+                        src={savedfilled}
                       />
                     </span>
                   </div>
