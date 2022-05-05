@@ -16,8 +16,6 @@ const defaultFormFieds = {
   url: "",
 }
 
-
-
 const JobForm = () => {
 
   const navigate = useNavigate()
@@ -32,6 +30,7 @@ const JobForm = () => {
     try{
 
     const response = await axios.post(`${process.env.REACT_APP_BACKEND_SERVER_URL}/api/jobs/`, form)
+    
 
     console.log(response.data)
 
@@ -92,7 +91,7 @@ const JobForm = () => {
           value={full_time}
           onChange={handleChange}
           placeholder="Full-time / Part-time"
-          name="fullTime"
+          name="full_time"
           className="job-input"
           >
         </input>
@@ -140,9 +139,10 @@ const JobForm = () => {
           value={compensation}
           onChange={handleChange}
           required
-          placeholder="Compensation"
+          placeholder="Hourly Compensation (ex: 60)"
           name="compensation"
           className="job-input"
+          maxLength="3"
           ></input>
 
         {/* address */}
@@ -163,7 +163,7 @@ const JobForm = () => {
           value={url}
           onChange={handleChange}
           placeholder="Company Website"
-          name="companyWebsite"
+          name="url"
           className="job-input"
           ></input>
 
@@ -200,4 +200,4 @@ const Popup = props => {
       </div>
     </div>
   )
-}
+  }
