@@ -47,7 +47,7 @@ const NavBar = ({ user, handleLogout }) => {
           user ? (
             <Nav className="mr-auto">
               <Nav.Link as={Link} className="nav-link" to="/">Home</Nav.Link>
-              <Nav.Link as={Link} className="nav-link" to="/profiles">Profiles</Nav.Link>
+              {/* <Nav.Link as={Link} className="nav-link" to="/profiles">Profiles</Nav.Link> */}
               <Nav.Link as={Link} className="nav-link" to="/resources">Resources</Nav.Link>
               <Nav.Link as={Link} className="nav-link" to="/about">About</Nav.Link>
               <Nav.Link as={Link} className="nav-link" to="/jobform">Post a job</Nav.Link>
