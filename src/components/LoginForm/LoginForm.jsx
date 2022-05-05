@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import styles from './LoginForm.module.css'
+import './LoginForm.module.css'
 import * as authService from '../../services/authService'
 
 const LoginForm = props => {
@@ -30,36 +30,42 @@ const LoginForm = props => {
     <form
       autoComplete="off"
       onSubmit={handleSubmit}
-      className={styles.container}
+      className="signin-form-container"
     >
-      <div className={styles.inputContainer}>
-        <label htmlFor="email" className={styles.label}>Email</label>
+      {/* email field */}
+      <div className="signin-input-container">
+        <label htmlFor="email"></label>
         <input
           type="text"
           autoComplete="off"
           id="email"
           value={formData.email}
           name="email"
+          placeholder='Email'
           onChange={handleChange}
         />
       </div>
-      <div className={styles.inputContainer}>
-        <label htmlFor="password" className={styles.label}>Password</label>
+      {/* sign in field */}
+      <div className="signin-input-container">
+        <label htmlFor="password"></label>
         <input
           type="password"
           autoComplete="off"
           id="password"
           value={formData.pw}
           name="pw"
+          placeholder='Password'
           onChange={handleChange}
         />
       </div>
+      {/* forget password */}
+      <Link to="/"><p className="forgot-password">Forgot Password?</p></Link>
+      {/* sign in button */}
       <div>
-        <button className={styles.button}>Log In</button>
-        <Link to="/">
-          <button>Cancel</button>
-        </Link>
+        <button className="signin-button">Sign In</button>
       </div>
+      {/* link to make an account */}
+      <p className="need-account">Don't have an account? <Link to="/signup">Sign Up</Link></p>
     </form>
   )
 }

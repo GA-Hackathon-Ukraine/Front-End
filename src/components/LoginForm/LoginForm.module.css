@@ -1,16 +1,30 @@
-.container {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
+.signin-form-container {
+  background-color: #FFCC00;
+  color: white;
 }
 
-.label,
-.button {
-  margin-right: 0.5rem;
+.signin-input-container {
+  border-radius: 15px 15px 0px 0px;
+  background-color: white;
+  color: #373D3F;
+  padding-left: auto;
+  padding-right: auto;
 }
 
-.inputContainer {
-  margin-bottom: 1rem;
+.signin-button {
+  background-color: #0050A3;
+  color: white;
+  font-weight: bold;
+  border: 0px;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 15px;
+}
+
+.need-account {
+  font-size: 10px;
 }

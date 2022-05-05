@@ -1,5 +1,9 @@
-.container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+.signin-header-box {
+    background-color: aqua;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.signin-header-text {
+    color: red;
 }
