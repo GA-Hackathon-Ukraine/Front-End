@@ -1,0 +1,43 @@
+.sign-in-input {
+  background-color: #eeeeee;
+  border-radius: 10px;
+  border: 5px solid #eeeeee;
+  color: black;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 75%;
+}
+
+.forgot-password {
+  /* margin-top: 5%; */
+  margin-bottom: 5%;
+  margin-left: 10%;
+  font-size: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signin-button {
+  background-color: #0050a3;
+  color: white;
+  font-weight: bold;
+  border: 0px;
+  border-radius: 15px;
+  padding-left: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 25%;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+}
+
+.need-account {
+  font-size: 10px;
+  text-align: center;
+  padding-bottom: 10%;
+}

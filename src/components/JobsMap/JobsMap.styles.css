@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-
 * {
   margin: 0;
   padding: 0;
@@ -62,9 +61,8 @@ h4 {
   color: black;
 }
 
-
 .compensation {
-  font-size: 14px
+  font-size: 14px;
 }
 
 .hourly-rate {
@@ -78,11 +76,10 @@ h4 {
 
 .card-wrapper-info-top-lower {
   display: flex;
-  
+
   justify-content: flex-start;
   align-items: center;
   width: 35%;
-
 }
 
 .location-wrapper-jobsmap {
@@ -117,9 +114,9 @@ h4 {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   /* gap:13px; */
-  background-color: #0A81FF;
+  background-color: #0a81ff;
   border-radius: 5px;
   box-shadow: none;
   border: none;
@@ -154,9 +151,9 @@ h4 {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   /* gap:13px; */
-  background-color: #0A81FF;
+  background-color: #0a81ff;
   border-radius: 5px;
   box-shadow: none;
   border: none;
@@ -167,7 +164,10 @@ h4 {
   font-weight: 100;
 }
 
-
+.save-btn-swipe-section:hover {
+  background-color: #ffcc00;
+  cursor: pointer;
+}
 /* .jobs-container {
   display: flex;
   justify-content: space-around;
