@@ -20,6 +20,7 @@ import './App.css'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
+  const [favorites, setFavorites] = useState([])
 
   const [jobs, setJobs] = useState([])
 
@@ -73,7 +74,7 @@ const App = () => {
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing setJobs={setJobs} jobs={jobs} user={user} />} />
-        <Route path="/job/:id" element={<JobDetails jobs={jobs}/>}/>
+        <Route path="/job/:id" element={<JobDetails favorites={favorites} setFavorites={setFavorites} jobs={jobs}/>}/>
         <Route
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
