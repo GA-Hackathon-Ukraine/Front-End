@@ -23,13 +23,13 @@ function SearchForm({setLocation, position, setPosition, setComponentShow, compo
         <div className='searchContainerLocation'>
         <img src={searchIcon}/>
         
-          <input className='searchInput' type="text" onChange={handleChange} value={position}/>
+          <input className='searchInput' placeholder="Search" type="text" onChange={handleChange} value={position}/>
         </div>
         <div className='searchContainerSearch'>
         <img src={locationIcon}/>
           <select defaultValue={'DEFAULT'} className='locationInput' onChange={handleSetLocation} type="text">
             <option value="DEFAULT" disabled hidden>
-              Please Select
+              Choose Location
             </option>
 
             <option>Tacoma</option>
@@ -42,6 +42,7 @@ function SearchForm({setLocation, position, setPosition, setComponentShow, compo
             <option>Auburn</option>
             <option>Lakewood</option>
             <option>Gig Harbor</option>
+            <option>Remote</option>
             
 
           </select>
