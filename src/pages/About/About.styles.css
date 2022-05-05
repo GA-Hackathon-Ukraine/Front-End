@@ -1,48 +1,51 @@
 @media only screen and (max-width: 700px) {
-
   div.mainContainer {
-    background-image: #FFCC00;
+    background-image: #ffcc00;
   }
 
-  .titleee{
+  .title {
     /* padding-top: 100px; */
+    font-weight: bold;
   }
   div.aboutPage {
     padding-top: 90px;
-    background-color: #FFCC00;
+    background-color: #ffcc00;
     color: white;
     text-align: center;
   }
 
-  nav.navbar{
+  nav.navbar {
     background-color: white;
   }
 
-  div.card{
-    padding: 15px;
+  .about {
+    font-size: 14px;
+  }
+  div.card {
+    padding: 12px;
     background-color: white;
-    margin:15px;
+    margin: 12px;
     border-radius: 10px;
   }
 
   h1 {
-    padding-top: 20px; 
+    padding-top: 20px;
     padding-left: 25px;
     padding-bottom: 20px;
   }
 
   h2 {
     /* padding: 5px; */
-    color: #2D4FA3;
+    color: #2d4fa3;
   }
 
   h3 {
     /* padding: 5px; */
-    color: #2D4FA3;
+    color: #2d4fa3;
   }
 
   p {
-    color: #373D3F;
+    color: #373d3f;
     padding: 10px;
     font-size: 1.5em;
     text-align: justify;
@@ -51,13 +54,12 @@
 }
 
 @media only screen and (min-width: 700px) {
-
   div.aboutPage {
-    background-color: #FFCC00;
+    background-color: #ffcc00;
     color: white;
     text-align: center;
   }
-  
+
   div.cardContainer {
     /* background-color: red; */
     display: flex;
@@ -65,44 +67,47 @@
     text-align: center;
     width: 30;
   }
-  
-  nav.navbar{
+
+  nav.navbar {
     background-color: white;
   }
-  
-  div.card{
+
+  div.card {
     padding: 15px;
     background-color: white;
-    margin:15px;
+    margin: 15px;
     border-radius: 10px;
   }
-  
+
   h1 {
-    padding-top: 20px; 
+    padding-top: 20px;
     padding-left: 25px;
     padding-bottom: 20px;
   }
-  
-  .card-img{
+
+  .card-img {
     padding: 15px;
   }
-  
+
   h2 {
-    padding: 5px;
-    color: #2D4FA3;
+    /* padding: 5px; */
+    color: #2d4fa3;
   }
-  
+
   h3 {
-    padding: 5px;
-    color: #2D4FA3;
+    /* padding: 5px; */
+    color: #2d4fa3;
   }
-  
+
+  .card-text {
+    font-weight: bold;
+  }
+
   p {
-    color: #373D3F;
+    color: #373d3f;
     padding: 10px;
     font-size: 10px;
     text-align: justify;
     text-justify: inter-word;
   }
-
 }

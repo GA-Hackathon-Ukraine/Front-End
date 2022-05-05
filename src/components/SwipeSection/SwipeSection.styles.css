@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: flex-start;
   /* align-items: center; */
-  margin-top: 60px;
+  margin-top: 35px;
   height: 27vh;
   width: 100%;
 }
@@ -14,13 +14,16 @@
   height: 20vh;
 }
 
+.location-img-slider {
+  height: 10px;
+}
 .slider-card {
   padding: 12px;
   margin: 0 auto;
   width: 80%;
   /* height: 100%; */
   background-color: white;
-  border-radius: 10px;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-content: stretch;
@@ -29,7 +32,7 @@
 .swipesection-btn-wrapper {
   display: flex;
   justify-content: center;
-  display: none;
+  /* display: none; */
 }
 
 .inner-section-swipe-section {
@@ -39,10 +42,10 @@
 }
 
 .slider-card-wrapper-upper {
-  height: 50px;
+  height: 36px;
   display: flex;
   justify-content: center;
-  background-color: #FFDE5C;
+  background-color: #ffde5c;
   border-radius: 10px;
 }
 
@@ -69,7 +72,7 @@
 
 .slider-card-wrapper-bottom-bottom {
   /* padding: 0px 4px 0px 4px; */
-  margin-top: 20px;
+  margin-top: 8px;
 }
 .slider-card-wrapper-bottom-bottom {
   width: 100%;
@@ -87,14 +90,12 @@
   justify-content: flex-end;
   margin-right: 20px;
   margin: 0 auto;
-  
 }
 .slide-to-see-more {
   display: flex;
   justify-self: flex-end;
   position: relative;
-  top:12px;
-
+  top: 12px;
 }
 .swipe-right-section {
   margin-bottom: 0rem;
@@ -124,22 +125,22 @@
 }
 
 .compensation {
-  font-size: 18px;
+  font-size: 15px;
   font-family: Inter;
   font-weight: 800;
-  color: #0A81FF;
+  color: #0a81ff;
 }
 
 .per-hour {
   font-size: 10px;
   font-family: Inter;
   font-weight: 800;
-  color: #0A81FF;
+  color: #0a81ff;
 }
 
 .swipe-right-section {
   font-size: 14px;
   font-family: Inter;
   font-weight: 500;
-  color: #4691E0;
+  color: #4691e0;
 }
