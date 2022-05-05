@@ -2,10 +2,13 @@ import styles from './Landing.module.css'
 import { Link } from 'react-router-dom'
 import SearchForm from '../../components/SearchForm/SearchForm'
 import JobsMap from '../../components/JobsMap/JobsMap'
+import ListCareers from '../../components/ListCareers/ListCareers'
+import SwipeSection from '../../components/SwipeSection/SwipeSection'
 import { useState } from 'react'
 
 const Landing = ({ user, jobs, setJobs }) => {
 
+  const [compomentShow, setComponentShow] = useState(false)
   const [search, setSearch] = useState("")
   const [location, setLocation] = useState("")
   const [position, setPosition] = useState("")
@@ -21,13 +24,6 @@ const Landing = ({ user, jobs, setJobs }) => {
     );
   });
 
-  // const getFilteredJobs = () => {
-  //   let searchTerm = search.toLowerCase()
-  //   return jobs.filter(v => {
-	// 		let lowerCaseName = v.company.toLowerCase()
-  //     return lowerCaseName.includes(searchTerm)
-  //   })
-  // }
   const getFilteredLocation = () => {
     let searchTerm = location.toLowerCase()
     return jobs.filter(v => {
@@ -62,8 +58,10 @@ const Landing = ({ user, jobs, setJobs }) => {
   return (
     <main className={styles.container}>
       <h1>hello, {user ? user.name : 'friend'}</h1>
-      <SearchForm setLocation={setLocation} setSearch={setSearch} search={search} position={position} setPosition={setPosition}/>
-      <JobsMap newJobs={combinedFilteredSearch}/>
+      <SearchForm setLocation={setLocation} setSearch={setSearch} search={search} position={position} setPosition={setPosition} setComponentShow={setComponentShow} compomentShow={compomentShow}/>
+      
+      { compomentShow ? <JobsMap newJobs={combinedFilteredSearch}/> :  <span style={{width: "100vw"}}> <SwipeSection /> <ListCareers /> </span> }
+      
     </main>
   )
 }

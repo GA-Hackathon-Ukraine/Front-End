@@ -27,7 +27,7 @@ const JobsMap = ({newJobs}) => {
                         <div className='card-wrapper-info-top'>
                             <div className='card-wrapper-info-top-header'>
                                 <div><h2 className='position'>{elem.position}</h2></div>
-                                <div className='hourly-rate'><h3 className='compensation'>{elem.compensation}</h3><span className='per-hour'>/Hour</span></div>
+                                <div className='hourly-rate'><h3 className='compensation'>${elem.compensation}</h3><span className='per-hour'>/Hour</span></div>
                             </div>
                             <div className='card-wrapper-info-top-lower'>
                                 <div> <h4 className='company-jobsmap'>{elem.company}</h4> </div>
@@ -42,7 +42,7 @@ const JobsMap = ({newJobs}) => {
                                         <button className='email-btn'> <img src={messageIcon}/></button>
                                     </div>
                                     <div>
-                                        <span className='saved-unfilled-wrapper'> <img src={savedUnfilled} /></span>
+                                        <span className='saved-unfilled-wrapper'> <img className='save-btn-swipe-section' src={savedUnfilled} /></span>
                                     </div>
                                 </div>
 
