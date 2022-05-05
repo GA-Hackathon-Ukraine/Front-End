@@ -32,6 +32,10 @@ const LoginForm = props => {
       onSubmit={handleSubmit}
       className={styles.container}
     >
+      <div className='welcomeSignIn'>
+        <h1>Welcome Back</h1>
+        <p>Hello, sign in to continue!</p>
+      </div>
       <div className={styles.inputContainer}>
         <label htmlFor="email" className={styles.label}>Email</label>
         <input
@@ -55,7 +59,7 @@ const LoginForm = props => {
         />
       </div>
       <div>
-        <button className={styles.button}>Log In</button>
+        <button className={styles.button}>Sign In</button>
         <Link to="/">
           <button>Cancel</button>
         </Link>
