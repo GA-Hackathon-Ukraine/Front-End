@@ -1,6 +1,7 @@
 import dummydata from './dummydata'
 import { Link } from 'react-router-dom';
 
+//hello
 function JobsMap({newJobs}) {
     const mappedData = newJobs.map((elem,idx)=>{
         return (
@@ -10,6 +11,7 @@ function JobsMap({newJobs}) {
                 <h3>{elem.position}</h3>
                 <h3>{elem.location}</h3>
             </div>
+            
             
             </Link>
         )
