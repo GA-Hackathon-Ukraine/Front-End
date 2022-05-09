@@ -81,7 +81,7 @@ function JobDetails({ jobs, setFavorites, favorites}) {
       }
 
      
-
+      // hello
 
       // setFavorites([...favorites, job])
       document.getElementById("favbutton").src = favred
