@@ -16,6 +16,7 @@ import foodandbeveragesIcon from './icons/food.svg'
 import landscape from './icons/landscaping.svg'
 import transport from './icons/transportation.svg'
 import cleaning from './icons/nclean.svg'
+import { supabase } from '../../utils/supabaseClient';
 
 
 function JobDetails({ jobs, setFavorites, favorites}) {
@@ -57,14 +58,32 @@ function JobDetails({ jobs, setFavorites, favorites}) {
       document.getElementById("favbutton")
     }
 
-    const handleOnClick = (job)=>{
+    const handleOnClick = async (job)=>{
       // console.log(job)
       // localStorage.setItem("name", JSON.stringify(name));
 
-      console.log(localStorage)
+
+      try {
+        // let { data, error } = await supabase
+        // .from("Users")
+        // .insert({ favorites, user_id: user.id })
+        // .single();
+        const { data, error } = await supabase
+          .from('users')
+          .select()
+          // .insert([
+          //   { nameRandom: 'The Shire', country_id: 554 }
+          // ])
+        console.log(data)
+        console.log(error)
+      } catch (error) {
+        
+      }
+
+     
 
 
-      setFavorites([...favorites, job])
+      // setFavorites([...favorites, job])
       document.getElementById("favbutton").src = favred
 
     }

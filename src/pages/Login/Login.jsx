@@ -2,7 +2,7 @@ import { useState } from 'react'
 import LoginForm from '../../components/LoginForm/LoginForm'
 import './login.css'
 
-const LoginPage = props => {
+const LoginPage = ({ userState, setUser }) => {
   const [message, setMessage] = useState([''])
 
   const updateMessage = msg => {
@@ -19,7 +19,9 @@ const LoginPage = props => {
         <p className='sign-in-salutation-subtitle'>Hello, sign in to continue!</p>
         {/* <p>{message}</p> */}
         <LoginForm
-          handleSignupOrLogin={props.handleSignupOrLogin}
+          // handleSignupOrLogin={props.handleSignupOrLogin}
+          setUser={setUser}
+          userState={userState}
           updateMessage={updateMessage}
         />
       </div>

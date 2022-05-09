@@ -2,8 +2,9 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './loginform.css'
 import * as authService from '../../services/authService'
+import { supabase } from '../../utils/supabaseClient'
 
-const LoginForm = props => {
+const LoginForm = ({userState, setUser}) => {
   const [formData, setFormData] = useState({
     email: '',
     pw: '',
@@ -11,18 +12,29 @@ const LoginForm = props => {
   const navigate = useNavigate()
 
   const handleChange = e => {
-    props.updateMessage('')
+    // props.updateMessage('')
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = async evt => {
     evt.preventDefault()
     try {
-      await authService.login(formData)
-      props.handleSignupOrLogin()
+
+      const { user, session, error } = await supabase.auth.signIn({
+        email: formData.email,
+        password: formData.pw,
+      })
+
+      setUser(session)
+      console.log('user', user)
+      console.log('session', session)
+      console.log('error', error)
+      // await authService.login(formData)
+      // props.handleSignupOrLogin()
       navigate('/')
     } catch (err) {
-      props.updateMessage(err.message)
+      // props.updateMessage(err.message)
+      console.log(err)
     }
   }
 
