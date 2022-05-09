@@ -21,13 +21,21 @@ const NavBar = ({ user, handleLogout }) => {
     navigate('/favorites')
   }
 
+  const handleNavPage=(eventKey, event)=>{
+    console.log(event)
+    navigate(eventKey)
+  }
+
+
   return (
+    <>
     <Navbar
-      style={{ padding: '0 10px', position: "fixed", width:"100%", zIndex: "100"}}
+      style={{ padding: '0 10px', position: "fixed", width:"100%", zIndex: "100",}}
       expand="xxxl"
       bg="light"
       variant="light"
-      
+      onSelect={handleNavPage}
+      collapseOnSelect    
     >
       <Navbar.Brand onClick={handleHome}>
         <img src={Logo} className="logo-image-main" height="100"></img>
@@ -42,29 +50,30 @@ const NavBar = ({ user, handleLogout }) => {
           aria-controls="responsive-navbar-nav"
         />
       </div>
-      <Navbar.Collapse  id="responsive-navbar-nav">
+      <Navbar.Collapse collapseOnSelect  id="responsive-navbar-nav">
         {
           user ? (
             <Nav className="mr-auto">
-              <Nav.Link as={Link} className="nav-link" to="/">Home</Nav.Link>
-              <Nav.Link as={Link} className="nav-link" to="/profiles">Profiles</Nav.Link>
-              <Nav.Link as={Link} className="nav-link" to="/resources">Resources</Nav.Link>
-              <Nav.Link as={Link} className="nav-link" to="/about">About</Nav.Link>
-              <Nav.Link as={Link} className="nav-link" to="/jobform">Post a job</Nav.Link>
+              <Nav.Link className="nav-link">Home</Nav.Link>
+              {/* <Nav.Link as={Link} className="nav-link" to="/profiles">Profiles</Nav.Link> */}
+              <Nav.Link className="nav-link" >Resources</Nav.Link>
+              <Nav.Link className="nav-link" >About</Nav.Link>
+              <Nav.Link className="nav-link" >Post a job</Nav.Link>
               <Nav.Link className="nav-link" onClick={handleLogout}>Log out</Nav.Link>
             </Nav>
           ) : (
             <Nav className="mr-auto">
-              <Nav.Link as={Link} className="nav-link" to="/login">Log In</Nav.Link>
-              <Nav.Link as={Link} className="nav-link" to="/signup">Sign Up</Nav.Link>
-              <Nav.Link as={Link} className="nav-link" to="/resources">Resources</Nav.Link>
-              <Nav.Link as={Link} className="nav-link" to="/about">About</Nav.Link>
-              <Nav.Link as={Link} className="nav-link" to="/jobform">Post a job</Nav.Link>
+              <Nav.Link eventKey="login" className="nav-link" >Log In</Nav.Link>
+              <Nav.Link eventKey="signup" className="nav-link" >Sign Up</Nav.Link>
+              <Nav.Link eventKey="resources" className="nav-link" >Resources</Nav.Link>
+              <Nav.Link eventKey="about" className="nav-link" >About</Nav.Link>
+              <Nav.Link eventKey="jobform" className="nav-link" >Post a job</Nav.Link>
             </Nav>
           )
         }
       </Navbar.Collapse>
     </Navbar>
+  </>
   );
 };
 
