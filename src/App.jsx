@@ -20,7 +20,8 @@ import Favorites from './pages/Favorites/Favorites'
 
 
 const App = () => {
-  const [user, setUser] = useState(authService.getUser())
+  // const [user, setUser] = useState(authService.getUser())
+  const [user, setUser] = useState({})
   const [favorites, setFavorites] = useState([])
 
   const [jobs, setJobs] = useState([])
@@ -50,22 +51,6 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  // useEffect(()=>{
-
-  // fetchData()
-
-  // },[])
-
-  // const fetchData = async()=>{
-
-  //   const response = await axios.get(`http://localhost:3001/api/profiles/`)
-  //   console.log(response.data)
-
-  // }
-
-
-
- 
 
 
   return (
@@ -78,7 +63,7 @@ const App = () => {
         <Route path="/job/:id" element={<JobDetails favorites={favorites} setFavorites={setFavorites} jobs={jobs}/>}/>
         <Route
           path="/signup"
-          element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
+          element={<Signup handleSignupOrLogin={handleSignupOrLogin} setUser={setUser} userState={user}/>}
         />
 
         <Route
@@ -87,7 +72,7 @@ const App = () => {
         />
         <Route
           path="/login"
-          element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
+          element={<Login handleSignupOrLogin={handleSignupOrLogin} setUser={setUser} userState={user}/>}
         />
         <Route
           path="/jobform"

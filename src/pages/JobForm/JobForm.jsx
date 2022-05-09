@@ -2,6 +2,7 @@ import './JobForm.styles.css'
 import { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { supabase } from '../../utils/supabaseClient';
 
 const defaultFormFieds = {
   company:"",
@@ -22,19 +23,38 @@ const JobForm = () => {
 
   const [form, setForm] = useState(defaultFormFieds)
   const [isOpen, setIsOpen] = useState(false);
+  
 
   const { company, position, full_time, city, state, contact, description, compensation, address, url } = form
 
+  // const getData = async () => {
+  // };
+  
   const handleSubmit = async (event) => {
     event.preventDefault()
     try{
+      
+      // const response = await axios.post(`${process.env.REACT_APP_BACKEND_SERVER_URL}/api/jobs/`, form)
+      
+      const { data, error } = await supabase.from('Jobs').insert([
+        { company: company,
+          position: position,
+          full_time: full_time,
+          city: city,
+          state: state,
+          contact: contact,
+          description: description,
+          compensation: compensation,
+          address: address,
+          url: url
+        },
+          
+      ]);
+      
 
-    const response = await axios.post(`${process.env.REACT_APP_BACKEND_SERVER_URL}/api/jobs/`, form)
-    
+    console.log(data, error)
 
-    console.log(response.data)
-
-    navigate('/')
+    // navigate('/')
 
 
   } catch(err){

@@ -2,8 +2,9 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './signupform.css'
 import * as authService from '../../services/authService'
+import { supabase } from '../../utils/supabaseClient'
 
-const SignupForm = props => {
+const SignupForm = ({userState, setUser}) => {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
     name: '',
@@ -12,8 +13,10 @@ const SignupForm = props => {
     passwordConf: '',
   })
 
+  const { name, email, password, passwordConf } = formData
+
   const handleChange = e => {
-    props.updateMessage('')
+    // props.updateMessage('')
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -23,15 +26,31 @@ const SignupForm = props => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      await authService.signup(formData)
-      props.handleSignupOrLogin()
+      const { user, session, error } = await supabase.auth.signUp(
+        {
+          email: email,
+          password: password,
+        },
+        {
+          data: { 
+            first_name: name,
+            favorites: []
+          }
+        }
+      )
+      setUser(session)
+      console.log('user', user)
+      console.log('session', session)
+      console.log('error', error)
+      // await authService.signup(formData)
+      // props.handleSignupOrLogin()
       navigate('/')
     } catch (err) {
-      props.updateMessage(err.message)
+      // props.updateMessage(err.message)
+      console.log(err)
     }
   }
 
-  const { name, email, password, passwordConf } = formData
 
   const isFormInvalid = () => {
     return !(name && email && password && password === passwordConf)

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import SignupForm from '../../components/SignupForm/SignupForm'
 import './signup.css'
 
-const Signup = props => {
+const Signup = ({ userState, setUser}) => {
   const [message, setMessage] = useState([''])
 
   const updateMessage = msg => {
@@ -17,7 +17,7 @@ const Signup = props => {
         <h3 className='create-account-salutation'>Welcome</h3>
         <p className='create-account-salutation-subtitle'>Hello, create an account to continue!</p>
         {/* <p>{message}</p> */}
-        <SignupForm {...props} updateMessage={updateMessage} />
+        <SignupForm userState={userState} setUser={setUser} updateMessage={updateMessage} />
       </div>
     </main>
   )
