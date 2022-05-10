@@ -9,6 +9,7 @@ const defaultFormFieds = {
   position: "",
   time: '',
   city: "",
+  industry: "",
   state: '',
   contact: "",
   description: "",
@@ -25,7 +26,7 @@ const JobForm = () => {
   const [isOpen, setIsOpen] = useState(false);
   
 
-  const { company, position, time, city, state, contact, description, compensation, address, url } = form
+  const { company, position, time, city, industry, state, contact, description, compensation, address, url } = form
 
   // const getData = async () => {
   // };
@@ -41,6 +42,7 @@ const JobForm = () => {
           position: position,
           time: time,
           city: city,
+          industry: industry,
           state: state,
           contact: contact,
           description: description,
@@ -115,6 +117,23 @@ const JobForm = () => {
           <option>Full-time</option>
           <option>Part-time</option>
         </select>
+        <label hidden htmlFor="industry"></label>
+        <select 
+        name="industry"
+        value={industry}
+        onChange={handleChange}
+        className="job-input">
+          <option value="" disabled selected>select an industry</option>
+          <option>Construction</option>
+          <option>Transportation</option>
+          <option>Cleaning</option>
+          <option>Caretaking</option>
+          <option>Gardening</option>
+          <option>Technology</option>
+          <option>Education</option>
+          <option>Food/Beverages</option>
+          <option>Other</option>
+        </select>
         {/* <input
           type="text"
           value={full_time}
@@ -125,17 +144,26 @@ const JobForm = () => {
           >
         </input> */}
 
-        {/* city */}
-        <label htmlFor="city"></label>
-        <input
-          type="text"
-          value={city}
-          onChange={handleChange}
-          placeholder="City"
-          required
-          name="city"
-          className="job-input"
-        ></input>
+        <label hidden htmlFor="city"></label>
+        <select 
+        name="city"
+        value={city}
+        onChange={handleChange}
+        className="job-input">
+          <option value="" disabled selected>select a city</option>
+          <option>Tacoma</option>
+          <option>Seattle</option>
+          <option>Olympia</option>
+          <option>Vancouver</option>
+          <option>Bellevue</option>
+          <option>Kent</option>
+          <option>Federal Way</option>
+          <option>Auburn</option>
+          <option>Lakewood</option>
+          <option>Gig Harbor</option>
+          <option>Remote</option>
+          <option>Other</option>
+        </select>
 
         {/* state */}
         <label htmlFor="state"></label>

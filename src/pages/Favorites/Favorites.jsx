@@ -5,10 +5,49 @@ import foodandbeveragesIcon from '../../../src/food.svg'
 import locationIcon from '../../../src/location.svg';
 import messageIcon from '../../../src/message.svg';
 import savedfilled from '../../../src/savedred.svg';
+import { useAuth } from '../../utils/auth';
+import { useEffect } from 'react';
+import { supabase } from '../../utils/supabaseClient';
 
 
-const Favorites = ({ favorites, user }) => {
-  const mappedData = favorites.map((elem, idx) => {
+const Favorites = ({ favorites }) => {
+
+  const auth = useAuth()
+
+  
+  
+  
+  let favoritedJobs = [] 
+
+  const getFavorites = async () =>{
+
+    console.log(auth.user)
+    const {data, error} = await supabase.from("Favorites").select().match({user_id: auth.user.id})
+
+
+    for(const job in data){
+      const {data, error} = await supabase.from("Jobs").select().match({id: job})
+      // console.log(data[0])
+      favoritedJobs.push(data[0])
+      
+
+    }
+    console.log(favoritedJobs)
+    if(error){
+      console.log(error)
+    } 
+  }
+
+  useEffect(()=>{
+
+    getFavorites()
+
+
+  },[])
+
+
+
+  const mappedData = favoritedJobs.map((elem, idx) => {
 
     let industry;
     switch (elem.industry) {

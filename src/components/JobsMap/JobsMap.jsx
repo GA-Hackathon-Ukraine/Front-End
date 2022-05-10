@@ -1,4 +1,4 @@
-import dummydata from './dummydata';
+// import dummydata from './dummydata';
 import { Link } from 'react-router-dom';
 import './JobsMap.styles.css';
 import locationIcon from '../../../src/location.svg';
@@ -11,36 +11,70 @@ import transportationIcon from '../../../src/transportation.svg'
 import caretakingIcon from '../../../src/caretaking.svg'
 import educationIcon from '../../../src/education.svg'
 import cleaningIcon from '../../../src/cleaning.svg'
+import { supabase } from '../../utils/supabaseClient';
+import { useEffect, useState } from 'react';
 
 
 
-const JobsMap = ({ allJobs }) => {
+
+const JobsMap = () => {
+
+  const [allJobs, setAlljobs] = useState([])
+
+
+  const getData = async ()=>{
+
+    const {data, error} = await supabase.from("Jobs").select()
+    setAlljobs(data)
+    console.log(data)
+
+    if (error){
+      console.log(error)
+    }
+  }
+
+  useEffect( () => {
+
+  getData()
+
+
+  }, [])
+
+
+
+
   const mappedData = allJobs.map((elem, idx) => {
 
     let industry;
+    // This needs ot be refactored later. adding new images .. etc.
     switch (elem.industry) {
-      case 'technology':
+      case 'Technology':
         industry = technologyIcon;
         break;
-      case 'food/beverage':
+      case 'Food/Beverages':
         industry = foodandbeveragesIcon;
         break;
-      case 'transportation':
+      case 'Transportation':
         industry = transportationIcon;
         break;
-      case 'caretaking':
+      case 'Caretaking':
         industry = caretakingIcon;
         break;
-      case 'education':
+      case 'Education':
         industry = educationIcon;
         break;
-      case 'cleaning':
+      case 'Cleaning':
+        industry = cleaningIcon;
+        break;
+      case 'Gardening':
+        industry = cleaningIcon;
+        break;
+      case 'Other':
         industry = cleaningIcon;
         break;
       default:
         industry = constructionIcon;
     }
-    console.log(industry);
     return (
       <div key={idx} className="card-wrapper">
         <Link

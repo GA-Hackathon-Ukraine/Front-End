@@ -32,7 +32,6 @@ const NavBar = ({ handleLogout }) => {
     console.log(event);
     navigate(eventKey);
   };
-  console.log(auth.user)
 
 
   return (

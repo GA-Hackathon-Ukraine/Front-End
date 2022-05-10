@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './jobDetails.css';
 import locationIcon from './smalllocationicon.svg';
 import favoriteButton from './favoriteButton.svg';
@@ -17,33 +17,61 @@ import landscape from './icons/landscaping.svg'
 import transport from './icons/transportation.svg'
 import cleaning from './icons/nclean.svg'
 import { supabase } from '../../utils/supabaseClient';
+import { useAuth } from '../../utils/auth';
 
 
 function JobDetails({ jobs, setFavorites, favorites}) {
+  const auth = useAuth()
   const { id } = useParams();
 
-  const filteredJob = jobs.filter((elem, idx) => elem.id === id);
+  console.log(auth)
 
-  const mappedFilteredJob = filteredJob.map((elem, idx) => {
+  const [job, setJob] = useState([])
 
+
+
+  const getJob = async ()=>{
+
+
+    const {data, error} = await supabase.from("Jobs").select().match({"id":id})
+
+    setJob(data)
+    if(error){
+      console.log(error)
+    }
+
+    console.log(data)
+
+  }
+
+  useEffect(() => {
+   
+    getJob()
+   
+  }, [])
+
+  // const filteredJob = jobs.filter((elem, idx) => elem.id === id);
+
+    const mappedFilteredJob = job.map((elem, idx) => {
+      console.log(elem)
     let industry;
     switch (elem.industry) {
-      case 'cleaning':
+      case 'Cleaning':
         industry = cleaning;
         break;
-      case 'transportation':
+      case 'Transportation':
         industry = transport;
         break;
-      case 'landscaping':
+      case 'Landscaping':
         industry = landscape;
         break;
-      case 'caretaking':
+      case 'Caretaking':
         industry = caregive;
         break;
-      case 'technology':
+      case 'Technology':
         industry = technologyIcon;
         break;
-      case 'food/beverage':
+      case 'Food/Beverages':
         industry = foodandbeveragesIcon;
         break;
       default:
@@ -58,33 +86,18 @@ function JobDetails({ jobs, setFavorites, favorites}) {
       document.getElementById("favbutton")
     }
 
-    const handleOnClick = async (job)=>{
-      // console.log(job)
-      // localStorage.setItem("name", JSON.stringify(name));
+    const handleFavoriteButton = async (job)=>{
 
+      // checks if favorite is already made by that user on that job.
 
-      try {
-        // let { data, error } = await supabase
-        // .from("Users")
-        // .insert({ favorites, user_id: user.id })
-        // .single();
-        const { data, error } = await supabase
-          .from('users')
-          .select()
-          // .insert([
-          //   { nameRandom: 'The Shire', country_id: 554 }
-          // ])
-        console.log(data)
-        console.log(error)
-      } catch (error) {
-        
-      }
+      const { data, error } = await supabase
+          .from('Favorites')
+          .insert([{user_id: auth.user.id, job_id: elem.id}])
 
+          console.log(data, error)
+
+      // if there the user already has favorated the job, unfavorite it.
      
-
-
-      // setFavorites([...favorites, job])
-      document.getElementById("favbutton").src = favred
 
     }
 
@@ -125,7 +138,7 @@ function JobDetails({ jobs, setFavorites, favorites}) {
                 fav.id === elem.id ? <img onClick={()=>handleOnClick(elem)} id="favbutton" src={favoriteButton}></img> : <img onClick={()=>handleOnClick(elem)} id="favbutton" src={favred}></img>
               })} */}
               
-              <img onClick={()=>handleOnClick(elem)} id="favbutton" src={favoriteButton}></img>
+              <img onClick={()=>handleFavoriteButton(elem)} id="favbutton" src={favoriteButton}></img>
             </div>
           </div>
           <div className="descriptionDiv">
@@ -144,7 +157,6 @@ function JobDetails({ jobs, setFavorites, favorites}) {
       </div>
     );
   });
-
   return (
     <>
       {mappedFilteredJob}
