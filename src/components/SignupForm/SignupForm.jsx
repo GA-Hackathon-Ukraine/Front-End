@@ -3,17 +3,20 @@ import { Link, useNavigate } from 'react-router-dom'
 import './signupform.css'
 import * as authService from '../../services/authService'
 import { supabase } from '../../utils/supabaseClient'
+import { useAuth } from '../../utils/auth'
 
 const SignupForm = ({userState, setUser}) => {
+  const auth = useAuth()
+  
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
     email: '',
     password: '',
     passwordConf: '',
   })
 
-  const { name, email, password, passwordConf } = formData
+  const { firstName, email, password, passwordConf } = formData
 
   const handleChange = e => {
     // props.updateMessage('')
@@ -25,35 +28,47 @@ const SignupForm = ({userState, setUser}) => {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    try {
-      const { user, session, error } = await supabase.auth.signUp(
-        {
-          email: email,
-          password: password,
-        },
-        {
-          data: { 
-            first_name: name,
-            favorites: []
-          }
-        }
-      )
-      setUser(session)
-      console.log('user', user)
-      console.log('session', session)
-      console.log('error', error)
+
+    const signup = await auth.signup(firstName, email, password)
+
+    console.log(signup)
+
+    if (signup.error) {
+      console.log(signup.error.message)
+    } else {
+      // setMessage("Welcome")
+      navigate('/')
+    }
+
+    // try {
+    //   const { user, session, error } = await supabase.auth.signUp(
+    //     {
+    //       email: email,
+    //       password: password,
+    //     },
+    //     {
+    //       data: { 
+    //         first_name: name,
+    //         favorites: []
+    //       }
+    //     }
+    //   )
+    //   setUser(session)
+    //   console.log('user', user)
+    //   console.log('session', session)
+    //   console.log('error', error)
       // await authService.signup(formData)
       // props.handleSignupOrLogin()
-      navigate('/')
-    } catch (err) {
+    //   navigate('/')
+    // } catch (err) {
       // props.updateMessage(err.message)
-      console.log(err)
-    }
+      // console.log(err)
+    // }
   }
 
 
   const isFormInvalid = () => {
-    return !(name && email && password && password === passwordConf)
+    return !(firstName && email && password && password === passwordConf)
   }
 
   return (
@@ -69,8 +84,8 @@ const SignupForm = ({userState, setUser}) => {
           type="text"
           autoComplete="off"
           id="name"
-          value={name}
-          name="name"
+          value={firstName}
+          name="firstName"
           onChange={handleChange}
           placeholder="Name"
           className="sign-up-input"
@@ -124,7 +139,7 @@ const SignupForm = ({userState, setUser}) => {
         </button>
       </div>
       {/* link to make an account */}
-      <p className="have-account">Already have an account? <Link class="signin" to="/login">Sign In</Link></p>
+      <p className="have-account">Already have an account? <Link className="signin" to="/login">Sign In</Link></p>
     </form>
   )
 }

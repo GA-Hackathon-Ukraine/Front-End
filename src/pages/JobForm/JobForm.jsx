@@ -7,7 +7,7 @@ import { supabase } from '../../utils/supabaseClient';
 const defaultFormFieds = {
   company:"",
   position: "",
-  full_time: '',
+  time: '',
   city: "",
   state: '',
   contact: "",
@@ -25,7 +25,7 @@ const JobForm = () => {
   const [isOpen, setIsOpen] = useState(false);
   
 
-  const { company, position, full_time, city, state, contact, description, compensation, address, url } = form
+  const { company, position, time, city, state, contact, description, compensation, address, url } = form
 
   // const getData = async () => {
   // };
@@ -39,7 +39,7 @@ const JobForm = () => {
       const { data, error } = await supabase.from('Jobs').insert([
         { company: company,
           position: position,
-          full_time: full_time,
+          time: time,
           city: city,
           state: state,
           contact: contact,
@@ -106,7 +106,16 @@ const JobForm = () => {
 
         {/* status */}
         <label htmlFor="status"></label>
-        <input
+        <select 
+        name="time"
+        value={time}
+        onChange={handleChange}
+        className="job-input">
+          <option value="" disabled selected>Part-time or Full-time</option>
+          <option>Full-time</option>
+          <option>Part-time</option>
+        </select>
+        {/* <input
           type="text"
           value={full_time}
           onChange={handleChange}
@@ -114,7 +123,7 @@ const JobForm = () => {
           name="full_time"
           className="job-input"
           >
-        </input>
+        </input> */}
 
         {/* city */}
         <label htmlFor="city"></label>
