@@ -8,6 +8,7 @@ import savedfilled from '../../../src/savedred.svg';
 import { useAuth } from '../../utils/auth';
 import { useEffect } from 'react';
 import { supabase } from '../../utils/supabaseClient';
+import { useState } from 'react';
 
 
 const Favorites = ({ favorites }) => {
@@ -15,7 +16,7 @@ const Favorites = ({ favorites }) => {
   const auth = useAuth()
 
   
-  
+  const [favJobs, setFavJobs] = useState([])
   
   let favoritedJobs = [] 
 
@@ -23,44 +24,46 @@ const Favorites = ({ favorites }) => {
 
     const {data, error} = await supabase.from("Favorites").select().match({user_id: auth.user.id})
 
-    console.log(data)
-
 
     data.forEach(async(job, idx)=>{
 
-      console.log(typeof job.id)
-      const {data, error} = await supabase.from("Jobs").select().match({id: job.id})
+      console.log(job)
+      const {data, error} = await supabase.from("Jobs").select().match({id: job.job_id})
       
-      console.log(error)
-      console.log(data)
-
+      if (error){console.log(error)}
+    
+      // console.log(data[0])
+      favoritedJobs.push(data[0])
+      setFavJobs(favoritedJobs)
 
     })
-
+    
     // for(const job in data){
-    //   const {data, error} = await supabase.from("Jobs").select().match({id: job})
-    //   // console.log(data[0])
-    //   favoritedJobs.push(data[0])
+      //   const {data, error} = await supabase.from("Jobs").select().match({id: job})
+      //   // console.log(data[0])
+      //   favoritedJobs.push(data[0])
       
-
-    // }
-    // console.log(favoritedJobs)
-    if(error){
-      console.log(error)
-    } 
-  }
-
-  useEffect(()=>{
-
-    getFavorites()
+      
+      // }
+      // console.log(favoritedJobs)
+      if(error){
+        console.log(error)
+      } 
+    }
+    
+    useEffect(()=>{
+      
+      getFavorites()
+      
 
 
   },[])
 
 
-
+  console.log(favoritedJobs)
   const mappedData = favoritedJobs.map((elem, idx) => {
 
+    {console.log(elem)}
     let industry;
     switch (elem.industry) {
       case 'technology':
