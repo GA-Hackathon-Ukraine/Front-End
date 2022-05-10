@@ -3,8 +3,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import './loginform.css'
 import * as authService from '../../services/authService'
 import { supabase } from '../../utils/supabaseClient'
+import { useAuth } from '../../utils/auth'
 
-const LoginForm = ({userState, setUser}) => {
+const LoginForm = ({ userState, setUser }) => {
+  const auth = useAuth()
+  const [message, setMessage] = useState("")
   const [formData, setFormData] = useState({
     email: '',
     pw: '',
@@ -16,26 +19,38 @@ const LoginForm = ({userState, setUser}) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = async evt => {
-    evt.preventDefault()
-    try {
+  const handleSubmit = async (e) => {
+    e.preventDefault()
 
-      const { user, session, error } = await supabase.auth.signIn({
-        email: formData.email,
-        password: formData.pw,
-      })
+    const signIn = await auth.login(formData.email, formData.pw)
 
-      setUser(session)
-      console.log('user', user)
-      console.log('session', session)
-      console.log('error', error)
-      // await authService.login(formData)
-      // props.handleSignupOrLogin()
-      navigate('/')
-    } catch (err) {
-      // props.updateMessage(err.message)
-      console.log(err)
+    if (signIn.error) {
+      setMessage(signIn.error.message)
+    } else {
+      setMessage("Welcome")
     }
+
+    navigate('/')
+    console.log(signIn.user)
+
+    // try {
+
+    //   const { user, session, error } = await supabase.auth.signIn({
+    //     email: formData.email,
+    //     password: formData.pw,
+    //   })
+
+    //   setUser(session)
+    //   console.log('user', user)
+    //   console.log('session', session)
+    //   console.log('error', error)
+    //   // await authService.login(formData)
+    //   // props.handleSignupOrLogin()
+    //   navigate('/')
+    // } catch (err) {
+    //   // props.updateMessage(err.message)
+    //   console.log(err)
+    // }
   }
 
   return (
