@@ -29,7 +29,6 @@ const NavBar = ({ handleLogout }) => {
   };
 
   const handleNavPage = (eventKey, event) => {
-    console.log(event);
     navigate(eventKey);
   };
 
