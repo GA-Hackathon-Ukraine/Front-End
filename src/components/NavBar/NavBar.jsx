@@ -54,12 +54,11 @@ const NavBar = ({ handleLogout }) => {
         {
           auth.user ? (
             <Nav className="mr-auto">
-              <Nav.Link className="nav-link">Home</Nav.Link>
               {/* <Nav.Link as={Link} className="nav-link" to="/profiles">Profiles</Nav.Link> */}
               <Nav.Link eventKey="resources" className="nav-link" >Resources</Nav.Link>
               <Nav.Link eventKey="about" className="nav-link" >About</Nav.Link>
-              <Nav.Link className="nav-link" >Post a job</Nav.Link>
-              <Nav.Link className="nav-link" onClick={auth.logout}>Log out</Nav.Link>
+              <Nav.Link eventKey="jobform" className="nav-link" >Post a job</Nav.Link>
+              <Nav.Link eventKey="/" className="nav-link" onClick={auth.logout}>Log out</Nav.Link>
             </Nav>
           ) : (
             <Nav className="mr-auto">

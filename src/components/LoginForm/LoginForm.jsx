@@ -28,9 +28,9 @@ const LoginForm = ({ userState, setUser }) => {
       setMessage(signIn.error.message)
     } else {
       setMessage("Welcome")
+      navigate('/')
     }
 
-    navigate('/')
     console.log(signIn.user)
 
     // try {
