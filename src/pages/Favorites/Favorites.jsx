@@ -43,16 +43,6 @@ const Favorites = () => {
         .match({ id: job.job_id });
       favoritedJobs.push(data[0]);
     }
-
-    // data.forEach(async (job, idx) => {
-    //   console.log(job.job_id);
-    //   const { data, error } = await supabase
-    //     .from("Jobs")
-    //     .select()
-    //     .match({ id: job.job_id });
-    //   favoritedJobs.push(data[0]);
-    //   console.log(data);
-    // });
     setFavJobs(favoritedJobs);
     console.log(favJobs);
   };
@@ -60,6 +50,17 @@ const Favorites = () => {
   useEffect(() => {
     getFavorites();
   }, []);
+
+  const handleDelete = async (jobId)=>{
+
+    const {data, error} = await supabase.from("Favorites").delete().match({job_id: jobId, user_id: auth.user.id})
+
+    if(error){
+      console.log(error)
+    }
+    getFavorites()
+
+  }
 
   const mappedData = favJobs.map((elem, idx) => {
     let industry;
@@ -102,9 +103,8 @@ const Favorites = () => {
         }}
         className="card-wrapper"
       >
-        <Link
+        <div
           className="card-wrapper-container"
-          key={`job-${idx}`}
           to={`/job/${elem.id}`}
         >
           <div className="image-container">
@@ -124,15 +124,6 @@ const Favorites = () => {
             />
           </div>
           <div className="card-wrapper-info">
-            {/* <div className='card-wrapper-info-left'>
-                                <div className='card-wrapper-info-left-top'>
-                                    <h2 className='position-name'>{elem.position}</h2>
-                                    <h3 className='company-name'>{elem.company}</h3>
-                                </div>
-                                <div className='card-wrapper-info-left-bottom'>
-                                    
-                                </div>
-                            </div> */}
             <div className="card-wrapper-info-top">
               <div className="card-wrapper-info-top-header">
                 <div>
@@ -161,13 +152,13 @@ const Favorites = () => {
               <div className="card-wrapper-info-bottom">
                 <div className="card-wrapper-info-bottom-left">
                   <div className="btn-group-jobsmap">
-                    <button className="details-btn">details</button>
+                    <Link to={`/job/${elem.id}`}><button className="details-btn">details</button></Link>
                     <button className="email-btn">
                       {" "}
                       <img src={messageIcon} />
                     </button>
                   </div>
-                  <div>
+                  <div onClick={(e)=>handleDelete(elem.id)}>
                     <span className="saved-unfilled-wrapper">
                       {" "}
                       <img
@@ -189,7 +180,7 @@ const Favorites = () => {
                             <h3>{elem.position}</h3>
                             <h3>{elem.location}</h3>
                            </div> */}
-        </Link>
+        </div>
       </div>
     );
   });
