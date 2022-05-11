@@ -1,69 +1,98 @@
-import { useState, useEffect } from 'react'
-import { Routes, Route, useNavigate, Navigate, BrowserRouter } from 'react-router-dom'
-import NavBar from './components/NavBar/NavBar'
-import Signup from './pages/Signup/Signup'
-import Login from './pages/Login/Login'
-import Landing from './pages/Landing/Landing'
-import Profiles from './pages/Profiles/Profiles'
-import ChangePassword from './pages/ChangePassword/ChangePassword'
-import JobForm from './pages/JobForm/JobForm'
-import Saved from './pages/Saved/Saved'
-import About from './pages/About/About'
-import Resources from './pages/Resources/Resources'
-import * as authService from './services/authService'
-import JobDetails from './pages/JobDetails/JobDetails'
-import dummydata from '../src/components/JobsMap/dummydata.js'
-import axios from 'axios'
-import './App.css'
-import Favorites from './pages/Favorites/Favorites'
-
-
+import { useState, useEffect } from "react";
+import {
+  Routes,
+  Route,
+  useNavigate,
+  Navigate,
+  BrowserRouter,
+} from "react-router-dom";
+import NavBar from "./components/NavBar/NavBar";
+import Signup from "./pages/Signup/Signup";
+import Login from "./pages/Login/Login";
+import Landing from "./pages/Landing/Landing";
+import Profiles from "./pages/Profiles/Profiles";
+import ChangePassword from "./pages/ChangePassword/ChangePassword";
+import JobForm from "./pages/JobForm/JobForm";
+import Saved from "./pages/Saved/Saved";
+import About from "./pages/About/About";
+import Resources from "./pages/Resources/Resources";
+import * as authService from "./services/authService";
+import JobDetails from "./pages/JobDetails/JobDetails";
+import dummydata from "../src/components/JobsMap/dummydata.js";
+import axios from "axios";
+import "./App.css";
+import Favorites from "./pages/Favorites/Favorites";
 
 const App = () => {
   // const [user, setUser] = useState(authService.getUser())
-  const [user, setUser] = useState({})
-  const [favorites, setFavorites] = useState([])
+  const [user, setUser] = useState({});
+  const [favorites, setFavorites] = useState([]);
+  const [searchShow, setSearchShow] = useState(false);
 
-  const [jobs, setJobs] = useState([])
+  const [jobs, setJobs] = useState([]);
 
-  useEffect(()=>{
-
-    setJobs(dummydata)
+  useEffect(() => {
+    setJobs(dummydata);
     // const jobs = axios.get(`${process.env.REACT_APP_BACKEND_SERVER_URL}/api/jobs`)
     // .then(res=>{
     //   setJobs(res.data)
     //   console.log(res.data)
     // })
+  }, []);
 
-
-  },[])
-
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    authService.logout()
-    setUser(null)
-    navigate('/')
-  }
+    authService.logout();
+    setUser(null);
+    navigate("/");
+  };
 
   const handleSignupOrLogin = () => {
-    setUser(authService.getUser())
-  }
-
-
+    setUser(authService.getUser());
+  };
 
   return (
-
-    <div className='mainContainer'>
-      {/* <button onClick={handleData}>Get data</button> */}
-      <NavBar user={user} handleLogout={handleLogout} />
+    <div className="mainContainer">
+      <NavBar
+        setSearchShow={setSearchShow}
+        searchShow={searchShow}
+        user={user}
+        handleLogout={handleLogout}
+      />
       <Routes>
-        <Route path="/" element={<Landing setJobs={setJobs} jobs={jobs} user={user} />} />
-        <Route path="/job/:id" element={<JobDetails favorites={favorites} setFavorites={setFavorites} jobs={jobs}/>}/>
+        <Route
+          path="/"
+          element={
+            <Landing
+              setSearchShow={setSearchShow}
+              searchShow={searchShow}
+              setJobs={setJobs}
+              jobs={jobs}
+              user={user}
+            />
+          }
+        />
+        <Route
+          path="/job/:id"
+          element={
+            <JobDetails
+              favorites={favorites}
+              setFavorites={setFavorites}
+              jobs={jobs}
+            />
+          }
+        />
+
         <Route
           path="/signup"
-          element={<Signup handleSignupOrLogin={handleSignupOrLogin} setUser={setUser} userState={user}/>}
+          element={
+            <Signup
+              handleSignupOrLogin={handleSignupOrLogin}
+              setUser={setUser}
+              userState={user}
+            />
+          }
         />
 
         <Route
@@ -72,39 +101,36 @@ const App = () => {
         />
         <Route
           path="/login"
-          element={<Login handleSignupOrLogin={handleSignupOrLogin} setUser={setUser} userState={user}/>}
+          element={
+            <Login
+              handleSignupOrLogin={handleSignupOrLogin}
+              setUser={setUser}
+              userState={user}
+            />
+          }
         />
-        <Route
-          path="/jobform"
-          element={<JobForm />}
-        />
-        <Route
-          path="/saved"
-          element={<Saved
-            jobs={jobs}
-
-            />}
-        />
-        <Route
-          path="/about"
-          element={<About />}
-        />
-        <Route
-          path="/resources"
-          element={<Resources />}
-        />
+        <Route path="/jobform" element={<JobForm />} />
+        <Route path="/saved" element={<Saved jobs={jobs} />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/resources" element={<Resources />} />
         <Route
           path="/profiles"
           element={user ? <Profiles /> : <Navigate to="/login" />}
         />
         <Route
           path="/changePassword"
-          element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <Navigate to="/login" />}
+          element={
+            user ? (
+              <ChangePassword handleSignupOrLogin={handleSignupOrLogin} />
+            ) : (
+              <Navigate to="/login" />
+            )
+          }
         />
       </Routes>
-    </div >
-  )
-}
+    </div>
+  );
+};
 
-export default App
+export default App;
 // hello world

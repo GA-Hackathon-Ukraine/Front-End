@@ -3,7 +3,7 @@ import './SearchForm.css';
 import locationIcon from './locationicon.png'
 import searchIcon from './searchicon.png'
 
-function SearchForm({setLocation, position, setPosition, setComponentShow, compomentShow}) {
+function SearchForm({setLocation, position, setPosition, setSearchShow}) {
 
     const handleChange = (e) => {
         setPosition(e.target.value)   
@@ -14,7 +14,7 @@ function SearchForm({setLocation, position, setPosition, setComponentShow, compo
   };
 
   const handleClickRender = () => {
-    setComponentShow(true)
+    setSearchShow(true)
   }
     
   return (

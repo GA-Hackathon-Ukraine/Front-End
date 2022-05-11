@@ -17,33 +17,9 @@ import { useEffect, useState } from 'react';
 
 
 
-const JobsMap = () => {
+const JobsMap = ({combinedFilteredSearch}) => {
 
-  const [allJobs, setAlljobs] = useState([])
-
-
-  const getData = async ()=>{
-
-    const {data, error} = await supabase.from("Jobs").select()
-    setAlljobs(data)
-    console.log(data)
-
-    if (error){
-      console.log(error)
-    }
-  }
-
-  useEffect( () => {
-
-  getData()
-
-
-  }, [])
-
-
-
-
-  const mappedData = allJobs.map((elem, idx) => {
+  const mappedData = combinedFilteredSearch.map((elem, idx) => {
 
     let industry;
     // This needs ot be refactored later. adding new images .. etc.

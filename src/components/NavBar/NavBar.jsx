@@ -16,13 +16,16 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../utils/auth';
 
-const NavBar = ({ handleLogout }) => {
+const NavBar = ({ setSearchShow, searchShow}) => {
   const auth = useAuth();
   let navigate = useNavigate();
 
   function handleHome() {
     navigate('/');
+    setSearchShow(false)
   }
+
+  
 
   const handleGoToFaves = () => {
     navigate('/favorites');
