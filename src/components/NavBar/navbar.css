@@ -69,4 +69,5 @@ Note: Beware of modifying this element as it can break the animations - you shou
   height: auto;
   width: 170px;
   padding: 20px;
+  padding-left: 0;
 }

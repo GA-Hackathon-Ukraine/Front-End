@@ -1,6 +1,5 @@
 import './JobForm.styles.css'
 import { useState } from 'react'
-import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '../../utils/supabaseClient';
 
@@ -27,16 +26,8 @@ const JobForm = () => {
   
 
   const { company, position, time, city, industry, state, contact, description, compensation, address, url } = form
-
-  // const getData = async () => {
-  // };
-  
   const handleSubmit = async (event) => {
     event.preventDefault()
-    try{
-      
-      // const response = await axios.post(`${process.env.REACT_APP_BACKEND_SERVER_URL}/api/jobs/`, form)
-      
       const { data, error } = await supabase.from('Jobs').insert([
         { company: company,
           position: position,
@@ -49,19 +40,15 @@ const JobForm = () => {
           compensation: compensation,
           address: address,
           url: url
-        },
-          
+        } 
       ]);
       
+      if(data){
+        navigate('/')
 
-    console.log(data, error)
-
-    // navigate('/')
-
-
-  } catch(err){
-    console.log()
-  }
+      } else {
+        console.log(error)
+      }
   }
 
   const handleChange = (event) => {
@@ -109,6 +96,7 @@ const JobForm = () => {
         {/* status */}
         <label htmlFor="status"></label>
         <select 
+        required
         name="time"
         value={time}
         onChange={handleChange}
@@ -119,6 +107,7 @@ const JobForm = () => {
         </select>
         <label hidden htmlFor="industry"></label>
         <select 
+        required
         name="industry"
         value={industry}
         onChange={handleChange}
@@ -146,6 +135,7 @@ const JobForm = () => {
 
         <label hidden htmlFor="city"></label>
         <select 
+        required
         name="city"
         value={city}
         onChange={handleChange}
@@ -211,11 +201,13 @@ const JobForm = () => {
           placeholder="Address"
           name="address"
           className="job-input"
+          required
           ></input>
 
         {/* company website */}
         <label htmlFor="company-website"></label>
         <input 
+        required
         type="text"
           value={url}
           onChange={handleChange}
@@ -227,6 +219,7 @@ const JobForm = () => {
         {/* job description box */}
         <label htmlFor="description"></label>
         <textarea 
+        required
         wrap="hard"
         className="job-description-box"
         type="text"
@@ -237,9 +230,9 @@ const JobForm = () => {
 
         <input type="submit" value="Submit" className="job-form-submit" onClick={togglePopup}/>
       </form>
-      {isOpen && <Popup content={<>
+      {/* {isOpen && <Popup content={<>
         <b>You submitted a job!</b>
-      </>} handleClose={togglePopup}/>}
+      </>} handleClose={togglePopup}/>} */}
     </div>
   )
 }
