@@ -98,7 +98,7 @@ function JobDetails() {
       console.log(auth.user.id);
       const { data, error } = await supabase
         .from('Favorites')
-        .insert([{ user_id: auth.user.id, job_id: elem.id }]);
+        .insert([{ user_id: auth.user.id, job_id: job.id }]);
       setFavorited(true);
       if (error) {
         console.log(error);
@@ -112,7 +112,7 @@ function JobDetails() {
       const { data, error } = await supabase
         .from('Favorites')
         .delete()
-        .match({ job_id: elem.id, user_id: auth.user.id });
+        .match({ job_id: job.id, user_id: auth.user.id });
       setFavorited(false);
       if (error) {
         console.log(error);
