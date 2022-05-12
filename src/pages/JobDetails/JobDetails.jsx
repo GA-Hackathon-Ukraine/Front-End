@@ -1,23 +1,23 @@
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import "./jobDetails.css";
-import locationIcon from "./smalllocationicon.svg";
-import favoriteButton from "./favoriteButton.svg";
-import favred from "./icons/redfav.svg";
-import mailIcon from "./mailicon.png";
-import childCare from "./childcard.png";
-import partTime from "./parttime.svg";
-import apply from "./apply.svg";
-import constructionIcon from "./icons/construction.svg";
-import caregive from "./icons/caretaking.svg";
-import technologyIcon from "./icons/technology.svg";
-import foodandbeveragesIcon from "./icons/food.svg";
-import landscape from "./icons/landscaping.svg";
-import transport from "./icons/transportation.svg";
-import cleaning from "./icons/nclean.svg";
-import { supabase } from "../../utils/supabaseClient";
-import { useAuth } from "../../utils/auth";
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import './jobDetails.css';
+import locationIcon from './smalllocationicon.svg';
+import favoriteButton from './favoriteButton.svg';
+import favred from './icons/redfav.svg';
+import mailIcon from './mailicon.png';
+import childCare from './childcard.png';
+import partTime from './parttime.svg';
+import apply from './apply.svg';
+import constructionIcon from './icons/construction.svg';
+import caregive from './icons/caretaking.svg';
+import technologyIcon from './icons/technology.svg';
+import foodandbeveragesIcon from './icons/food.svg';
+import landscape from './icons/landscaping.svg';
+import transport from './icons/transportation.svg';
+import cleaning from './icons/nclean.svg';
+import { supabase } from '../../utils/supabaseClient';
+import { useAuth } from '../../utils/auth';
 
 function JobDetails() {
   const auth = useAuth();
@@ -25,17 +25,34 @@ function JobDetails() {
 
   const [job, setJob] = useState([]);
 
+  const [favorited, setFavorited] = useState(false);
+
   const getJob = async () => {
     const { data, error } = await supabase
-      .from("Jobs")
+      .from('Jobs')
       .select()
       .match({ id: id });
     setJob(data);
+
     if (error) {
       console.log(error);
     }
 
-    console.log(data);
+    if (auth.user) {
+      const { data, error } = await supabase
+        .from('Favorites')
+        .select()
+        .match({ job_id: id, user_id: auth.user.id });
+
+      if (error) {
+        console.log(error);
+      }
+      if (data.length > 0) {
+        setFavorited(true);
+      } else {
+        setFavorited(false);
+      }
+    }
   };
 
   useEffect(() => {
@@ -45,49 +62,61 @@ function JobDetails() {
   // const filteredJob = jobs.filter((elem, idx) => elem.id === id);
 
   const mappedFilteredJob = job.map((elem, idx) => {
-    console.log(elem);
     let industry;
     switch (elem.industry) {
-      case "Cleaning":
+      case 'Cleaning':
         industry = cleaning;
         break;
-      case "Transportation":
+      case 'Transportation':
         industry = transport;
         break;
-      case "Landscaping":
+      case 'Landscaping':
         industry = landscape;
         break;
-      case "Caretaking":
+      case 'Caretaking':
         industry = caregive;
         break;
-      case "Technology":
+      case 'Technology':
         industry = technologyIcon;
         break;
-      case "Food/Beverages":
+      case 'Food/Beverages':
         industry = foodandbeveragesIcon;
         break;
       default:
         industry = constructionIcon;
     }
-    function weblink() {
-      // window.location=`${elem.url}`;
-      window.location.href("www.google.com");
-    }
+    // function weblink() {
+    //   // window.location=`${elem.url}`;
+    //   window.location.href('www.google.com');
+    // }
 
     const handleFavorite = () => {
-      document.getElementById("favbutton");
+      document.getElementById('favbutton');
     };
 
-    const handleFavoriteButton = async (job) => {
-      // checks if favorite is already made by that user on that job.
-
+    const handleFavoriteButtonSave = async (job) => {
+      console.log(auth.user.id);
       const { data, error } = await supabase
-        .from("Favorites")
+        .from('Favorites')
         .insert([{ user_id: auth.user.id, job_id: elem.id }]);
+      setFavorited(true);
+      if (error) {
+        console.log(error);
+      }
+    };
 
-      console.log(data, error);
+    // const {data, error} = await supabase.from("Favorites").delete().match({job_id: jobId, user_id: auth.user.id})
 
-      // if there the user already has favorated the job, unfavorite it.
+    const handleFavoriteButtonDelete = async (job) => {
+      console.log(auth.user.id);
+      const { data, error } = await supabase
+        .from('Favorites')
+        .delete()
+        .match({ job_id: elem.id, user_id: auth.user.id });
+      setFavorited(false);
+      if (error) {
+        console.log(error);
+      }
     };
 
     const url = elem.url;
@@ -100,7 +129,7 @@ function JobDetails() {
           <div className="jobDetailsMini">
             <div className="jobDetailsLeft">
               <div className="positionDiv">
-                <h3 style={{ color: "white" }} className="positionn">
+                <h3 style={{ color: 'white' }} className="positionn">
                   {elem.position}
                 </h3>
               </div>
@@ -130,25 +159,32 @@ function JobDetails() {
               {/* {favorites.forEach((fav) => {
                 fav.id === elem.id ? <img onClick={()=>handleOnClick(elem)} id="favbutton" src={favoriteButton}></img> : <img onClick={()=>handleOnClick(elem)} id="favbutton" src={favred}></img>
               })} */}
-
-              <img
-                onClick={() => handleFavoriteButton(elem)}
-                id="favbutton"
-                src={favoriteButton}
-              ></img>
+              {favorited ? (
+                <img
+                  onClick={() => handleFavoriteButtonDelete(elem)}
+                  id="favbutton"
+                  src={favred}
+                ></img>
+              ) : (
+                <img
+                  onClick={() => handleFavoriteButtonSave(elem)}
+                  id="favbutton"
+                  src={favoriteButton}
+                ></img>
+              )}
             </div>
           </div>
           <div className="descriptionDiv">
             <h2 className="description">Description</h2>
             <p className="descriptionText">{elem.description}</p>
           </div>
-          <a id="emailMe" href={"mailto:" + `${elem.contact}`}>
+          <a id="emailMe" href={'mailto:' + `${elem.contact}`}>
             <button className="contactButton">
               <img src={mailIcon} />
               <h4 className="contactButtonText">Contact</h4>
-            </button>{" "}
+            </button>{' '}
           </a>
-          <a id="applyHere" target="_blank" href={"https://" + `${elem.url}`}>
+          <a id="applyHere" target="_blank" href={'https://' + `${elem.url}`}>
             <button className="applyButton">
               <img src={apply} />
               <h4 className="applyButtonText">Apply</h4>

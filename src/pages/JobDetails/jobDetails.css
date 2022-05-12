@@ -115,7 +115,7 @@
 #favbutton:hover {
   /* background-color: #ffcc00; */
   cursor: pointer;
-  background-image: url("./icons/redfav.svg");
+  /* background-image: url("./icons/redfav.svg"); */
 }
 
 #applyHere, #emailMe {
