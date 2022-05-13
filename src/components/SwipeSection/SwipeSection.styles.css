@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 
 .swipe-section {
   padding: 0px 0px;
@@ -7,7 +7,6 @@
   justify-content: flex-start;
   width: 100%;
 }
-
 
 .location-img-slider {
   height: 10px;
@@ -161,4 +160,12 @@ h3.slider-card-wrapper-compensation {
   display: flex;
   justify-content: space-between;
   padding: 10px;
+}
+.section-title {
+  margin: 0 auto;
+  width: 90%;
+  font-size: 19px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: white;
 }
