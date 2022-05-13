@@ -1,9 +1,5 @@
-// import dummydata from './dummydata';
-import { Link } from 'react-router-dom';
 import './JobsMap.styles.css';
 import locationIcon from '../../../src/location.svg';
-import messageIcon from '../../../src/message.svg';
-import savedUnfilled from '../../../src/saved-unfilled.svg';
 import constructionIcon from '../../../src/construction.svg';
 import technologyIcon from '../../../src/technology.svg';
 import foodandbeveragesIcon from '../../../src/food.svg'
@@ -11,8 +7,6 @@ import transportationIcon from '../../../src/transportation.svg'
 import caretakingIcon from '../../../src/caretaking.svg'
 import educationIcon from '../../../src/education.svg'
 import cleaningIcon from '../../../src/cleaning.svg'
-import { supabase } from '../../utils/supabaseClient';
-import { useEffect, useState } from 'react';
 import JobsMapCard from '../JobsMapCard/JobsMapCard';
 import JobsNumber from '../JobsNumber/JobsNumber';
 

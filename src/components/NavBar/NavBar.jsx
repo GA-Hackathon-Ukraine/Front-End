@@ -1,18 +1,11 @@
-import { Link } from "react-router-dom";
-import { slide as Menu } from "react-burger-menu";
 import {
   Navbar,
-  NavDropdown,
-  Form,
-  FormControl,
-  Button,
   Nav,
 } from "react-bootstrap";
 import Logo from "./logon.png";
 import Favorite from "./favorite.svg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./navbar.css";
-import { LinkContainer } from "react-router-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../utils/auth";
 
@@ -53,7 +46,7 @@ const NavBar = ({ setSearchShow, searchShow }) => {
       >
         <Nav.Link className="nav-link">
           <Navbar.Brand onClick={handleHome}>
-            <img src={Logo} className="logo-image-main" height="100"></img>
+            <img src={Logo} className="logo-image-main" height="100" alt=""></img>
           </Navbar.Brand>
         </Nav.Link>
         <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
@@ -63,6 +56,7 @@ const NavBar = ({ setSearchShow, searchShow }) => {
                 className="navbar-faves-icon"
                 onClick={handleGoToFaves}
                 src={Favorite}
+                alt=""
               ></img>
             ) : (
               <></>
