@@ -24,7 +24,6 @@
 .card-information-wrapper {
   display: grid;
   height: 100%;
-  /* min-height: 80px; */
   align-content: space-around;
   grid-auto-columns: 1fr;
   grid-column-gap: 5px;

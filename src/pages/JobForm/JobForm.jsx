@@ -88,8 +88,6 @@ const JobForm = () => {
         <p className="job-form-sub-statement">
           Fill out the fields below to post a job!
         </p>
-
-        {/* company name */}
         <label htmlFor="company-name"></label>
         <input
           value={company}
@@ -100,8 +98,6 @@ const JobForm = () => {
           type="text"
           className="job-input"
         ></input>
-
-        {/* position */}
         <label htmlFor="position"></label>
         <input
           value={position}
@@ -112,8 +108,6 @@ const JobForm = () => {
           type="text"
           className="job-input"
         ></input>
-
-        {/* status */}
         <label htmlFor="status"></label>
         <select
           required
@@ -151,15 +145,6 @@ const JobForm = () => {
           <option>Food/Beverages</option>
           <option>Other</option>
         </select>
-        {/* <input
-          type="text"
-          value={full_time}
-          onChange={handleChange}
-          placeholder="Full-time / Part-time"
-          name="full_time"
-          className="job-input"
-          >
-        </input> */}
 
         <label hidden htmlFor="city"></label>
         <select
@@ -186,8 +171,6 @@ const JobForm = () => {
           <option>Remote</option>
           <option>Other</option>
         </select>
-
-        {/* state */}
         <label htmlFor="state"></label>
         <input
           type="text"
@@ -198,8 +181,6 @@ const JobForm = () => {
           name="state"
           className="job-input"
         ></input>
-
-        {/* contact */}
         <label htmlFor="contact"></label>
         <input
           type="text"
@@ -210,8 +191,6 @@ const JobForm = () => {
           name="contact"
           className="job-input"
         ></input>
-
-        {/* compensation */}
         <label htmlFor="compensation"></label>
         <input
           type="text"
@@ -223,8 +202,6 @@ const JobForm = () => {
           className="job-input"
           maxLength="3"
         ></input>
-
-        {/* address */}
         <label htmlFor="address"></label>
         <input
           type="text"
@@ -235,8 +212,6 @@ const JobForm = () => {
           className="job-input"
           required
         ></input>
-
-        {/* company website */}
         <label htmlFor="company-website"></label>
         <input
           required
@@ -247,8 +222,6 @@ const JobForm = () => {
           name="url"
           className="job-input"
         ></input>
-
-        {/* job description box */}
         <label htmlFor="description"></label>
         <textarea
           required
@@ -268,9 +241,6 @@ const JobForm = () => {
           onClick={togglePopup}
         />
       </form>
-      {/* {isOpen && <Popup content={<>
-        <b>You submitted a job!</b>
-      </>} handleClose={togglePopup}/>} */}
     </div>
   );
 };

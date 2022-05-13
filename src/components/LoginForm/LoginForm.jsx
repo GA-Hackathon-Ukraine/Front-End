@@ -15,7 +15,6 @@ const LoginForm = ({ userState, setUser }) => {
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    // props.updateMessage('')
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -30,27 +29,6 @@ const LoginForm = ({ userState, setUser }) => {
       setMessage("Welcome");
       navigate("/");
     }
-
-    console.log(signIn.user);
-
-    // try {
-
-    //   const { user, session, error } = await supabase.auth.signIn({
-    //     email: formData.email,
-    //     password: formData.pw,
-    //   })
-
-    //   setUser(session)
-    //   console.log('user', user)
-    //   console.log('session', session)
-    //   console.log('error', error)
-    //   // await authService.login(formData)
-    //   // props.handleSignupOrLogin()
-    //   navigate('/')
-    // } catch (err) {
-    //   // props.updateMessage(err.message)
-    //   console.log(err)
-    // }
   };
 
   return (
@@ -59,7 +37,6 @@ const LoginForm = ({ userState, setUser }) => {
       onSubmit={handleSubmit}
       className="signin-form-container"
     >
-      {/* email field */}
       <div className="signin-input-container">
         <label hidden htmlFor="email"></label>
         <input
@@ -73,7 +50,6 @@ const LoginForm = ({ userState, setUser }) => {
           className="sign-in-input"
         />
       </div>
-      {/* sign in field */}
       <div className="signin-input-container">
         <label hidden htmlFor="password"></label>
         <input
@@ -87,15 +63,12 @@ const LoginForm = ({ userState, setUser }) => {
           className="sign-in-input"
         />
       </div>
-      {/* forget password */}
       <Link to="/">
         <p className="forgot-password">Forgot Password?</p>
       </Link>
-      {/* sign in button */}
       <div>
         <button className="signin-button">Sign In</button>
       </div>
-      {/* link to make an account */}
       <p className="need-account">
         Don't have an account?{" "}
         <Link className="signup" to="/signup">

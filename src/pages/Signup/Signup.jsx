@@ -14,14 +14,11 @@ const Signup = ({ userState, setUser }) => {
       <div className="titleDiv">
         <h1 className="create-account-title">Create an account</h1>
       </div>
-      {/* <p>{message}</p> */}
       <div className="create-account-area">
         <h3 className="create-account-salutation">Welcome</h3>
         <p className="create-account-salutation-subtitle">
           create an account to continue
         </p>
-
-        {/* <p>{message}</p> */}
         <SignupForm
           userState={userState}
           setUser={setUser}

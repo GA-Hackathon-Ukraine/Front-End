@@ -86,9 +86,6 @@ const SwipeSection = () => {
         </div>
         
         </ReactSwipe>
-        {/* <div className='slide-to-see-more-wrapper'>
-          <div className='slide-to-see-more'><h5 className='swipe-right-section'>Swipe</h5><img src={arrowRight}/></div>
-        </div> */}
       <div className='swipesection-btn-wrapper'>
         <button className="swipey" onClick={() => reactSwipeEl.prev()}>←</button>
         <button className="swipey" onClick={() => reactSwipeEl.next()}>→</button>

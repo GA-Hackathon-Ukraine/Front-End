@@ -77,7 +77,6 @@ const NavBar = ({ setSearchShow, searchShow }) => {
         <Navbar.Collapse collapseOnSelect id="responsive-navbar-nav">
           {auth.user ? (
             <Nav className="mr-auto">
-              {/* <Nav.Link as={Link} className="nav-link" to="/profiles">Profiles</Nav.Link> */}
               <Nav.Link eventKey="resources" className="nav-link">
                 Resources
               </Nav.Link>

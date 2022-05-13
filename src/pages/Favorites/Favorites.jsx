@@ -174,14 +174,8 @@ const Favorites = () => {
               </div>
             </div>
             <div className="card-wrapper-info-left">
-              {/* <img src={locationIcon} /> */}
             </div>
           </div>
-          {/* <div className='jobs-container'>
-                            <h3>{elem.company}</h3>
-                            <h3>{elem.position}</h3>
-                            <h3>{elem.location}</h3>
-                           </div> */}
         </div>
       </div>
     );
@@ -191,8 +185,6 @@ const Favorites = () => {
     <div style={{ paddingTop: "75px" }}>
       <h1 style={{ textAlign: "center", color: "white" }}>Saved Jobs</h1>
       {favJobs.length > 0 ? mappedData : <Loading />}
-      {/* {msg ? <h1>{msg}</h1> : <></>} */}
-      {/* {favJobs.length > 0 && !msg ? mappedData : <Loading />} */}
     </div>
   );
 };

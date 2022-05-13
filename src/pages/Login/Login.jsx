@@ -17,9 +17,7 @@ const LoginPage = ({ userState, setUser }) => {
       <div className="sign-form-area">
         <h3 className="sign-in-salutation">Welcome</h3>
         <p className="sign-in-salutation-subtitle">Sign in to continue</p>
-        {/* <p>{message}</p> */}
         <LoginForm
-          // handleSignupOrLogin={props.handleSignupOrLogin}
           setUser={setUser}
           userState={userState}
           updateMessage={updateMessage}

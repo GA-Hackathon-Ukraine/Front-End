@@ -156,9 +156,6 @@ function JobDetails() {
               </div>
             </div>
             <div className="jobDetailsRight">
-              {/* {favorites.forEach((fav) => {
-                fav.id === elem.id ? <img onClick={()=>handleOnClick(elem)} id="favbutton" src={favoriteButton}></img> : <img onClick={()=>handleOnClick(elem)} id="favbutton" src={favred}></img>
-              })} */}
               {favorited ? (
                 <img
                   onClick={() => handleFavoriteButtonDelete(elem)}

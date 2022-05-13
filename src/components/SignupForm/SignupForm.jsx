@@ -36,34 +36,8 @@ const SignupForm = ({userState, setUser}) => {
     if (signup.error) {
       console.log(signup.error.message)
     } else {
-      // setMessage("Welcome")
       navigate('/')
     }
-
-    // try {
-    //   const { user, session, error } = await supabase.auth.signUp(
-    //     {
-    //       email: email,
-    //       password: password,
-    //     },
-    //     {
-    //       data: { 
-    //         first_name: name,
-    //         favorites: []
-    //       }
-    //     }
-    //   )
-    //   setUser(session)
-    //   console.log('user', user)
-    //   console.log('session', session)
-    //   console.log('error', error)
-      // await authService.signup(formData)
-      // props.handleSignupOrLogin()
-    //   navigate('/')
-    // } catch (err) {
-      // props.updateMessage(err.message)
-      // console.log(err)
-    // }
   }
 
 
@@ -77,7 +51,6 @@ const SignupForm = ({userState, setUser}) => {
       onSubmit={handleSubmit}
       className="sign-up-form-container"
     >
-      {/* name field */}
       <div className="sign-up-input-container">
         <label htmlFor="name"></label>
         <input
@@ -91,7 +64,6 @@ const SignupForm = ({userState, setUser}) => {
           className="sign-up-input"
         />
       </div>
-      {/* email field */}
       <div className="sign-up-input-container">
         <label htmlFor="email"></label>
         <input
@@ -105,7 +77,6 @@ const SignupForm = ({userState, setUser}) => {
           className="sign-up-input"
         />
       </div>
-      {/* password field */}
       <div className="sign-up-input-container">
         <label htmlFor="password"></label>
         <input
@@ -119,7 +90,6 @@ const SignupForm = ({userState, setUser}) => {
           className="sign-up-input"
         />
       </div>
-      {/* password confirm field */}
       <div className="sign-up-input-container">
         <label htmlFor="confirm"></label>
         <input
@@ -138,7 +108,6 @@ const SignupForm = ({userState, setUser}) => {
           Create account
         </button>
       </div>
-      {/* link to make an account */}
       <p className="have-account">Already have an account? <Link className="signin" to="/login">Sign In</Link></p>
     </form>
   )
