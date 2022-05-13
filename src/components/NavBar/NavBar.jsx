@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import { slide as Menu } from 'react-burger-menu';
+import { Link } from "react-router-dom";
+import { slide as Menu } from "react-burger-menu";
 import {
   Navbar,
   NavDropdown,
@@ -7,43 +7,40 @@ import {
   FormControl,
   Button,
   Nav,
-} from 'react-bootstrap';
-import Logo from './logon.png';
-import Favorite from './favorite.svg';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './navbar.css';
-import { LinkContainer } from 'react-router-bootstrap';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../utils/auth';
+} from "react-bootstrap";
+import Logo from "./logon.png";
+import Favorite from "./favorite.svg";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./navbar.css";
+import { LinkContainer } from "react-router-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../utils/auth";
 
-const NavBar = ({ setSearchShow, searchShow}) => {
+const NavBar = ({ setSearchShow, searchShow }) => {
   const auth = useAuth();
   let navigate = useNavigate();
 
   function handleHome() {
-    navigate('/');
-    setSearchShow(false)
+    navigate("/");
+    setSearchShow(false);
   }
 
-  
-
   const handleGoToFaves = () => {
-    navigate('/favorites');
+    navigate("/favorites");
   };
 
   const handleNavPage = (eventKey, event) => {
     navigate(eventKey);
   };
 
-
   return (
     <>
       <Navbar
         style={{
-          padding: '0 10px',
-          position: 'fixed',
-          width: '100%',
-          zIndex: '100',
+          padding: "0 10px",
+          position: "fixed",
+          width: "100%",
+          zIndex: "100",
         }}
         expand="xxxl"
         bg="light"
@@ -53,23 +50,23 @@ const NavBar = ({ setSearchShow, searchShow}) => {
       >
         <Nav.Link eventKey="/">
           <Navbar.Brand onClick={handleHome}>
-            <img
-              src={Logo}
-              className="logo-image-main"
-              height="100"
-            ></img>
+            <img src={Logo} className="logo-image-main" height="100"></img>
           </Navbar.Brand>
         </Nav.Link>
-        <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
+        <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
           <div>
             {auth.user ? (
-              <img className='navbar-faves-icon' onClick={handleGoToFaves} src={Favorite}></img>
+              <img
+                className="navbar-faves-icon"
+                onClick={handleGoToFaves}
+                src={Favorite}
+              ></img>
             ) : (
               <></>
             )}
           </div>
           <Navbar.Toggle
-            style={{ border: 'hidden' }}
+            style={{ border: "hidden" }}
             data-bs-target="#navbarSupportedContent"
             aria-controls="responsive-navbar-nav"
           />

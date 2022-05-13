@@ -1,129 +1,49 @@
-@media only screen and (max-width: 700px) {
-  div.mainContainer {
-    background-image: #ffcc00;
-  }
-
-  div.resourcesPage {
-    padding-top: 100px;
-    background-color: #ffcc00;
-    color: white;
-    text-align: center;
-  }
-
-  div.card {
-    padding: 15px;
-    background-color: white;
-    margin: 15px;
-    border-radius: 10px;
-  }
-
-  .card-text {
-    font-weight: bold;
-  }
-
-  h1 {
-    padding-top: 20px;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-bottom: 20px;
-    font-weight: bold;
-  }
-
-  h2 {
-    padding: 5px;
-    color: #373d3f;
-  }
-
-  h3 {
-    padding: 5px;
-    color: #373d3f;
-  }
-
-  p {
-    color: #2d4fa3;
-    padding-bottom: 10px;
-    font-size: 10px;
-    text-align: justify;
-    text-justify: inter-word;
-    align-content: center;
-  }
-
-  a:link {
-    color: #2d4fa3;
-    font-size: 14px;
-  }
-
-  a:visited {
-    color: #373d3f;
-  }
-
-  a:hover {
-    color: black;
-  }
-
-  a:active {
-    color: #ffcc00;
-  }
+.mainContainer {
+  background-image: #ffcc00;
 }
 
-@media only screen and (min-width: 700px) {
-  div.resourcesPage {
-    background-color: #ffcc00;
-    color: white;
-    text-align: center;
-  }
+.resourcesPage {
+  padding-top: 90px;
+  background-color: #ffcc00;
+  color: white;
+  text-align: center;
+}
 
-  div.cardContainer {
-    display: flex;
-    display: inline-block;
-    text-align: center;
-    width: 30;
-  }
+.card {
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: white;
+  margin: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
 
-  div.card {
-    padding: 15px;
-    background-color: white;
-    margin: 15px;
-    border-radius: 10px;
-  }
+.card-text {
+  font-weight: bold;
+  padding: 5px;
+  color: #373d3f;
+  text-align: center;
+}
+.titleee {
+  padding: 20px 25px;
+  font-weight: bold;
+}
+.resourceCardParagraph {
+  color: #2d4fa3;
+  padding-bottom: 10px;
+  font-size: 10px;
+  align-content: center;
+}
 
-  h1 {
-    padding-top: 20px;
-    padding-left: 25px;
-    padding-bottom: 20px;
-  }
+.resourceAnchor:link {
+  color: #2d4fa3;
+  font-size: 14px;
+}
 
-  h2 {
-    padding: 5px;
-    color: #373d3f;
-  }
+.resourceAnchor:visited {
+  color: #373d3f;
+}
 
-  h3 {
-    padding: 5px;
-    color: #373d3f;
-  }
-
-  p {
-    color: #2d4fa3;
-    padding-bottom: 10px;
-    font-size: 10px;
-    text-align: justify;
-    text-justify: inter-word;
-  }
-
-  a:link {
-    color: #2d4fa3;
-  }
-
-  a:visited {
-    color: #373d3f;
-  }
-
-  a:hover {
-    color: black;
-  }
-
-  a:active {
-    color: #ffcc00;
-  }
+.resourceAnchor:hover {
+  color: black;
 }

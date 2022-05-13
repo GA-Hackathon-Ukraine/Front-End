@@ -1,113 +1,27 @@
-@media only screen and (max-width: 700px) {
-  div.mainContainer {
-    background-image: #ffcc00;
-  }
-
-  .title {
-    /* padding-top: 100px; */
-    font-weight: bold;
-  }
-  div.aboutPage {
-    padding-top: 90px;
-    background-color: #ffcc00;
-    color: white;
-    text-align: center;
-  }
-
-  nav.navbar {
-    background-color: white;
-  }
-
-  .about {
-    font-size: 14px;
-  }
-  div.card {
-    padding: 12px;
-    background-color: white;
-    margin: 12px;
-    border-radius: 10px;
-  }
-
-  h1 {
-    padding-top: 20px;
-    padding-left: 25px;
-    padding-bottom: 20px;
-  }
-
-  h2 {
-    /* padding: 5px; */
-    color: #2d4fa3;
-  }
-
-  h3 {
-    /* padding: 5px; */
-    color: #2d4fa3;
-  }
-
-  p {
-    color: #373d3f;
-    padding: 10px;
-    font-size: 1.5em;
-    text-align: justify;
-    text-justify: inter-word;
-  }
+.mainContainer {
+  background-image: #ffcc00;
 }
 
-@media only screen and (min-width: 700px) {
-  div.aboutPage {
-    background-color: #ffcc00;
-    color: white;
-    text-align: center;
-  }
+.title {
+  padding: 20px 25px;
+  font-weight: bold;
+}
+.aboutPage {
+  padding-top: 90px;
+  background-color: #ffcc00;
+  color: white;
+  text-align: center;
+}
 
-  div.cardContainer {
-    /* background-color: red; */
-    display: flex;
-    display: inline-block;
-    text-align: center;
-    width: 30;
-  }
-
-  nav.navbar {
-    background-color: white;
-  }
-
-  div.card {
-    padding: 15px;
-    background-color: white;
-    margin: 15px;
-    border-radius: 10px;
-  }
-
-  h1 {
-    padding-top: 20px;
-    padding-left: 25px;
-    padding-bottom: 20px;
-  }
-
-  .card-img {
-    padding: 15px;
-  }
-
-  h2 {
-    /* padding: 5px; */
-    color: #2d4fa3;
-  }
-
-  h3 {
-    /* padding: 5px; */
-    color: #2d4fa3;
-  }
-
-  .card-text {
-    font-weight: bold;
-  }
-
-  p {
-    color: #373d3f;
-    padding: 10px;
-    font-size: 10px;
-    text-align: justify;
-    text-justify: inter-word;
-  }
+.about {
+  font-size: 14px;
+  word-wrap: break-word;
+  color: #373d3f;
+  padding: 10px;
+}
+.card {
+  padding: 12px;
+  background-color: white;
+  margin: 12px;
+  border-radius: 10px;
 }

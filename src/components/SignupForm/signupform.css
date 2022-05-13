@@ -1,5 +1,5 @@
 .sign-up-input-container {
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   width: 100%;
 }
 
@@ -38,8 +38,8 @@
 }
 
 .have-account {
-  font-size: 10px;
+  font-size: 14px;
   text-align: center;
-  padding-bottom: 10%;
+  padding-top: 10px;
   color: black;
 }
