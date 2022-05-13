@@ -19,19 +19,18 @@ function SearchForm({setLocation, position, setPosition, setSearchShow}) {
     
   return (
     <div className="searchContainer">
-      <form onClick={handleClickRender}>
+      <form className='searchContainer-form' onClick={handleClickRender}>
         <div className='searchContainerLocation'>
-        <img src={searchIcon}/>
+        <img className='searchContainer-searchIcon' src={searchIcon}/>
         
           <input className='searchInput' placeholder="Search" type="text" onChange={handleChange} value={position}/>
         </div>
         <div className='searchContainerSearch'>
-        <img src={locationIcon}/>
+        <img className='searchContainer-locationIcon' src={locationIcon}/>
           <select defaultValue={'DEFAULT'} className='locationInput' onChange={handleSetLocation} type="text">
             <option value="DEFAULT" disabled hidden>
               Choose Location
             </option>
-
             <option>Tacoma</option>
             <option>Seattle</option>
             <option>Olympia</option>
@@ -43,8 +42,6 @@ function SearchForm({setLocation, position, setPosition, setSearchShow}) {
             <option>Lakewood</option>
             <option>Gig Harbor</option>
             <option>Remote</option>
-            
-
           </select>
         </div>
       </form>

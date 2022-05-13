@@ -18,11 +18,14 @@
 }
 
 .section-title {
-  padding: 0px 30px;
+  margin: 0 auto;
+  width: 90%;
+  /* padding: 0px 0px 20px 0px; */
   font-size: 19px;
   font-weight: 500;
   margin-bottom: 20px;
   color: white;
+  /* text-align: center; */
 }
 
 .icons-search-indstry {

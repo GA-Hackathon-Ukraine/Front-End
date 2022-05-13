@@ -10,16 +10,18 @@ import transportationIcon from "../../../src/transportation.svg";
 import caretakingIcon from "../../../src/caretaking.svg";
 import cleaningIcon from "../../../src/cleaning.svg";
 import educationIcon from "../../../src/education.svg";
+import { supabase } from "../../utils/supabaseClient";
 
 import { useAuth } from "../../utils/auth";
 import { useEffect } from "react";
-import { supabase } from "../../utils/supabaseClient";
 import { useState } from "react";
 
 const Favorites = () => {
   const auth = useAuth();
   const [favJobs, setFavJobs] = useState([]);
   const [msg, setMsg] = useState("");
+
+  console.log(auth)
 
   const getFavorites = async () => {
     const { data, error } = await supabase

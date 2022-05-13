@@ -63,7 +63,7 @@ const NavBar = ({ setSearchShow, searchShow}) => {
         <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
           <div>
             {auth.user ? (
-              <img onClick={handleGoToFaves} src={Favorite}></img>
+              <img className='navbar-faves-icon' onClick={handleGoToFaves} src={Favorite}></img>
             ) : (
               <></>
             )}

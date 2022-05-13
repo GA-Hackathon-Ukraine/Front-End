@@ -194,7 +194,8 @@ function JobDetails() {
       </div>
     );
   });
-  return <>{mappedFilteredJob}</>;
+  return <>
+    {mappedFilteredJob}</>;
 }
 
 export default JobDetails;

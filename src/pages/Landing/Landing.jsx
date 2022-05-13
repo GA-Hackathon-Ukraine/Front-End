@@ -2,6 +2,7 @@ import styles from "./Landing.module.css";
 import SearchForm from "../../components/SearchForm/SearchForm";
 import JobsMap from "../../components/JobsMap/JobsMap";
 import ListCareers from "../../components/ListCareers/ListCareers";
+import ListCareersNew from "../../components/ListCareers/ListCareersNew";
 import SwipeSection from "../../components/SwipeSection/SwipeSection";
 import { useState, useEffect } from "react";
 import { supabase } from "../../utils/supabaseClient";
@@ -69,8 +70,8 @@ const Landing = ({ searchShow, setSearchShow }) => {
         <JobsMap combinedFilteredSearch={combinedFilteredSearch} />
       ) : (
         <span style={{ width: "100vw" }}>
-          {" "}
-          <SwipeSection /> <ListCareers />{" "}
+        
+          <SwipeSection /> <ListCareersNew />
         </span>
       )}
     </main>

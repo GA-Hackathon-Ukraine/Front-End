@@ -1,18 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 .swipe-section {
+  padding: 20px 0px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /* align-items: center; */
-  margin-top: 35px;
-  height: 27vh;
+  /* margin-top: 35px; */
   width: 100%;
 }
 
-.slider-card-wrapper {
-  height: 20vh;
-}
 
 .location-img-slider {
   height: 10px;
@@ -20,13 +16,14 @@
 .slider-card {
   padding: 12px;
   margin: 0 auto;
-  width: 80%;
+  height: 20vh;
+  width: 90%;
   /* height: 100%; */
   background-color: white;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-  align-content: stretch;
+  align-content: space-between;
 }
 
 .swipesection-btn-wrapper {
@@ -42,7 +39,7 @@
 }
 
 .slider-card-wrapper-upper {
-  height: 36px;
+  height: 35%;
   display: flex;
   justify-content: center;
   background-color: #ffde5c;
@@ -50,7 +47,11 @@
 }
 
 .image-clean-forswipe {
-  width: 30px;
+  width: 25px;
+}
+
+.slider-card-wrapper-bottom {
+  height: 50%;
 }
 
 .slider-card-wrapper-bottom-upper-title {
@@ -71,6 +72,7 @@
 }
 
 .slider-card-wrapper-bottom-bottom {
+  height: 15%;
   /* padding: 0px 4px 0px 4px; */
   margin-top: 8px;
 }
@@ -83,6 +85,14 @@
 .save-btn-swipe-section {
   width: 15px;
 }
+
+h3.slider-card-wrapper-compensation {
+  padding: 0px;
+  font-family: Inter;
+  font-weight: 800;
+  color: #0a81ff;
+}
+
 .slide-to-see-more-wrapper {
   margin-top: 10px;
   width: 80%;

@@ -37,7 +37,7 @@ const SwipeSection = () => {
                 </div>
             </div>
                 <div className='slider-card-wrapper-bottom-bottom'>
-                  <div className='hourly-rate'><h3 className='compensation'>$45</h3><span className='per-hour'>/Hour</span></div>
+                  <div className='hourly-rate'><h3 className='slider-card-wrapper-compensation'>$45</h3><span className='per-hour'>/Hour</span></div>
                   <div><span><img className='save-btn-swipe-section' src={savedUnfilled} /></span></div>
                 </div>
           </div>

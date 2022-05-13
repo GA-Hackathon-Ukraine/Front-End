@@ -35,29 +35,30 @@ const useProvideAuth = () => {
 		setUser(null);
 	};
 
-	const signup = async (firstName, email, password) =>{
-
+	const signup = async (firstName, email, password) => {
 		// if(firstName.length < 3){
 
 		// }
 
-		const { user, session, error } = await supabase.auth.signUp({
+		const { user, session, error } = await supabase.auth.signUp(
+			{
 				email: email,
-				password: password,
-			  },
-			  {
-				data: { 
-				  first_name: firstName
+				password: password
+			},
+			{
+				data: {
+					first_name: firstName
 				}
-			})
+			}
+		);
 
-			console.log("user: ", user, "session: ", session, "error: ", error)
-			return { user, session, error };
-
-	}
+		console.log('user: ', user, 'session: ', session, 'error: ', error);
+		return { user, session, error };
+	};
 
 	useEffect(() => {
 		const user = supabase.auth.user();
+		//
 		setUser(user);
 
 		const auth = supabase.auth.onAuthStateChange((event, session) => {

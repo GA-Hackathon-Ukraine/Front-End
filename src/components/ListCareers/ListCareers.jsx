@@ -8,12 +8,15 @@ import gardening from '../../../src/gardening.svg'
 import technology from '../../../src/technology.svg'
 import education from '../../../src/education.svg'
 import food from '../../../src/food.svg'
+import ListCareersNew from './ListCareersNew'
+
 
 const ListCareers = () => {
   return (
     <>
       <div className="listcareers-wrapper">
         <h2 className='section-title'>Search by Industry</h2>
+
         <div className="wrapper-for-industry">
           <div><img className='icons-search-indstry' src={construction} /></div>
           <div><img className='icons-search-indstry' src={transportation} /></div>
