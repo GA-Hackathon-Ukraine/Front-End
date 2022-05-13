@@ -20,10 +20,13 @@ const NavBar = ({ setSearchShow, searchShow }) => {
   const auth = useAuth();
   let navigate = useNavigate();
 
-  function handleHome() {
+  const handleHome = () => {
     navigate("/");
     setSearchShow(false);
-  }
+    if (document.getElementsByClassName("active")[0]) {
+      document.getElementsByClassName("active")[0].classList.remove("active");
+    }
+  };
 
   const handleGoToFaves = () => {
     navigate("/favorites");
@@ -42,13 +45,13 @@ const NavBar = ({ setSearchShow, searchShow }) => {
           width: "100%",
           zIndex: "100",
         }}
-        expand="xxxl"
+        expand="md"
         bg="light"
         variant="light"
         onSelect={handleNavPage}
         collapseOnSelect
       >
-        <Nav.Link eventKey="/">
+        <Nav.Link className="nav-link">
           <Navbar.Brand onClick={handleHome}>
             <img src={Logo} className="logo-image-main" height="100"></img>
           </Navbar.Brand>
