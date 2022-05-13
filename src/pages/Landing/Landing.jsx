@@ -1,7 +1,6 @@
 import styles from "./Landing.module.css";
 import SearchForm from "../../components/SearchForm/SearchForm";
 import JobsMap from "../../components/JobsMap/JobsMap";
-import ListCareers from "../../components/ListCareers/ListCareers";
 import ListCareersNew from "../../components/ListCareers/ListCareersNew";
 import SwipeSection from "../../components/SwipeSection/SwipeSection";
 import { useState, useEffect } from "react";
