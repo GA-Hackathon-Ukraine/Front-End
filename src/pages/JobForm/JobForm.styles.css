@@ -37,9 +37,7 @@
   border-radius: 10px;
   border: 5px solid #eeeeee;
   color: black;
-  padding-left: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
   margin-bottom: 20px;
   margin-left: 10%;
   margin-right: 10%;
@@ -97,7 +95,7 @@
   overflow: auto;
 }
 .close-icon {
-  content: 'x';
+  content: "x";
   cursor: pointer;
   position: fixed;
   right: calc(15% - 30px);
@@ -118,4 +116,14 @@ b {
 
 .close-icon {
   color: black;
+}
+
+.form-full-div select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("./downarrowicon.png");
+  background-repeat: no-repeat;
+  background-position-x: 98%;
+  background-position-y: 12px;
+  background-size: 20px;
 }

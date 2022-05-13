@@ -16,7 +16,6 @@ const Landing = ({ searchShow, setSearchShow }) => {
   const getData = async () => {
     const { data, error } = await supabase.from("Jobs").select();
     setAlljobs(data);
-    console.log(data);
 
     if (error) {
       console.log(error);
@@ -70,7 +69,6 @@ const Landing = ({ searchShow, setSearchShow }) => {
         <JobsMap combinedFilteredSearch={combinedFilteredSearch} />
       ) : (
         <span style={{ width: "100vw" }}>
-        
           <SwipeSection /> <ListCareersNew />
         </span>
       )}

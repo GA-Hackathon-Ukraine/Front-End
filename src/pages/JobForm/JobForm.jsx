@@ -117,12 +117,13 @@ const JobForm = () => {
         <label htmlFor="status"></label>
         <select
           required
+          style={{ color: "grey" }}
           name="time"
           value={time}
           onChange={handleChange}
           className="job-input"
         >
-          <option value="" disabled selected>
+          <option value="" disabled hidden selected>
             full-time or part-time work
           </option>
           <option>full-time</option>
@@ -132,11 +133,12 @@ const JobForm = () => {
         <select
           required
           name="industry"
+          style={{ color: "grey" }}
           value={industry}
           onChange={handleChange}
           className="job-input"
         >
-          <option value="" disabled selected>
+          <option value="" disabled selected hidden>
             select an industry
           </option>
           <option>Construction</option>
@@ -163,11 +165,12 @@ const JobForm = () => {
         <select
           required
           name="city"
+          style={{ color: "grey" }}
           value={city}
           onChange={handleChange}
           className="job-input"
         >
-          <option value="" disabled selected>
+          <option value="" disabled selected hidden>
             select a city
           </option>
           <option>Tacoma</option>
