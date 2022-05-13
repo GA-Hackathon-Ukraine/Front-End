@@ -64,6 +64,7 @@ const Landing = ({ searchShow, setSearchShow }) => {
         setPosition={setPosition}
         setSearchShow={setSearchShow}
         searchShow={searchShow}
+        allJobs={allJobs}
       />
 
       {searchShow ? (
