@@ -1,82 +1,103 @@
-import './JobForm.styles.css'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { supabase } from '../../utils/supabaseClient';
+import "./JobForm.styles.css";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { supabase } from "../../utils/supabaseClient";
 
 const defaultFormFieds = {
-  company:"",
+  company: "",
   position: "",
-  time: '',
+  time: "",
   city: "",
   industry: "",
-  state: '',
+  state: "",
   contact: "",
   description: "",
   compensation: "",
   address: "",
   url: "",
-}
+};
 
 const JobForm = () => {
+  const navigate = useNavigate();
 
-  const navigate = useNavigate()
-
-  const [form, setForm] = useState(defaultFormFieds)
+  const [form, setForm] = useState(defaultFormFieds);
   const [isOpen, setIsOpen] = useState(false);
-  
 
-  const { company, position, time, city, industry, state, contact, description, compensation, address, url } = form
+  const {
+    company,
+    position,
+    time,
+    city,
+    industry,
+    state,
+    contact,
+    description,
+    compensation,
+    address,
+    url,
+  } = form;
   const handleSubmit = async (event) => {
-    event.preventDefault()
-      const { data, error } = await supabase.from('Jobs').insert([
-        { company: company,
-          position: position,
-          time: time,
-          city: city,
-          industry: industry,
-          state: state,
-          contact: contact,
-          description: description,
-          compensation: compensation,
-          address: address,
-          url: url
-        } 
-      ]);
-      
-      if(data){
-        navigate('/')
+    event.preventDefault();
+    const { data, error } = await supabase.from("Jobs").insert([
+      {
+        company: company,
+        position: position,
+        time: time,
+        city: city,
+        industry: industry,
+        state: state,
+        contact: contact,
+        description: description,
+        compensation: compensation,
+        address: address,
+        url: url,
+      },
+    ]);
 
-      } else {
-        console.log(error)
-      }
-  }
+    if (data) {
+      navigate("/");
+    } else {
+      console.log(error);
+    }
+  };
 
   const handleChange = (event) => {
-    const { name, value } = event.target
-    setForm({...form, [name]: value})
-  }
+    const { name, value } = event.target;
+    setForm({ ...form, [name]: value });
+  };
 
   //toggle popup function
   const togglePopup = () => {
     setIsOpen(!isOpen);
-  }
+  };
 
   return (
     <div className="form-full-div">
       <h1 className="form-h1">Post a Job</h1>
-      <form onSubmit={handleSubmit} className="job-form" style={{display: "flex", flexDirection: "column", width:"100%", margin: "0 auto"}}>
+      <form
+        onSubmit={handleSubmit}
+        className="job-form"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          width: "100%",
+          margin: "0 auto",
+        }}
+      >
         <h3 className="job-form-sub-title">Job Form</h3>
-        <p className="job-form-sub-statement">Fill out the fields below to post a job!</p>
-        
+        <p className="job-form-sub-statement">
+          Fill out the fields below to post a job!
+        </p>
+
         {/* company name */}
         <label htmlFor="company-name"></label>
-        <input 
+        <input
           value={company}
           onChange={handleChange}
           placeholder="Company Name"
           required
           name="company"
-          type='text'
+          type="text"
           className="job-input"
         ></input>
 
@@ -88,31 +109,36 @@ const JobForm = () => {
           placeholder="Job Title"
           required
           name="position"
-          type='text'
+          type="text"
           className="job-input"
-        >
-        </input>
+        ></input>
 
         {/* status */}
         <label htmlFor="status"></label>
-        <select 
-        required
-        name="time"
-        value={time}
-        onChange={handleChange}
-        className="job-input">
-          <option value="" disabled selected>Part-time or Full-time</option>
-          <option>Full-time</option>
-          <option>Part-time</option>
+        <select
+          required
+          name="time"
+          value={time}
+          onChange={handleChange}
+          className="job-input"
+        >
+          <option value="" disabled selected>
+            full-time or part-time work
+          </option>
+          <option>full-time</option>
+          <option>part-time</option>
         </select>
         <label hidden htmlFor="industry"></label>
-        <select 
-        required
-        name="industry"
-        value={industry}
-        onChange={handleChange}
-        className="job-input">
-          <option value="" disabled selected>select an industry</option>
+        <select
+          required
+          name="industry"
+          value={industry}
+          onChange={handleChange}
+          className="job-input"
+        >
+          <option value="" disabled selected>
+            select an industry
+          </option>
           <option>Construction</option>
           <option>Transportation</option>
           <option>Cleaning</option>
@@ -134,13 +160,16 @@ const JobForm = () => {
         </input> */}
 
         <label hidden htmlFor="city"></label>
-        <select 
-        required
-        name="city"
-        value={city}
-        onChange={handleChange}
-        className="job-input">
-          <option value="" disabled selected>select a city</option>
+        <select
+          required
+          name="city"
+          value={city}
+          onChange={handleChange}
+          className="job-input"
+        >
+          <option value="" disabled selected>
+            select a city
+          </option>
           <option>Tacoma</option>
           <option>Seattle</option>
           <option>Olympia</option>
@@ -169,8 +198,8 @@ const JobForm = () => {
 
         {/* contact */}
         <label htmlFor="contact"></label>
-        <input 
-        type="text"
+        <input
+          type="text"
           value={contact}
           onChange={handleChange}
           placeholder="Contact email"
@@ -178,11 +207,11 @@ const JobForm = () => {
           name="contact"
           className="job-input"
         ></input>
-        
+
         {/* compensation */}
         <label htmlFor="compensation"></label>
-        <input 
-        type="text"
+        <input
+          type="text"
           value={compensation}
           onChange={handleChange}
           required
@@ -190,11 +219,11 @@ const JobForm = () => {
           name="compensation"
           className="job-input"
           maxLength="3"
-          ></input>
+        ></input>
 
         {/* address */}
         <label htmlFor="address"></label>
-        <input 
+        <input
           type="text"
           value={address}
           onChange={handleChange}
@@ -202,52 +231,59 @@ const JobForm = () => {
           name="address"
           className="job-input"
           required
-          ></input>
+        ></input>
 
         {/* company website */}
         <label htmlFor="company-website"></label>
-        <input 
-        required
-        type="text"
+        <input
+          required
+          type="text"
           value={url}
           onChange={handleChange}
           placeholder="Company Website"
           name="url"
           className="job-input"
-          ></input>
+        ></input>
 
         {/* job description box */}
         <label htmlFor="description"></label>
-        <textarea 
-        required
-        wrap="hard"
-        className="job-description-box"
-        type="text"
+        <textarea
+          required
+          wrap="hard"
+          className="job-description-box"
+          type="text"
           value={description}
           onChange={handleChange}
           placeholder="Job Description"
-          name="description"></textarea>
+          name="description"
+        ></textarea>
 
-        <input type="submit" value="Submit" className="job-form-submit" onClick={togglePopup}/>
+        <input
+          type="submit"
+          value="Submit"
+          className="job-form-submit"
+          onClick={togglePopup}
+        />
       </form>
       {/* {isOpen && <Popup content={<>
         <b>You submitted a job!</b>
       </>} handleClose={togglePopup}/>} */}
     </div>
-  )
-}
+  );
+};
 
-export default JobForm
-
+export default JobForm;
 
 //popup component
-const Popup = props => {
+const Popup = (props) => {
   return (
-    <div className='popup-box'>
-      <div className='box'>
-        <span className='close-icon' onClick={props.handleClose}>X</span>
+    <div className="popup-box">
+      <div className="box">
+        <span className="close-icon" onClick={props.handleClose}>
+          X
+        </span>
         {props.content}
       </div>
     </div>
-  )
-  }
+  );
+};
