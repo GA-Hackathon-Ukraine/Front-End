@@ -21,8 +21,6 @@ const Favorites = () => {
   const [favJobs, setFavJobs] = useState([]);
   const [msg, setMsg] = useState("");
 
-  console.log(auth)
-
   const getFavorites = async () => {
     const { data, error } = await supabase
       .from("Favorites")
@@ -44,6 +42,9 @@ const Favorites = () => {
         .select()
         .match({ id: job.job_id });
       favoritedJobs.push(data[0]);
+      if (error) {
+        console.log(error);
+      }
     }
     setFavJobs(favoritedJobs);
     console.log(favJobs);
@@ -53,16 +54,17 @@ const Favorites = () => {
     getFavorites();
   }, []);
 
-  const handleDelete = async (jobId)=>{
+  const handleDelete = async (jobId) => {
+    const { data, error } = await supabase
+      .from("Favorites")
+      .delete()
+      .match({ job_id: jobId, user_id: auth.user.id });
 
-    const {data, error} = await supabase.from("Favorites").delete().match({job_id: jobId, user_id: auth.user.id})
-
-    if(error){
-      console.log(error)
+    if (error) {
+      console.log(error);
     }
-    getFavorites()
-
-  }
+    getFavorites();
+  };
 
   const mappedData = favJobs.map((elem, idx) => {
     let industry;
@@ -105,10 +107,7 @@ const Favorites = () => {
         }}
         className="card-wrapper"
       >
-        <div
-          className="card-wrapper-container"
-          to={`/job/${elem.id}`}
-        >
+        <div className="card-wrapper-container" to={`/job/${elem.id}`}>
           <div className="image-container">
             <div
               style={{
@@ -144,7 +143,11 @@ const Favorites = () => {
                   <h4 className="company-jobsmap">{elem.company}</h4>{" "}
                 </div>
                 <div className="location-wrapper-jobsmap">
-                  <img className="img-jobsmap" src={locationIcon} />
+                  <img
+                    alt={`location-${elem.city}`}
+                    className="img-jobsmap"
+                    src={locationIcon}
+                  />
                   <h4 className="location-jobsmap">{elem.city},</h4>
                   <h4 className="location-jobsmap">{elem.state}</h4>
                 </div>
@@ -154,16 +157,19 @@ const Favorites = () => {
               <div className="card-wrapper-info-bottom">
                 <div className="card-wrapper-info-bottom-left">
                   <div className="btn-group-jobsmap">
-                    <Link to={`/job/${elem.id}`}><button className="details-btn">details</button></Link>
+                    <Link to={`/job/${elem.id}`}>
+                      <button className="details-btn">details</button>
+                    </Link>
                     <button className="email-btn">
                       {" "}
-                      <img src={messageIcon} />
+                      <img alt="message-icon" src={messageIcon} />
                     </button>
                   </div>
-                  <div onClick={(e)=>handleDelete(elem.id)}>
+                  <div onClick={(e) => handleDelete(elem.id)}>
                     <span className="saved-unfilled-wrapper">
                       {" "}
                       <img
+                        alt="swipe-icon"
                         className="save-btn-swipe-section"
                         src={savedfilled}
                       />
@@ -173,8 +179,7 @@ const Favorites = () => {
                 <div></div>
               </div>
             </div>
-            <div className="card-wrapper-info-left">
-            </div>
+            <div className="card-wrapper-info-left"></div>
           </div>
         </div>
       </div>

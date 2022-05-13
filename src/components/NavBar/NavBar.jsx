@@ -1,18 +1,8 @@
-import { Link } from "react-router-dom";
-import { slide as Menu } from "react-burger-menu";
-import {
-  Navbar,
-  NavDropdown,
-  Form,
-  FormControl,
-  Button,
-  Nav,
-} from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import Logo from "./logon.png";
 import Favorite from "./favorite.svg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./navbar.css";
-import { LinkContainer } from "react-router-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../utils/auth";
 
