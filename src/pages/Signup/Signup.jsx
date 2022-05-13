@@ -20,6 +20,7 @@ const Signup = ({ userState, setUser }) => {
         <p className="create-account-salutation-subtitle">
           create an account to continue
         </p>
+
         {/* <p>{message}</p> */}
         <SignupForm
           userState={userState}

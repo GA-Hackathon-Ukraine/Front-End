@@ -7,29 +7,28 @@ const Resources = () => {
       <div className="cardContainer">
         <div className="card">
           <h3 className="card-text">General Immigration Services</h3>
-          <p className="resourseCardParagraph">
+          <div className="resourseCardParagraph">
             <a className="resourceAnchor" href="https://www.dhs.gov/ukraine">
-              Uniting For Ukraine - Humanitarian Assistance Overview
+              <p>Uniting For Ukraine - Humanitarian Assistance Overview</p>
             </a>
-            <br />
-            <br />
             <a
               className="resourceAnchor"
               href="https://www.uscis.gov/humanitarian/uniting-for-ukraine"
             >
-              Uniting For Ukraine - U.S. Citizenship and Immigration Services
+              <p>
+                Uniting For Ukraine - U.S. Citizenship and Immigration Services
+              </p>
             </a>
-            <br />
-            <br />
             <a
               className="resourceAnchor"
               href="https://www.uscis.gov/forms/explore-my-options"
             >
-              Explore My Options - Online Tool - U.S. Citizen and Immigration
-              Services
+              <p>
+                Explore My Options - Online Tool - U.S. Citizen and Immigration
+                Services
+              </p>
             </a>
-            <br></br>
-          </p>
+          </div>
         </div>
         <div className="card">
           <h3 className="card-text">Community Resources</h3>

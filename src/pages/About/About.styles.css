@@ -3,8 +3,10 @@
 }
 
 .title {
-  padding: 20px 25px;
+  font-size: 32px;
+  padding: 20px 25px 15px 25px;
   font-weight: bold;
+  text-align: center;
 }
 .aboutPage {
   padding-top: 90px;
@@ -18,10 +20,19 @@
   word-wrap: break-word;
   color: #373d3f;
   padding: 10px;
+  text-align: left;
 }
 .card {
   padding: 12px;
   background-color: white;
   margin: 12px;
   border-radius: 10px;
+}
+.card-text {
+  text-align: left;
+}
+.create-account-logoText {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
