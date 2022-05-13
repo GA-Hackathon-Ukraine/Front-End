@@ -43,7 +43,7 @@ const NavBar = ({ setSearchShow, searchShow }) => {
       >
         <Nav.Link className="nav-link">
           <Navbar.Brand onClick={handleHome}>
-            <img src={Logo} className="logo-image-main" height="100"></img>
+            <img src={Logo} className="logo-image-main" height="100" alt=""></img>
           </Navbar.Brand>
         </Nav.Link>
         <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
@@ -53,6 +53,7 @@ const NavBar = ({ setSearchShow, searchShow }) => {
                 className="navbar-faves-icon"
                 onClick={handleGoToFaves}
                 src={Favorite}
+                alt=""
               ></img>
             ) : (
               <></>

@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./loginform.css";
-import * as authService from "../../services/authService";
-import { supabase } from "../../utils/supabaseClient";
 import { useAuth } from "../../utils/auth";
 
 const LoginForm = ({ userState, setUser }) => {

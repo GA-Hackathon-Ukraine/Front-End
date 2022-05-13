@@ -25,7 +25,7 @@ function SearchForm({setLocation, position, setPosition, setSearchShow}) {
     <div className="searchContainer">
       <form className="searchContainer-form" onClick={handleClickRender}>
         <div className="searchContainerLocation">
-          <img className="searchContainer-searchIcon" src={searchIcon} />
+          <img className="searchContainer-searchIcon" src={searchIcon} alt=""/>
 
           <input
             className="searchInput"
@@ -36,7 +36,7 @@ function SearchForm({setLocation, position, setPosition, setSearchShow}) {
           />
         </div>
         <div className="searchContainerSearch">
-          <img className="searchContainer-locationIcon" src={locationIcon} />
+          <img className="searchContainer-locationIcon" src={locationIcon} alt="" />
           <select
             defaultValue={"DEFAULT"}
             className="locationInput"

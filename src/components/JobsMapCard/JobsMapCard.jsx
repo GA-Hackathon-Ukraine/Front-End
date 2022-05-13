@@ -6,7 +6,7 @@ const JobsMapCard = ({ elem, locationImg, industry }) => {
       <div className="jobsmap-card-wrapper">
         <div className="jobsmap-card">
           <div>
-            <img className="card-image" src={industry} />
+            <img className="card-image" src={industry} alt={`card image for ${industry}`}/>
           </div>
           <div className="card-information-wrapper">
             <div className="card-information-position">
