@@ -23,6 +23,7 @@
 }
 
 .image-container {
+  width: 40%;
   margin-right: 10px;
   display: flex;
   align-items: center;
@@ -178,3 +179,7 @@ h4 {
   display: flex;
   justify-content: space-around;
 } */
+
+.image-container {
+  min-width: 75px;
+}

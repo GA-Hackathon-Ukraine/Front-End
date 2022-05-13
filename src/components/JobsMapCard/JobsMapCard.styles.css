@@ -1,0 +1,118 @@
+.jobsmap-card {
+  display: grid;
+  width: 100%;
+  min-height: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: auto;
+}
+
+.jobsmap-card-wrapper {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.card-information-wrapper {
+  display: grid;
+  height: 100%;
+  /* min-height: 80px; */
+  align-content: space-around;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  justify-content: end;
+}
+
+.heading-jobsmap-position-title {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 700;
+}
+
+
+
+.heading-jobsmap-position-compensation {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.text-span {
+  font-size: 10px;
+  line-height: 10px;
+  font-weight: 400;
+}
+
+.heading-jobsmap-position-company {
+  margin-top: 0px;
+  margin-right: 10px;
+  margin-bottom: 0px;
+  font-size: 10px;
+  line-height: 10px;
+  font-weight: 400;
+}
+
+.div-block {
+  display: flex;
+  align-items: center;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+
+.heading-jobsmap-position-city {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 10px;
+  line-height: 10px;
+  font-weight: 400;
+}
+
+.image-industry-jobsmap {
+  margin-right: 5px;
+  flex: 0 auto;
+}
+
+.button-2 {
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 5px;
+  background-color: #0a81ff;
+  font-size: 12px;
+  line-height: 12px;
+  color: white;
+}
+
+.card-image {
+  width: 100px;
+}
+
+.card-information-location {
+  align-self: center;
+}
+
+.card-information-detailsbtn {
+  justify-self: flex-end;
+}
+
+.card-information-pay {
+  justify-self: flex-end;
+}

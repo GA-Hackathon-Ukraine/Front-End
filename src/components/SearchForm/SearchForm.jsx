@@ -1,14 +1,20 @@
-import "./SearchForm.css";
-import locationIcon from "./locationicon.png";
-import searchIcon from "./searchicon.png";
 
-function SearchForm({ setLocation, position, setPosition, setSearchShow }) {
+import './SearchForm.css';
+import locationIcon from './locationicon.png'
+import searchIcon from './searchicon.png'
+
+function SearchForm({setLocation, position, setPosition, setSearchShow}) {
+
   const handleChange = (e) => {
-    setPosition(e.target.value);
-  };
+    setPosition(e.target.value)   
+  }
 
   const handleSetLocation = (e) => {
-    setLocation(e.target.value);
+    if (e.target.value === "All") {
+      setLocation('')
+    } else {
+      setLocation(e.target.value);
+    }
   };
 
   const handleClickRender = () => {
@@ -41,6 +47,7 @@ function SearchForm({ setLocation, position, setPosition, setSearchShow }) {
             <option value="DEFAULT" disabled hidden>
               Choose Location
             </option>
+            <option>All</option>
             <option>Tacoma</option>
             <option>Seattle</option>
             <option>Olympia</option>
