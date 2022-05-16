@@ -8,18 +8,20 @@ import savedUnfilled from '../../../src/saved-unfilled.svg'
 import constructionSimple from '../../../src/construction-simple.svg'
 import cleaningSimple from '../../../src/cleaning-simple.svg'
 
+
 const SwipeSection = () => {
   let reactSwipeEl;
- 
+
   return (
-    <div className='swipe-section'>
-      <div className='inner-section-swipe-section'>
-      <h2 className='section-title'>Recommended Jobs</h2>
-      <ReactSwipe
-        className="carousel"
-        swipeOptions={{ continuous: true }}
-        ref={el => (reactSwipeEl = el)}
+    <div className="swipe-section">
+      <div className="inner-section-swipe-section">
+        <h2 className="section-title">Recommended Jobs</h2>
+        <ReactSwipe
+          className="carousel"
+          swipeOptions={{ continuous: true }}
+          ref={(el) => (reactSwipeEl = el)}
         >
+          
         <Link to={"/job/4"}>
           <div className="slider-card-wrapper">
             <div className='slider-card'>
@@ -86,14 +88,19 @@ const SwipeSection = () => {
             </div>
             </div>
           </Link>
+
         </ReactSwipe>
-      <div className='swipesection-btn-wrapper'>
-        <button className="swipey" onClick={() => reactSwipeEl.prev()}>←</button>
-        <button className="swipey" onClick={() => reactSwipeEl.next()}>→</button>
-      </div>
+        <div className="swipesection-btn-wrapper">
+          <button className="swipey" onClick={() => reactSwipeEl.prev()}>
+            ←
+          </button>
+          <button className="swipey" onClick={() => reactSwipeEl.next()}>
+            →
+          </button>
+        </div>
       </div>
     </div>
   );
-}
+};
 
-export default SwipeSection
+export default SwipeSection;

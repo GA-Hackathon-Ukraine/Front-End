@@ -1,49 +1,45 @@
-import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import './signupform.css'
-import * as authService from '../../services/authService'
-import { supabase } from '../../utils/supabaseClient'
-import { useAuth } from '../../utils/auth'
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./signupform.css";
+import { useAuth } from "../../utils/auth";
 
-const SignupForm = ({userState, setUser}) => {
-  const auth = useAuth()
-  
-  const navigate = useNavigate()
+const SignupForm = ({ userState, setUser }) => {
+  const auth = useAuth();
+
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    firstName: '',
-    email: '',
-    password: '',
-    passwordConf: '',
-  })
+    firstName: "",
+    email: "",
+    password: "",
+    passwordConf: "",
+  });
 
-  const { firstName, email, password, passwordConf } = formData
+  const { firstName, email, password, passwordConf } = formData;
 
-  const handleChange = e => {
-    // props.updateMessage('')
+  const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
-  const handleSubmit = async e => {
-    e.preventDefault()
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-    const signup = await auth.signup(firstName, email, password)
+    const signup = await auth.signup(firstName, email, password);
 
-    console.log(signup)
+    console.log(signup);
 
     if (signup.error) {
-      console.log(signup.error.message)
+      console.log(signup.error.message);
     } else {
-      navigate('/')
+      navigate("/");
     }
-  }
-
+  };
 
   const isFormInvalid = () => {
-    return !(firstName && email && password && password === passwordConf)
-  }
+    return !(firstName && email && password && password === passwordConf);
+  };
 
   return (
     <form
@@ -108,9 +104,14 @@ const SignupForm = ({userState, setUser}) => {
           Create account
         </button>
       </div>
-      <p className="have-account">Already have an account? <Link className="signin" to="/login">Sign In</Link></p>
+      <p className="have-account">
+        Already have an account?{" "}
+        <Link className="signin" to="/login">
+          Sign In
+        </Link>
+      </p>
     </form>
-  )
-}
+  );
+};
 
-export default SignupForm
+export default SignupForm;
