@@ -116,7 +116,7 @@ function JobDetails() {
           <div className="jobDetailsMini">
             <div className="jobDetailsLeft">
               <div className="positionDiv">
-                <h3 style={{ color: "white" }} className="positionn">
+                <h3 style={{ color: "white" }} className="positionn-jobs-detail">
                   {elem.position}
                 </h3>
               </div>
@@ -133,18 +133,18 @@ function JobDetails() {
                 </div>
               </div>
               <div className="wageDiv">
-                <h3 className="wage">
+                <h3 className="slider-card-wrapper-compensation jobs-details-page-compensation">
                   ${elem.compensation}
-                  <span className="hour">/Hour</span>
+                  <span className="per-hour jobs-details-page-compensation">/Hour</span>
                 </h3>
               </div>
               <div className="acessoriesDiv">
                 <div className="acessories">
                   <img alt={`status-${idx + 1}`} src={partTime}></img>
                 </div>
-                <div className="acessories">
+                {/* <div className="acessories">
                   <img alt={`status-${idx + 2}`} src={childCare}></img>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="jobDetailsRight">

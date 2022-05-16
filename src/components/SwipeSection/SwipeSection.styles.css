@@ -14,7 +14,7 @@
 .slider-card {
   padding: 12px;
   margin: 0 auto;
-  height: 20vh;
+  height: 25vh;
   width: 90%;
   background-color: white;
   border-radius: 16px;
@@ -54,6 +54,7 @@
   margin-top: 10px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .slider-card-wrapper-bottom-upper-location {
@@ -81,7 +82,7 @@
   width: 15px;
 }
 
-h3.slider-card-wrapper-compensation {
+.slider-card-wrapper-compensation {
   padding: 0px;
   font-family: Inter;
   font-weight: 800;
@@ -108,11 +109,12 @@ h3.slider-card-wrapper-compensation {
   color: white;
 }
 
-.position-title {
+.position-title-swiper {
   margin-bottom: 0rem;
   font-family: Inter;
   font-weight: 800;
   font-size: 12px;
+  color: black;
 }
 
 .company-title {
@@ -120,6 +122,7 @@ h3.slider-card-wrapper-compensation {
   font-family: Inter;
   font-weight: 300;
   margin-bottom: 0rem;
+  color: black;
 }
 
 .location-wa {
@@ -127,6 +130,7 @@ h3.slider-card-wrapper-compensation {
   font-size: 10px;
   font-family: Inter;
   font-weight: 300;
+  color: black;
 }
 
 .compensation {
@@ -168,4 +172,9 @@ h3.slider-card-wrapper-compensation {
   font-weight: 500;
   margin-bottom: 20px;
   color: white;
+}
+
+.move-up-btn {
+  position: relative;
+  top: -5px;
 }

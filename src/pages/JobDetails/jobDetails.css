@@ -5,6 +5,7 @@
   padding-top: 110px;
 }
 .jobDetailsMini {
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
 }
@@ -15,20 +16,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffcc00;
+  background-color: #FFDE5C;
   height: 100px;
   border-radius: 15px;
   margin-bottom: 15px;
 }
 
-.positionn {
-  font-size: 14px;
+.positionn-jobs-detail {
+  font-size: 24px;
   margin-bottom: 0px;
   margin-top: 0;
   color: white;
 }
 .companyLocationDiv {
   display: flex;
+  align-items: center;
   gap: 50px;
 }
 .company {
@@ -81,7 +83,7 @@
   justify-content: center;
   align-items: center;
   gap: 13px;
-  background-color: #ffcc00;
+  background-color: #FFDE5C;
   border-radius: 15px;
   box-shadow: none;
   border: none;
@@ -106,10 +108,24 @@
   color: white;
 }
 
+#favbutton {
+  width: 20px;
+}
+
 #favbutton:hover {
   cursor: pointer;
 }
 
 #applyHere, #emailMe {
   text-decoration: none;
+}
+
+.jobs-details-page-compensation {
+  color: white;
+  font-weight: 700;
+}
+
+.wageDiv {
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
