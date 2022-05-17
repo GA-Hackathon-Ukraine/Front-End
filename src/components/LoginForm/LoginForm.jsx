@@ -64,7 +64,7 @@ const LoginForm = ({ userState, setUser }) => {
       <Link to="/">
         <p className="forgot-password">Forgot Password?</p>
       </Link>
-      <div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
         <button className="signin-button">Sign In</button>
       </div>
       <p className="need-account">
