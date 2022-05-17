@@ -6,6 +6,7 @@
   margin: 0 auto;
   border-radius: 0px 0px 8px 8px;
   max-width: 600px;
+  height: 50vh;
 }
 
 .create-account-title {
@@ -45,4 +46,15 @@
 .create-account-salutation-subtitle {
   padding-left: 10%;
   font-size: 15px;
+}
+.masterDiv {
+  width: 100vw;
+  background-color: white;
+  height: 100vh;
+}
+
+@media (min-width: 600px) {
+  .create-account-container {
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
+  }
 }
