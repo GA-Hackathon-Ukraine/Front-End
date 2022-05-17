@@ -119,3 +119,19 @@
 .jobs-map-card-spacing {
   padding-top: 0px;
 }
+
+@media (min-width: 700px) {
+  .jobsmap-card-wrapper {
+    width: 500px;
+    max-width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+
+  .card-image {
+    width: auto;
+  }
+}

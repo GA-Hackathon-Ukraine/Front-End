@@ -3,7 +3,7 @@
 .swipe-section {
   margin: 0 auto;
   /* max-width: 900px; */
-  padding: 0px 0px 20px 0px;
+  padding: 0px 0px 50px 0px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -167,7 +167,7 @@
   border: none;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 10px 0px 0px 0px;
 }
 .section-title {
   margin: 0 auto;
@@ -200,6 +200,7 @@
 
   .swipesection-btn-wrapper {
     margin: 0 auto;
+    width: 500px;
     /* max-width: 600px; */
   }
 

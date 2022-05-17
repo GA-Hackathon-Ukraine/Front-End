@@ -100,9 +100,8 @@ const Favorites = () => {
     return (
 
       <>
-      
-        <JobsMapCard elem={elem} locationImg={locationIcon} industry={industry} handleDelete={handleDelete} showFave={true} />
-
+        
+          <JobsMapCard elem={elem} locationImg={locationIcon} industry={industry} handleDelete={handleDelete} showFave={true} />
       </>
       // <div
       //   key={idx}
@@ -194,7 +193,8 @@ const Favorites = () => {
   return (
     <div style={{ paddingTop: "90px" }}>
       <h1 className="titleee" style={{ textAlign: "center", color: "white" }}>Saved Jobs</h1>
-      {favJobs.length > 0 ? mappedData : <Loading />}
+      {favJobs.length > 0 ? <div className='wrapper-jobs-map-grid'> {mappedData}
+        </div>  : <Loading />}
     </div>
   );
 };
