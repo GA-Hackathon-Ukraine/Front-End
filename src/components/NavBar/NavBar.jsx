@@ -34,6 +34,7 @@ const NavBar = ({ setSearchShow, searchShow }) => {
           position: "fixed",
           width: "100%",
           zIndex: "100",
+          boxShadow: "0 0 15px 5px rgba(0, 0, 0, 0.1)",
         }}
         expand="md"
         bg="light"
