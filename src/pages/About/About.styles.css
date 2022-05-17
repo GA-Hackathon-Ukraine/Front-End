@@ -38,3 +38,9 @@
   flex-direction: column;
   justify-content: flex-start;
 }
+
+@media (min-width: 600px) {
+  .aboutPage {
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
+  }
+}

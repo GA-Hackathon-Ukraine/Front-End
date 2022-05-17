@@ -7,14 +7,14 @@
 }
 
 .form-h1 {
-  padding-top: 120px;
-  padding-left: 25px;
-  padding-bottom: 20px;
+  padding-top: 140px;
+  padding-left: 60px;
+  padding-bottom: 5px;
   font-weight: bold;
 }
 
 .job-form {
-  border-radius: 8px 8px 8px 8px;
+  border-radius: 8px 8px 0px 0px;
   background: white;
   color: #373d3f;
   padding-left: auto;
@@ -128,4 +128,9 @@ b {
   background-position-x: 98%;
   background-position-y: 12px;
   background-size: 20px;
+}
+@media (min-width: 600px) {
+  .form-full-div {
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
+  }
 }

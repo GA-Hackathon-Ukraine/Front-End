@@ -10,20 +10,22 @@ const LoginPage = ({ userState, setUser }) => {
   };
 
   return (
-    <main className="sign-in-container">
-      <div className="signin-header-box">
-        <h1 className="signin-header-text">Log In</h1>
-      </div>
-      <div className="sign-form-area">
-        <h3 className="sign-in-salutation">Welcome</h3>
-        <p className="sign-in-salutation-subtitle">Sign in to continue</p>
-        <LoginForm
-          setUser={setUser}
-          userState={userState}
-          updateMessage={updateMessage}
-        />
-      </div>
-    </main>
+    <div className="masterDiv">
+      <main className="sign-in-container">
+        <div className="signin-header-box">
+          <h1 className="signin-header-text">Log In</h1>
+        </div>
+        <div className="sign-form-area">
+          <h3 className="sign-in-salutation">Welcome</h3>
+          <p className="sign-in-salutation-subtitle">Sign in to continue</p>
+          <LoginForm
+            setUser={setUser}
+            userState={userState}
+            updateMessage={updateMessage}
+          />
+        </div>
+      </main>
+    </div>
   );
 };
 

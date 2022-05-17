@@ -1,12 +1,13 @@
 .sign-in-container {
-  background-color: #ffcc00;
-  color: white;
   width: 100%;
   margin: 0 auto;
-  border-radius: 0px 0px 8px 8px;
   max-width: 600px;
+  background-color: #ffcc00;
+  height: 100vh;
 }
-
+.signin-header-box {
+  margin: 0;
+}
 .signin-header-text {
   padding-top: 140px;
   padding-left: 10%;
@@ -14,14 +15,18 @@
   font-weight: bold;
   color: white !important;
   width: 100%;
+  margin-bottom: 8;
 }
 .forgot-password {
   font-size: 14px;
 }
+.sigin-form-container {
+  height: 100%;
+}
 
 .sign-form-area {
-  border-radius: 8px 8px 8px 8px;
-  background: white;
+  background-color: white;
+  border-radius: 8px 8px 0px 0px;
   color: #373d3f;
   padding-left: auto;
   padding-right: auto;
@@ -51,4 +56,10 @@
 
 .need-account {
   color: #373d3f;
+}
+
+@media (min-width: 600px) {
+  .sign-in-container {
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
+  }
 }
