@@ -129,6 +129,7 @@
     padding: 15px;
     border-radius: 10px;
     background-color: #fff;
+    box-shadow: 0 0 15px 5px rgba(9, 110, 243, 0.103);
   }
 
   .card-image {
