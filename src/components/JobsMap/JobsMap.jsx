@@ -1,5 +1,5 @@
 import './JobsMap.styles.css';
-import locationIcon from '../../../src/location.svg';
+import locationIcon from '../../../src/location-red.svg';
 import constructionIcon from '../../../src/construction.svg';
 import technologyIcon from '../../../src/technology.svg';
 import foodandbeveragesIcon from '../../../src/food.svg'
@@ -49,14 +49,18 @@ const JobsMap = ({combinedFilteredSearch, allJobs}) => {
         industry = constructionIcon;
     }
     return (
-      <JobsMapCard elem={elem} locationImg={locationIcon} industry={industry} />
+      <JobsMapCard elem={elem} locationImg={locationIcon} industry={industry} showFave={false}/>
     );
   });
 
   return (
     <>
-      <JobsNumber combinedFilteredSearch={combinedFilteredSearch} />
-      {mappedData}
+      <div className='home-landing-wrapper-block'>
+        <JobsNumber combinedFilteredSearch={combinedFilteredSearch} />
+        <div className='wrapper-jobs-map-grid'>
+          {mappedData}
+        </div>
+      </div>
     </>);
 };
 

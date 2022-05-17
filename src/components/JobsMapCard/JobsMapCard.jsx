@@ -1,6 +1,9 @@
 import "./JobsMapCard.styles.css";
 import { Link } from "react-router-dom";
-const JobsMapCard = ({ elem, locationImg, industry }) => {
+import HandleDeleteBtn from "../HandleDeleteBtn/HandleDeleteBtn";
+import locationImg from '../../../src/location-red.svg'
+
+const JobsMapCard = ({ elem, industry, handleDelete, showFave }) => {
   return (
     <>
       <div className="jobsmap-card-wrapper">
@@ -17,12 +20,12 @@ const JobsMapCard = ({ elem, locationImg, industry }) => {
               <h3 className="heading-jobsmap-position-title">
                 {elem.position}
               </h3>
-              <h5 className="heading-jobsmap-position-company">
+              <h5 className="company-title jobs-map-card-spacing">
                 {elem.company}
               </h5>
             </div>
             <div className="card-information-pay">
-              <h3 className="heading-jobsmap-position-compensation">
+              <h3 className="slider-card-wrapper-compensation">
                 ${elem.compensation}
                 <span className="text-span">/Hour</span>
               </h3>
@@ -30,17 +33,18 @@ const JobsMapCard = ({ elem, locationImg, industry }) => {
             <div className="card-information-location">
               <div className="div-block">
                 <img
-                  className="image-industry-jobsmap"
+                  className="location-img-slider"
                   src={locationImg}
                   alt=""
                 />
-                <h6 className="heading-jobsmap-position-city">{elem.city}</h6>
+                <h5 className="location-wa">{elem.city}</h5>
               </div>
             </div>
             <div className="card-information-detailsbtn">
-              <Link to={`job/${elem.id}`} className="button-2 w-button">
+              <Link to={`/job/${elem.id}`} className="button-2 w-button">
                 Details
               </Link>
+              <HandleDeleteBtn elem={elem} handleDelete={handleDelete} showFave={showFave}/>
             </div>
           </div>
         </div>

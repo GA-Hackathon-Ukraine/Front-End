@@ -15,7 +15,7 @@
 .searchContainerLocation {
   display: flex;
   align-items: center;
-  border-radius: 12px 12px 0px 0px;
+  border-radius: 9px 9px 0px 0px;
   border-bottom: #a32d2d;
   height: 45px;
   background-color: white;
@@ -24,7 +24,7 @@
 .searchContainerSearch {
   display: flex;
   align-items: center;
-  border-radius: 0px 0px 12px 12px;
+  border-radius: 0px 0px 9px 9px;
   border-bottom: #a32d2d;
   height: 45px;
   background-color: white;

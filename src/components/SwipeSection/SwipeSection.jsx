@@ -32,7 +32,7 @@ const SwipeSection = () => {
                   <div className='slider-card-wrapper-bottom-upper'>
                     <div className='slider-card-wrapper-bottom-upper-title'>
                       <div><h4 className='position-title-swiper'>Nanny</h4></div>
-                      <div className='slider-card-wrapper-bottom-upper-location'><span><img className='location-img-slider' src={locationImg} /></span><h5 className='location-wa'>Seattle, WA</h5></div>
+                      <div className='slider-card-wrapper-bottom-upper-location'><img className='location-img-slider' src={locationImg} /><h5 className='location-wa'>Seattle, WA</h5></div>
                     </div>
                     <div><h5 className='company-title'>Kindercare Learning Centers</h5></div>
                   </div>

@@ -2,3 +2,76 @@
   width: 90%;
   margin: 0 auto;
 }
+
+.jobs-number-section-title {
+  /* float: left; */
+  margin: 0 auto;
+  width: 90%;
+  max-width: 900px;
+  /* display: flex;
+  justify-items: flex-start; */
+}
+
+.jobs-number-section-title-new {
+  margin: 0 auto;
+  font-size: 19px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: white;
+}
+
+
+@media (min-width: 700px) {
+  .jobsmap-card-wrapper {
+    width: 100%;
+  }
+
+  .jobs-number-section-title {
+    /* float: left; */
+    margin: 0 auto;
+    width: 100%;
+    max-width: 900px;
+    /* display: flex;
+    justify-items: flex-start; */
+  }
+
+  .card-image {
+    width: auto;
+  }
+
+  .grid-wrapper-careers {
+    margin: 0 auto;
+    /* max-width: 900px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px 20px 0px;
+  }
+  
+  .grid-careers-image {
+    width: auto;
+  }
+  
+  .grid-careers {
+    margin: 0 auto;
+    display: flex;
+    grid-template-columns: none;
+    grid-gap: 10px;
+  }
+  
+   .grid-careers-image {
+    grid-column: none;
+  } 
+  
+  .grid-careers-image:last-child:nth-child(3n - 1) {
+    grid-column-end: none;
+  }
+  
+  .grid-careers-image:nth-last-child(2):nth-child(3n + 1) {
+    grid-column-end: none;
+  } 
+
+  .swipe-section {
+    width: 900px;
+  }
+}

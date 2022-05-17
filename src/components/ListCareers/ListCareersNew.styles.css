@@ -9,23 +9,28 @@
   width: 100%;
 }
 
-.grid-careers {
-  width: 90%;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-gap: 20px;
+@media (max-width: 400px) {
+  .grid-careers {
+    margin: 0 auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 20px;
+  }
+  
+  .grid-careers-image {
+    grid-column: span 2;
+  }
+  
+  .grid-careers-image:last-child:nth-child(3n - 1) {
+    grid-column-end: -2;
+  }
+  
+  .grid-careers-image:nth-last-child(2):nth-child(3n + 1) {
+    grid-column-end: 4;
+  }
 }
 
-.grid-careers-image {
-  grid-column: span 2;
-}
 
-.grid-careers-image:last-child:nth-child(3n - 1) {
-  grid-column-end: -2;
-}
-
-.grid-careers-image:nth-last-child(2):nth-child(3n + 1) {
-  grid-column-end: 4;
-}
 
 

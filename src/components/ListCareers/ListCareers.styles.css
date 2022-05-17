@@ -18,8 +18,9 @@
 }
 
 .section-title {
-  margin: 0 auto;
-  width: 90%;
+  
+  /* margin: 0 auto;
+  width: 90%; */
   /* padding: 0px 0px 20px 0px; */
   font-size: 19px;
   font-weight: 500;
@@ -31,3 +32,9 @@
 .icons-search-indstry {
   width: 120px;
 }
+
+/* @media (min-width: 700px) {
+  .section-title {
+    max-width: 900px;
+  }
+} */

@@ -1,7 +1,11 @@
-const JobsNumber = ({combinedFilteredSearch}) => {
+import './JobsNumber.styles.css'
+
+const JobsNumber = ({ combinedFilteredSearch }) => {
   return (
     <>
-      <h2 className="section-title ">{combinedFilteredSearch.length} Jobs</h2>
+      <div className="jobs-number-section-title">
+        <h2 className="jobs-number-section-title-new">{combinedFilteredSearch.length} Jobs</h2>
+      </div>
     </>
   )
 }
