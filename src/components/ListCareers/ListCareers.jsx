@@ -15,7 +15,7 @@ const ListCareers = () => {
   return (
     <>
       <div className="listcareers-wrapper">
-        <h2 className='section-title'>Search by Industry</h2>
+        <h2 className='section-title search-by-industry'>Search by Industry</h2>
 
         <div className="wrapper-for-industry">
           <div><img className='icons-search-indstry' src={construction} /></div>

@@ -15,7 +15,7 @@ const SwipeSection = () => {
   return (
     <div className="swipe-section">
       <div className="inner-section-swipe-section">
-        <h2 className="section-title">Recommended Jobs</h2>
+        <h2 className="section-title recommended-jobs">Recommended Jobs</h2>
         <ReactSwipe
           className="carousel"
           swipeOptions={{ continuous: true }}
