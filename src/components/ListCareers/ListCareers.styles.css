@@ -17,6 +17,11 @@
   margin-top: 20px;
 }
 
+.search-by-industry {
+  position: relative;
+  top: 10px;
+}
+
 .section-title {
   
   /* margin: 0 auto;
