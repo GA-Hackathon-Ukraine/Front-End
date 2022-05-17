@@ -3,6 +3,8 @@
   margin: 0px 25px 10px 25px;
   font-family: 'Inter', sans-serif;
   padding-top: 110px;
+  /* margin: 0 auto; */
+  max-width: 500px;
 }
 .jobDetailsMini {
   margin-top: 30px;
@@ -129,4 +131,17 @@
 .wageDiv {
   margin-top: 10px;
   margin-bottom: 30px;
+}
+
+@media (min-width: 700px) {
+  .jobDetailsContainer {
+    margin: 0px 25px 10px 25px;
+    font-family: 'Inter', sans-serif;
+    padding-top: 110px;
+    margin: 0 auto;
+    max-width: 500px;
+  }
+  .weird-image-resize {
+    width: 70px;
+  }
 }

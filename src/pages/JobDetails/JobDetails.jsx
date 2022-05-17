@@ -111,7 +111,7 @@ function JobDetails() {
       <div key={`jobish-${idx}`}>
         <div className="jobDetailsContainer" key={`job-detail-${idx}`}>
           <div className="industry">
-            <img alt={`industry-${elem.industry}`} width="20%" src={industry} />
+            <img className="weird-image-resize" alt={`industry-${elem.industry}`} width="20%" src={industry} />
           </div>
           <div className="jobDetailsMini">
             <div className="jobDetailsLeft">
