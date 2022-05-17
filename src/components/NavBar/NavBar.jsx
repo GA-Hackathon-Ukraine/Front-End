@@ -1,5 +1,6 @@
 import { Navbar, Nav } from "react-bootstrap";
 import Logo from "./logon.png";
+import NewLogo from "./robotaNewLogo.svg"
 import Favorite from "./favorite.svg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./NavBar.css";
@@ -41,10 +42,10 @@ const NavBar = ({ setSearchShow, searchShow }) => {
         onSelect={handleNavPage}
         collapseOnSelect
       >
-        <Nav.Link className="nav-link">
+        <Nav.Link className="nav-link-new-logo">
           <Navbar.Brand onClick={handleHome}>
             <img
-              src={Logo}
+              src={NewLogo}
               className="logo-image-main"
               height="100"
               alt=""

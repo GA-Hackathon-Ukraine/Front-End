@@ -174,19 +174,20 @@ h4 {
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   padding-bottom: 40px;
-  max-width: 900px;
+  max-width: 500px;
 }
 
 @media (min-width: 700px) {
   .wrapper-jobs-map-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     padding-bottom: 40px;
   }
   .jobsmap-card-wrapper {
     margin-bottom: 0px;
+    width: 100%;
   }
 }
 

@@ -182,3 +182,36 @@
   position: relative;
   top: -5px;
 }
+
+@media (min-width: 700px) {
+  .section-title {
+    max-width: 500px;
+  }
+
+  .swipe-section {
+    /* display: none; */
+    /* max-width: 600px; */
+  }
+
+  .slide-card-wrapper {
+    margin: 0 auto;
+    /* max-width: 900px; */
+  }
+
+  .swipesection-btn-wrapper {
+    margin: 0 auto;
+    /* max-width: 600px; */
+  }
+
+  .slider-card {
+    padding: 12px;
+    margin: 0 auto;
+    height: 25vh;
+    width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+  }
+}
