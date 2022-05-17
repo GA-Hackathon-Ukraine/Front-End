@@ -1,6 +1,9 @@
 .form-full-div {
   background-color: #ffcc00;
   color: white;
+  border-radius: 0px 0px 8px 8px;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
 .form-h1 {
@@ -11,7 +14,7 @@
 }
 
 .job-form {
-  border-radius: 15px 15px 0px 0px;
+  border-radius: 8px 8px 8px 8px;
   background: white;
   color: #373d3f;
   padding-left: auto;
