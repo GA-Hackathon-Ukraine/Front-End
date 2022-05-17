@@ -54,14 +54,14 @@
 .logo-image-main {
   margin-left: 10px;
   height: auto;
-  width: 50px;
+  width: 35px;
   padding: 10px 10px;
   padding-left: 0;
   padding-right: 0;
 }
 
 .navbar-faves-icon {
-  width: 20px;
+  width: 12px;
 }
 .navbar-collapse {
   /* padding-top: 15px; */
@@ -70,4 +70,11 @@
 
 .nav-link-new-logo {
   padding: 0;
+}
+
+.yellow-btn-nav {
+  margin-left: 10px;
+  padding: 5px 15px;
+  background-color: #ffde5c;
+  border-radius: 8px;
 }

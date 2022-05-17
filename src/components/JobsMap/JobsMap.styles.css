@@ -179,16 +179,17 @@ h4 {
 
 @media (min-width: 700px) {
   .wrapper-jobs-map-grid {
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
     padding-bottom: 40px;
   }
-  .jobsmap-card-wrapper {
+  /* .jobsmap-card-wrapper {
     margin-bottom: 0px;
     width: 100%;
-  }
+  } */
 }
 
 .home-landing-wrapper-block {
