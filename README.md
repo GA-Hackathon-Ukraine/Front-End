@@ -108,6 +108,3 @@ Robota means work in Ukrainian. Robota is a mobile friendly platform to assist U
 - [ ] Have sponsored partnerships with companies
 - [x] ~~Mobile and Web Browser friendly~~
 - [x] ~~User Authentication~~
-
----
-
