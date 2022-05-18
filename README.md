@@ -48,18 +48,16 @@ Robota means work in Ukrainian. Robota is a mobile friendly platform to assist U
 - **CSS**
 - **Bootstrap**
 - **Supabase**
-- **Firebase**
 - **GitHub**
 - **Figma**
 - **Trello**
 - **Netlify**
-- **Heroku**
 
 ---
 
 ### **_Features_**
 
-- _Firebase User Authentication_
+- _Supabase Authentication_
 - _Instant predictive search filtering through typing or selecting from the dropdown_
 - _Recommended Jobs on the Home Page for logged in users_
 - _Save a Job button to easily access certain jobs later on the Saved Jobs page_
@@ -113,10 +111,3 @@ Robota means work in Ukrainian. Robota is a mobile friendly platform to assist U
 
 ---
 
-### **_Credits_**
-
-Images: [Figma](www.figma.com)
-
-Markdown Guide: ia.net
-
-Markdown Cheatsheet: [GitHub](www.github.com)
