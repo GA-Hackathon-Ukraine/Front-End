@@ -97,7 +97,7 @@
   overflow: auto;
 }
 .close-icon {
-  content: "x";
+  content: 'x';
   cursor: pointer;
   position: fixed;
   right: calc(15% - 30px);
@@ -123,7 +123,7 @@ b {
 .form-full-div select {
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: url("./downarrowicon.png");
+  background-image: url('./downarrowicon.png');
   background-repeat: no-repeat;
   background-position-x: 98%;
   background-position-y: 12px;
@@ -131,6 +131,6 @@ b {
 }
 @media (min-width: 600px) {
   .form-full-div {
-    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px 5px rgba(9, 110, 243, 0.103);
   }
 }
