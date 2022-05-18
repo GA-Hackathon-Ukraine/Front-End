@@ -2,8 +2,6 @@
 
 [Deployed App](https://robota-ukraine.netlify.app/) | [Presentation](https://docs.google.com/presentation/d/1KPU7uL_DgQvKG4KeRvCvVRvz4jBJWEIAykm4fYgxOow/edit#slide=id.g126e7c3924d_0_190) | [GitHub](https://github.com/GA-Hackathon-Ukraine) | [Figma](https://www.figma.com/files/team/1103365125208080239/Ukraine?fuid=1103367579039861110)
 
-#### Due Date: 05/05/2022
-
 ---
 
 ### **_Our Cross-functional Team_**
