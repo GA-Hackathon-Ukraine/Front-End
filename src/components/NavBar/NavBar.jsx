@@ -1,26 +1,26 @@
-import { Navbar, Nav } from "react-bootstrap";
-import Logo from "./logon.png";
-import NewLogo from "./robotaNewLogo.svg"
-import Favorite from "./favorite.svg";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./NavBar.css";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../utils/auth";
+import { Navbar, Nav } from 'react-bootstrap';
+import Logo from './logon.png';
+import NewLogo from './robotaNewLogo.svg';
+import Favorite from './favorite.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './NavBar.css';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../utils/auth';
 
 const NavBar = ({ setSearchShow, searchShow }) => {
   const auth = useAuth();
   let navigate = useNavigate();
 
   const handleHome = () => {
-    navigate("/");
+    navigate('/');
     setSearchShow(false);
-    if (document.getElementsByClassName("active")[0]) {
-      document.getElementsByClassName("active")[0].classList.remove("active");
+    if (document.getElementsByClassName('active')[0]) {
+      document.getElementsByClassName('active')[0].classList.remove('active');
     }
   };
 
   const handleGoToFaves = () => {
-    navigate("/favorites");
+    navigate('/favorites');
   };
 
   const handleNavPage = (eventKey, event) => {
@@ -31,11 +31,11 @@ const NavBar = ({ setSearchShow, searchShow }) => {
     <>
       <Navbar
         style={{
-          padding: "0 10px",
-          position: "fixed",
-          width: "100%",
-          zIndex: "100",
-          boxShadow: "0 0 15px 5px rgba(0, 0, 0, 0.1)",
+          padding: '0 10px',
+          position: 'fixed',
+          width: '100%',
+          zIndex: '100',
+          boxShadow: '0 0 15px 5px rgba(0, 0, 0, 0.1)',
         }}
         expand="md"
         bg="light"
@@ -53,10 +53,14 @@ const NavBar = ({ setSearchShow, searchShow }) => {
             ></img>
           </Navbar.Brand>
         </Nav.Link>
-        <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
+        <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
           <div>
             {auth.user ? (
-              <div className="yellow-btn-nav">
+              <div
+                style={{ cursor: 'pointer' }}
+                onClick={handleGoToFaves}
+                className="yellow-btn-nav"
+              >
                 <img
                   className="navbar-faves-icon"
                   onClick={handleGoToFaves}
@@ -69,7 +73,7 @@ const NavBar = ({ setSearchShow, searchShow }) => {
             )}
           </div>
           <Navbar.Toggle
-            style={{ border: "hidden" }}
+            style={{ border: 'hidden' }}
             data-bs-target="#navbarSupportedContent"
             aria-controls="responsive-navbar-nav"
           />

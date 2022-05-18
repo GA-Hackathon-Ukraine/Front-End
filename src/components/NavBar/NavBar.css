@@ -61,7 +61,7 @@
 }
 
 .navbar-faves-icon {
-  width: 12px;
+  width: 20px;
 }
 .navbar-collapse {
   /* padding-top: 15px; */
@@ -73,8 +73,13 @@
 }
 
 .yellow-btn-nav {
-  margin-left: 10px;
-  padding: 5px 15px;
+  padding: 8px;
+  padding-top: 4px;
   background-color: #ffde5c;
   border-radius: 8px;
+  transition: 0.5s;
+}
+.yellow-btn-nav:hover {
+  background-color: #fcd01f;
+  transition: 0.5s;
 }
