@@ -6,7 +6,7 @@
 
 ### **_Our Cross-functional Team_**
 
-![Image](https://i.imgur.com/QUSLBwd.png)
+![Image](/public/teampic.PNG)
 
 #### **Frontend Engineers:**
 
