@@ -1,103 +1,124 @@
-# Robota
+# **ROBOTA**
 
+[Deployed App](https://robota-ukraine.netlify.app/) | [Presentation](https://docs.google.com/presentation/d/1KPU7uL_DgQvKG4KeRvCvVRvz4jBJWEIAykm4fYgxOow/edit#slide=id.g126e7c3924d_0_190) | [GitHub](https://github.com/GA-Hackathon-Ukraine) | [Figma](https://www.figma.com/files/team/1103365125208080239/Ukraine?fuid=1103367579039861110)
 
-> A job hunting platform for Ukrainian Refugees in Washington State  
+#### Due Date: 05/05/2022
 
-<br>
-Ukrainian refugees in Washington need an easy and efficient way to search and apply for jobs so that they can quickly re-enter the workforce.
+---
 
-<br>
-<br>
+### **_Our Cross-functional Team_**
 
-## EXPLORE HERE  
-___________________
+![Image](https://i.imgur.com/QUSLBwd.png)
 
-Click here, to peruse our web app, [Robota](https:// .netlify.app)
+#### **Frontend Engineers:**
 
-<br>
-<br>
+##### Bianca Joseph | [GitHub](https://github.com/biancajoseph101) | [LinkedIn](https://www.linkedin.com/in/biancaclairejoseph)
 
-### SCREENSHOTS 
-___________
-<br>
-Search page<br>
+##### Roman Protoliuk | [GitHub](https://github.com/romanprotoliuk) | [LinkedIn](https://www.linkedin.com/in/roman-protoliuk-a5340a170/)
 
+##### Jamel Scott Fadel | [GitHub](https://github.com/jamelscott) | [LinkedIn](https://www.linkedin.com/in/jamelfadel/)
 
-<img src ="https://i.imgur.com/qPD3PJg.png" alt="search" width="150"/>
-<br>
-<br>
+#### **Backend Engineers:**
 
-About page
+##### Anthony Kowalkowski | [GitHub](https://github.com/adkowalkowski) | [LinkedIn](https://www.linkedin.com/in/anthony-kowalkowski/)
 
-<img src ="https://i.imgur.com/IMn7oax.png" alt="search" width="150"/>
-<br>
-<br>
+##### Daniel Ribuffo | [GitHub](https://github.com/dribuffo) | [LinkedIn](https://www.linkedin.com/in/danielribuffo/)
 
-Our team!
+##### Renée Skibinski | [GitHub](https://github.com/giamazonas) | [LinkedIn](https://www.linkedin.com/in/renee-skibinski-/)
 
-<img src ="https://i.imgur.com/QUSLBwd.png" alt="places" width="400"/>
-<br>
-<br>
+#### **UX/UI Designers:**
 
-💻  UX Designers<br>
+##### Lizzie Bridges | [GitHub](https://github.com/biancajoseph101) | [LinkedIn](https://www.linkedin.com/in/lizziebridges/)
 
-Eva Regelski <br>
-Lizzie Bridges <br>
+##### Eva Regelski | [GitHub](https://github.com/Nashid-Alam) | [LinkedIn](https://www.linkedin.com/in/eva-regelski/)
 
-💻  Front end Engineers<br>
+---
 
-Bianca Joseph <br>
-Jamel Fadel <br>
-Roman Protouliuk <br>
+### **_Description_**
 
-💻  Back end Engineers <br>
+Robota means work in Ukrainian. Robota is a mobile friendly platform to assist Ukrainian refugees in finding relevant jobs with ease. This app was created for a 3 Day International Aid Hackathon run by General Assembly. We were tasked with solving a problem for a specific country. Upon researching what refugees are struggling with the most, we learned that finding a job is the biggest challenge. Robota is currently specifically for Ukrainian refugees that have relocated to the state of Washington as this is where the majority of them have moved to within the United States. Featuring user authentication, this app has search filters specially catered to find the most common jobs for Ukrainians. The other set of users are companies who want to help Ukrainian refugees by posting jobs or tasks through the form. On our home page, we have provided icons of the most popular industries for refugees who are not proficient in English as a visual aid. Our team was thrilled to announce that Robota won first place by the judges of the Hackathon as well as "Crowd Favorite" by all of the attendees!
 
-Anthony Kowalkowski <br>
-Daniel Ribuffo <br>
-Renée Skibinski <br><br><br>
+---
 
+### **_Technology Used_**
 
-### TECH USED 
-________________
+- **JavaScript**
+- **React**
+- **Node**
+- **Express**
+- **Mongo**
+- **CSS**
+- **Bootstrap**
+- **Supabase**
+- **Firebase**
+- **GitHub**
+- **Figma**
+- **Trello**
+- **Netlify**
+- **Heroku**
 
+---
 
-<br>
- <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
- <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
- <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
- <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
- <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
- <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white">
- <img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge">
- <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white">
- <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white">
- <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white">
- <br>
+### **_Features_**
 
- 
+- _Firebase User Authentication_
+- _Instant predictive search filtering through typing or selecting from the dropdown_
+- _Recommended Jobs on the Home Page for logged in users_
+- _Save a Job button to easily access certain jobs later on the Saved Jobs page_
+- _Direct contact to employer through Job Details page_
+- _Easy apply button on Job Details page_
+- _Helpful descriptors for each job, such as "Hourly Compensation", "Job Length", "Child Care"_
+- _Mobile Friendly and Web Browser Friendly_
 
-<br>
-<br>
+- _Search functionality_
 
-### ICEBOX 
-___________________
-<br>
+  - _Search by position or company key words_
 
-- translation toggle
-- icons on resources page
-- add more filter options
-- more usability tests
-- public/private partnerships
+  - _Search by industry cards_
 
-<br>
-<br>
+  - _Search by location dropdown menu_
 
-### CREDITS 
-______________________________
+- _Pages_
 
-<br>Robota<br>
-<img src ="https://i.imgur.com/V5l97mt.png" alt="mapbox" width="200"/>
-<br>
-<br>
-Favicon<br><br>
-<img src ="https://i.imgur.com/TvO3bX1.png" alt="favicon" width="200"/>
+  - _Log In & Sign Up pages_
+
+  - _Home Page_
+
+  - _Job Details Page_
+
+  - _Saved Jobs Page_
+
+  - _Post a Job Form Page_
+
+  - _Resources Page_
+
+  - _About Page_
+
+---
+
+### **_Screenshots_**
+
+![Image](https://i.imgur.com/qPD3PJg.png)
+
+![Image](https://i.imgur.com/IMn7oax.png)
+
+---
+
+### **_Future Updates_**
+
+- [ ] Expand our locations to other states
+- [ ] Implement a Geolocation feature
+- [ ] Add verification
+- [ ] Have sponsored partnerships with companies
+- [x] ~~Mobile and Web Browser friendly~~
+- [x] ~~User Authentication~~
+
+---
+
+### **_Credits_**
+
+Images: [Figma](www.figma.com)
+
+Markdown Guide: ia.net
+
+Markdown Cheatsheet: [GitHub](www.github.com)
