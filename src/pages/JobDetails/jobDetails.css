@@ -5,6 +5,10 @@
   padding-top: 110px;
   /* margin: 0 auto; */
   max-width: 500px;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 0px 0px 8px 8px;
+  background-color: white;
 }
 .jobDetailsMini {
   margin-top: 30px;
@@ -18,7 +22,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #FFDE5C;
+  background-color: #ffde5c;
   height: 100px;
   border-radius: 15px;
   margin-bottom: 15px;
@@ -29,7 +33,7 @@
   font-weight: 800;
   margin-bottom: 0px;
   margin-top: 0;
-  color: white;
+  color: black;
 }
 .companyLocationDiv {
   display: flex;
@@ -40,7 +44,7 @@
   font-weight: 100;
   font-size: 13px;
   margin-top: 0 auto;
-  color: white;
+  color: black;
   font-weight: 400;
   margin-bottom: 0;
 }
@@ -54,13 +58,14 @@
   font-weight: 400;
   padding: 0;
   margin: 0;
-  color: white;
+  color: black;
   font-size: 10px;
 }
 .descriptionDiv {
-  background-color: white;
+  background-color: rgba(176, 178, 180, 0.212);
   border-radius: 15px;
   padding: 18px 18px;
+  border: 1px solid rgba(0, 0, 0, 0.247);
 }
 .description {
   font-family: 'Inter', sans-serif;
@@ -79,14 +84,15 @@
   gap: 20px;
   margin-bottom: 20px;
 }
-.contactButton, .applyButton {
+.contactButton,
+.applyButton {
   font-family: 'Inter', sans-serif;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 13px;
-  background-color: #FFDE5C;
+  background-color: #ffde5c;
   border-radius: 15px;
   box-shadow: none;
   border: none;
@@ -97,34 +103,36 @@
   font-weight: 100;
   text-decoration: none;
 }
-.contactButtonText, .applyButtonText {
+.contactButtonText,
+.applyButtonText {
   font-weight: 500;
   letter-spacing: 0.5px;
   margin-bottom: 0;
 }
 .wage {
   margin-top: 0px;
-  color: white;
+  color: black;
 }
 .hour {
   font-size: 14px;
-  color: white;
+  color: black;
 }
 
 #favbutton {
-  width: 20px;
+  width: 30px;
 }
 
 #favbutton:hover {
   cursor: pointer;
 }
 
-#applyHere, #emailMe {
+#applyHere,
+#emailMe {
   text-decoration: none;
 }
 
 .jobs-details-page-compensation {
-  color: white;
+  color: black;
   font-weight: 700;
 }
 

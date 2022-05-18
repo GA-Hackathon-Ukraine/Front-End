@@ -1,22 +1,22 @@
-import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import "./jobDetails.css";
-import locationIcon from "./smalllocationicon.svg";
-import favoriteButton from "./favoriteButton.svg";
-import favred from "./icons/redfav.svg";
-import mailIcon from "./mailicon.png";
-import childCare from "./childcard.png";
-import partTime from "./parttime.svg";
-import apply from "./apply.svg";
-import constructionIcon from "./icons/construction.svg";
-import caregive from "./icons/caretaking.svg";
-import technologyIcon from "./icons/technology.svg";
-import foodandbeveragesIcon from "./icons/food.svg";
-import landscape from "./icons/landscaping.svg";
-import transport from "./icons/transportation.svg";
-import cleaning from "./icons/nclean.svg";
-import { supabase } from "../../utils/supabaseClient";
-import { useAuth } from "../../utils/auth";
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import './jobDetails.css';
+import locationIcon from './smalllocationicon.svg';
+import favoriteButton from './favoriteButton.svg';
+import favred from './icons/redfav.svg';
+import mailIcon from './mailicon.png';
+import childCare from './childcard.png';
+import partTime from './parttime.svg';
+import apply from './apply.svg';
+import constructionIcon from './icons/construction.svg';
+import caregive from './icons/caretaking.svg';
+import technologyIcon from './icons/technology.svg';
+import foodandbeveragesIcon from './icons/food.svg';
+import landscape from './icons/landscaping.svg';
+import transport from './icons/transportation.svg';
+import cleaning from './icons/nclean.svg';
+import { supabase } from '../../utils/supabaseClient';
+import { useAuth } from '../../utils/auth';
 
 function JobDetails() {
   const auth = useAuth();
@@ -28,7 +28,7 @@ function JobDetails() {
 
   const getJob = async () => {
     const { data, error } = await supabase
-      .from("Jobs")
+      .from('Jobs')
       .select()
       .match({ id: id });
     setJob(data);
@@ -39,7 +39,7 @@ function JobDetails() {
 
     if (auth.user) {
       const { data, error } = await supabase
-        .from("Favorites")
+        .from('Favorites')
         .select()
         .match({ job_id: id, user_id: auth.user.id });
 
@@ -63,22 +63,22 @@ function JobDetails() {
   const mappedFilteredJob = job.map((elem, idx) => {
     let industry;
     switch (elem.industry) {
-      case "Cleaning":
+      case 'Cleaning':
         industry = cleaning;
         break;
-      case "Transportation":
+      case 'Transportation':
         industry = transport;
         break;
-      case "Landscaping":
+      case 'Landscaping':
         industry = landscape;
         break;
-      case "Caretaking":
+      case 'Caretaking':
         industry = caregive;
         break;
-      case "Technology":
+      case 'Technology':
         industry = technologyIcon;
         break;
-      case "Food/Beverages":
+      case 'Food/Beverages':
         industry = foodandbeveragesIcon;
         break;
       default:
@@ -88,7 +88,7 @@ function JobDetails() {
     const handleFavoriteButtonSave = async (job) => {
       console.log(auth.user.id);
       const { data, error } = await supabase
-        .from("Favorites")
+        .from('Favorites')
         .insert([{ user_id: auth.user.id, job_id: job.id }]);
       setFavorited(true);
       if (error) {
@@ -99,7 +99,7 @@ function JobDetails() {
     const handleFavoriteButtonDelete = async (job) => {
       console.log(auth.user.id);
       const { data, error } = await supabase
-        .from("Favorites")
+        .from('Favorites')
         .delete()
         .match({ job_id: job.id, user_id: auth.user.id });
       setFavorited(false);
@@ -111,14 +111,17 @@ function JobDetails() {
       <div key={`jobish-${idx}`}>
         <div className="jobDetailsContainer" key={`job-detail-${idx}`}>
           <div className="industry">
-            <img className="weird-image-resize" alt={`industry-${elem.industry}`} width="20%" src={industry} />
+            <img
+              className="weird-image-resize"
+              alt={`industry-${elem.industry}`}
+              width="20%"
+              src={industry}
+            />
           </div>
           <div className="jobDetailsMini">
             <div className="jobDetailsLeft">
               <div className="positionDiv">
-                <h3 style={{ color: "white" }} className="positionn-jobs-detail">
-                  {elem.position}
-                </h3>
+                <h3 className="positionn-jobs-detail">{elem.position}</h3>
               </div>
               <div className="companyLocationDiv">
                 <h3 className="company">{elem.company}</h3>
@@ -135,7 +138,9 @@ function JobDetails() {
               <div className="wageDiv">
                 <h3 className="slider-card-wrapper-compensation jobs-details-page-compensation">
                   ${elem.compensation}
-                  <span className="per-hour jobs-details-page-compensation">/Hour</span>
+                  <span className="per-hour jobs-details-page-compensation">
+                    /Hour
+                  </span>
                 </h3>
               </div>
               <div className="acessoriesDiv">
@@ -173,7 +178,7 @@ function JobDetails() {
             <button className="contactButton">
               <img src={mailIcon} alt="mail-icon" />
               <h4 className="contactButtonText">Contact</h4>
-            </button>{" "}
+            </button>{' '}
           </a>
           <a
             rel="noreferrer"
