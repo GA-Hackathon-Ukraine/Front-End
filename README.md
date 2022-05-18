@@ -14,7 +14,7 @@
 
 ##### Roman Protoliuk | [GitHub](https://github.com/romanprotoliuk) | [LinkedIn](https://www.linkedin.com/in/roman-protoliuk-a5340a170/)
 
-##### Jamel Scott Fadel | [GitHub](https://github.com/jamelscott) | [LinkedIn](https://www.linkedin.com/in/jamelfadel/)
+##### Jamel Ahmed Scott Fadel | [GitHub](https://github.com/jamelscott) | [LinkedIn](https://www.linkedin.com/in/jamelfadel/)
 
 #### **Backend Engineers:**
 
