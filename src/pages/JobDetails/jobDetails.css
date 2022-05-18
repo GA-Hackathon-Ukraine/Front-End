@@ -4,10 +4,10 @@
   font-family: 'Inter', sans-serif;
   padding-top: 110px;
   /* margin: 0 auto; */
-  max-width: 500px;
+  max-width: 600px;
   box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  border-radius: 0px 0px 8px 8px;
+  padding: 40px;
+  border-radius: 8px 8px 8px 8px;
   background-color: white;
 }
 .jobDetailsMini {
@@ -62,10 +62,10 @@
   font-size: 10px;
 }
 .descriptionDiv {
-  background-color: rgba(176, 178, 180, 0.212);
+  /* background-color: #93c5ff; */
   border-radius: 15px;
   padding: 18px 18px;
-  border: 1px solid rgba(0, 0, 0, 0.247);
+  border: 1px solid #93c5ff;
 }
 .description {
   font-family: 'Inter', sans-serif;
@@ -145,9 +145,9 @@
   .jobDetailsContainer {
     margin: 0px 25px 10px 25px;
     font-family: 'Inter', sans-serif;
-    padding-top: 110px;
+    /* padding-top: 160px; */
     margin: 0 auto;
-    max-width: 500px;
+    max-width: 600px;
   }
   .weird-image-resize {
     width: 70px;

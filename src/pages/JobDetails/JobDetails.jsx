@@ -109,88 +109,90 @@ function JobDetails() {
     };
     return (
       <div key={`jobish-${idx}`}>
-        <div className="jobDetailsContainer" key={`job-detail-${idx}`}>
-          <div className="industry">
-            <img
-              className="weird-image-resize"
-              alt={`industry-${elem.industry}`}
-              width="20%"
-              src={industry}
-            />
-          </div>
-          <div className="jobDetailsMini">
-            <div className="jobDetailsLeft">
-              <div className="positionDiv">
-                <h3 className="positionn-jobs-detail">{elem.position}</h3>
-              </div>
-              <div className="companyLocationDiv">
-                <h3 className="company">{elem.company}</h3>
-                <div className="locationDiv">
-                  <img
-                    alt={`city-${elem.city}`}
-                    width="10px"
-                    height="20px"
-                    src={locationIcon}
-                  ></img>
-                  <h3 className="location">{elem.city}, WA</h3>
+        <div style={{ paddingTop: '120px' }}>
+          <div className="jobDetailsContainer">
+            <div className="industry">
+              <img
+                className="weird-image-resize"
+                alt={`industry-${elem.industry}`}
+                width="20%"
+                src={industry}
+              />
+            </div>
+            <div className="jobDetailsMini">
+              <div className="jobDetailsLeft">
+                <div className="positionDiv">
+                  <h3 className="positionn-jobs-detail">{elem.position}</h3>
                 </div>
-              </div>
-              <div className="wageDiv">
-                <h3 className="slider-card-wrapper-compensation jobs-details-page-compensation">
-                  ${elem.compensation}
-                  <span className="per-hour jobs-details-page-compensation">
-                    /Hour
-                  </span>
-                </h3>
-              </div>
-              <div className="acessoriesDiv">
-                <div className="acessories">
-                  <img alt={`status-${idx + 1}`} src={partTime}></img>
+                <div className="companyLocationDiv">
+                  <h3 className="company">{elem.company}</h3>
+                  <div className="locationDiv">
+                    <img
+                      alt={`city-${elem.city}`}
+                      width="10px"
+                      height="20px"
+                      src={locationIcon}
+                    ></img>
+                    <h3 className="location">{elem.city}, WA</h3>
+                  </div>
                 </div>
-                {/* <div className="acessories">
+                <div className="wageDiv">
+                  <h3 className="slider-card-wrapper-compensation jobs-details-page-compensation">
+                    ${elem.compensation}
+                    <span className="per-hour jobs-details-page-compensation">
+                      /Hour
+                    </span>
+                  </h3>
+                </div>
+                <div className="acessoriesDiv">
+                  <div className="acessories">
+                    <img alt={`status-${idx + 1}`} src={partTime}></img>
+                  </div>
+                  {/* <div className="acessories">
                   <img alt={`status-${idx + 2}`} src={childCare}></img>
                 </div> */}
+                </div>
+              </div>
+              <div className="jobDetailsRight">
+                {favorited ? (
+                  <img
+                    onClick={() => handleFavoriteButtonDelete(elem)}
+                    id="favbutton"
+                    alt="favorite-button-red"
+                    src={favred}
+                  ></img>
+                ) : (
+                  <img
+                    onClick={() => handleFavoriteButtonSave(elem)}
+                    id="favbutton"
+                    alt="favorite-button-grey"
+                    src={favoriteButton}
+                  ></img>
+                )}
               </div>
             </div>
-            <div className="jobDetailsRight">
-              {favorited ? (
-                <img
-                  onClick={() => handleFavoriteButtonDelete(elem)}
-                  id="favbutton"
-                  alt="favorite-button-red"
-                  src={favred}
-                ></img>
-              ) : (
-                <img
-                  onClick={() => handleFavoriteButtonSave(elem)}
-                  id="favbutton"
-                  alt="favorite-button-grey"
-                  src={favoriteButton}
-                ></img>
-              )}
+            <div className="descriptionDiv">
+              <h2 className="description">Description</h2>
+              <p className="descriptionText">{elem.description}</p>
             </div>
+            <a id="emailMe" href={`mailto:${elem.contact}`}>
+              <button className="contactButton">
+                <img src={mailIcon} alt="mail-icon" />
+                <h4 className="contactButtonText">Contact</h4>
+              </button>{' '}
+            </a>
+            <a
+              rel="noreferrer"
+              id="applyHere"
+              target="_blank"
+              href={`https://${elem.url}`}
+            >
+              <button className="applyButton">
+                <img alt="apply-icon" src={apply} />
+                <h4 className="applyButtonText">Apply</h4>
+              </button>
+            </a>
           </div>
-          <div className="descriptionDiv">
-            <h2 className="description">Description</h2>
-            <p className="descriptionText">{elem.description}</p>
-          </div>
-          <a id="emailMe" href={`mailto:${elem.contact}`}>
-            <button className="contactButton">
-              <img src={mailIcon} alt="mail-icon" />
-              <h4 className="contactButtonText">Contact</h4>
-            </button>{' '}
-          </a>
-          <a
-            rel="noreferrer"
-            id="applyHere"
-            target="_blank"
-            href={`https://${elem.url}`}
-          >
-            <button className="applyButton">
-              <img alt="apply-icon" src={apply} />
-              <h4 className="applyButtonText">Apply</h4>
-            </button>
-          </a>
         </div>
       </div>
     );
