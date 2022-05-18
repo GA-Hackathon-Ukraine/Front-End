@@ -11,11 +11,11 @@ const LoginPage = ({ userState, setUser }) => {
 
   return (
     <div className="masterDiv">
-      <main className="sign-in-container">
-        <div className="signin-header-box">
-          <h1 className="signin-header-text">Log In</h1>
+      <main className="create-account-container">
+        <div className="titleDiv">
+          <h1 className="create-account-title">Log In</h1>
         </div>
-        <div className="sign-form-area">
+        <div className="create-account-area">
           <h3 className="sign-in-salutation">Welcome</h3>
           <p className="sign-in-salutation-subtitle">Sign in to continue</p>
           <LoginForm
