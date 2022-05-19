@@ -97,7 +97,6 @@ function JobDetails() {
     };
 
     const handleFavoriteButtonDelete = async (job) => {
-      console.log(auth.user.id);
       const { data, error } = await supabase
         .from('Favorites')
         .delete()

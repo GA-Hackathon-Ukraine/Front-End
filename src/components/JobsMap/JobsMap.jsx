@@ -16,8 +16,6 @@ const JobsMap = ({combinedFilteredSearch, allJobs}) => {
 
   const mappedData = combinedFilteredSearch.map((elem, idx) => {
 
-    console.log(combinedFilteredSearch.length)
-
     let industry;
     // This needs ot be refactored later. adding new images .. etc.
     switch (elem.industry) {
@@ -49,7 +47,7 @@ const JobsMap = ({combinedFilteredSearch, allJobs}) => {
         industry = constructionIcon;
     }
     return (
-      <JobsMapCard elem={elem} locationImg={locationIcon} industry={industry} showFave={false}/>
+      <JobsMapCard key={`key-${idx}`} elem={elem} locationImg={locationIcon} industry={industry} showFave={false}/>
     );
   });
 

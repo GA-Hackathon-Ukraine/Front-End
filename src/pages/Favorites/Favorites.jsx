@@ -48,7 +48,6 @@ const Favorites = () => {
       }
     }
     setFavJobs(favoritedJobs);
-    console.log(favJobs);
   };
 
   useEffect(() => {
@@ -100,93 +99,8 @@ const Favorites = () => {
     return (
 
       <>
-        
-          <JobsMapCard elem={elem} locationImg={locationIcon} industry={industry} handleDelete={handleDelete} showFave={true} />
+          <JobsMapCard key={`key-new-${idx}`} elem={elem} locationImg={locationIcon} industry={industry} handleDelete={handleDelete} showFave={true} />
       </>
-      // <div
-      //   key={idx}
-      //   style={{
-      //     margin: "0 auto",
-      //     padding: "10px",
-      //     gap: "30px",
-      //     marginBottom: "20px",
-      //   }}
-      //   className="card-wrapper"
-      // >
-      //   <div className="card-wrapper-container" to={`/job/${elem.id}`}>
-      //     <div className="image-container">
-      //       <div
-      //         style={{
-      //           marginLeft: "5px",
-      //           width: "90px",
-      //           height: "90px",
-      //           backgroundColor: "#FFCC00",
-      //           borderRadius: "7px",
-      //           backgroundImage: `url(
-      //                             ${industry}
-      //                           )`,
-      //           backgroundPosition: "50% 50%",
-      //           backgroundSize: "cover",
-      //         }}
-      //       />
-      //     </div>
-      //     <div className="card-wrapper-info">
-      //       <div className="card-wrapper-info-top">
-      //         <div className="card-wrapper-info-top-header">
-      //           <div>
-      //             <h2 style={{ paddingLeft: "0" }} className="position">
-      //               {elem.position}
-      //             </h2>
-      //           </div>
-      //           <div className="hourly-rate">
-      //             <h3 className="compensation">${elem.compensation}</h3>
-      //             <span className="per-hour">/Hour</span>
-      //           </div>
-      //         </div>
-      //         <div className="card-wrapper-info-top-lower">
-      //           <div>
-      //             {" "}
-      //             <h4 className="company-jobsmap">{elem.company}</h4>{" "}
-      //           </div>
-      //           <div className="location-wrapper-jobsmap">
-      //             <img
-      //               alt={`location-${elem.city}`}
-      //               className="img-jobsmap"
-      //               src={locationIcon}
-      //             />
-      //             <h4 className="location-jobsmap">{elem.city},</h4>
-      //             <h4 className="location-jobsmap">{elem.state}</h4>
-      //           </div>
-      //         </div>
-      //       </div>
-      //       <div className="card-wrapper-info-bottom">
-      //         <div className="card-wrapper-info-bottom">
-      //           <div className="card-wrapper-info-bottom-left">
-      //             <div className="btn-group-jobsmap">
-      //               <Link to={`/job/${elem.id}`}>
-      //                 <button className="details-btn">details</button>
-      //               </Link>
-      //               <button className="email-btn">
-      //                 <img alt="message-icon" src={messageIcon} />
-      //               </button>
-      //             </div>
-                  // <div onClick={(e) => handleDelete(elem.id)}>
-                  //   <span className="saved-unfilled-wrapper">
-                  //     <img
-                  //       alt="swipe-icon"
-                  //       className="save-btn-swipe-section"
-                  //       src={savedfilled}
-                  //     />
-                  //   </span>
-                  // </div>
-      //           </div>
-      //           <div></div>
-      //         </div>
-      //       </div>
-      //       <div className="card-wrapper-info-left"></div>
-      //     </div>
-      //   </div>
-      // </div>
     );
   });
 
