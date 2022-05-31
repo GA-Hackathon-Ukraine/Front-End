@@ -1,22 +1,22 @@
-import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import './jobDetails.css';
-import locationIcon from './smalllocationicon.svg';
-import favoriteButton from './favoriteButton.svg';
-import favred from './icons/redfav.svg';
-import mailIcon from './mailicon.png';
-import childCare from './childcard.png';
-import partTime from './parttime.svg';
-import apply from './apply.svg';
-import constructionIcon from './icons/construction.svg';
-import caregive from './icons/caretaking.svg';
-import technologyIcon from './icons/technology.svg';
-import foodandbeveragesIcon from './icons/food.svg';
-import landscape from './icons/landscaping.svg';
-import transport from './icons/transportation.svg';
-import cleaning from './icons/nclean.svg';
-import { supabase } from '../../utils/supabaseClient';
-import { useAuth } from '../../utils/auth';
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import "./jobDetails.css";
+import locationIcon from "./smalllocationicon.svg";
+import favoriteButton from "./favoriteButton.svg";
+import favred from "./icons/redfav.svg";
+import mailIcon from "./mailicon.png";
+import childCare from "./childcard.png";
+import partTime from "./parttime.svg";
+import apply from "./apply.svg";
+import constructionIcon from "./icons/construction.svg";
+import caregive from "./icons/caretaking.svg";
+import technologyIcon from "./icons/technology.svg";
+import foodandbeveragesIcon from "./icons/food.svg";
+import landscape from "./icons/landscaping.svg";
+import transport from "./icons/transportation.svg";
+import cleaning from "./icons/nclean.svg";
+import { supabase } from "../../utils/supabaseClient";
+import { useAuth } from "../../utils/auth";
 
 function JobDetails() {
   const auth = useAuth();
@@ -28,7 +28,7 @@ function JobDetails() {
 
   const getJob = async () => {
     const { data, error } = await supabase
-      .from('Jobs')
+      .from("Jobs")
       .select()
       .match({ id: id });
     setJob(data);
@@ -39,7 +39,7 @@ function JobDetails() {
 
     if (auth.user) {
       const { data, error } = await supabase
-        .from('Favorites')
+        .from("Favorites")
         .select()
         .match({ job_id: id, user_id: auth.user.id });
 
@@ -63,22 +63,22 @@ function JobDetails() {
   const mappedFilteredJob = job.map((elem, idx) => {
     let industry;
     switch (elem.industry) {
-      case 'Cleaning':
+      case "Cleaning":
         industry = cleaning;
         break;
-      case 'Transportation':
+      case "Transportation":
         industry = transport;
         break;
-      case 'Landscaping':
+      case "Landscaping":
         industry = landscape;
         break;
-      case 'Caretaking':
+      case "Caretaking":
         industry = caregive;
         break;
-      case 'Technology':
+      case "Technology":
         industry = technologyIcon;
         break;
-      case 'Food/Beverages':
+      case "Food/Beverages":
         industry = foodandbeveragesIcon;
         break;
       default:
@@ -86,19 +86,22 @@ function JobDetails() {
     }
 
     const handleFavoriteButtonSave = async (job) => {
-      console.log(auth.user.id);
-      const { data, error } = await supabase
-        .from('Favorites')
-        .insert([{ user_id: auth.user.id, job_id: job.id }]);
-      setFavorited(true);
-      if (error) {
-        console.log(error);
+      if (auth.user) {
+        const { data, error } = await supabase
+          .from("Favorites")
+          .insert([{ user_id: auth.user.id, job_id: job.id }]);
+        setFavorited(true);
+        if (error) {
+          console.log(error);
+        }
+      } else {
+        handlePopUp();
       }
     };
 
     const handleFavoriteButtonDelete = async (job) => {
       const { data, error } = await supabase
-        .from('Favorites')
+        .from("Favorites")
         .delete()
         .match({ job_id: job.id, user_id: auth.user.id });
       setFavorited(false);
@@ -106,9 +109,14 @@ function JobDetails() {
         console.log(error);
       }
     };
+
+    const handlePopUp = () => {
+      let popup = document.getElementById("myPopup");
+      popup.classList.toggle("show");
+    };
     return (
       <div key={`jobish-${idx}`}>
-        <div style={{ paddingTop: '120px' }}>
+        <div style={{ paddingTop: "120px" }}>
           <div className="jobDetailsContainer">
             <div className="industry">
               <img
@@ -153,21 +161,26 @@ function JobDetails() {
                 </div>
               </div>
               <div className="jobDetailsRight">
-                {favorited ? (
-                  <img
-                    onClick={() => handleFavoriteButtonDelete(elem)}
-                    id="favbutton"
-                    alt="favorite-button-red"
-                    src={favred}
-                  ></img>
-                ) : (
-                  <img
-                    onClick={() => handleFavoriteButtonSave(elem)}
-                    id="favbutton"
-                    alt="favorite-button-grey"
-                    src={favoriteButton}
-                  ></img>
-                )}
+                <div className="popup">
+                  <span className="popuptext" id="myPopup">
+                    Login to favorite
+                  </span>
+                  {favorited ? (
+                    <img
+                      onClick={() => handleFavoriteButtonDelete(elem)}
+                      id="favbutton"
+                      alt="favorite-button-red"
+                      src={favred}
+                    ></img>
+                  ) : (
+                    <img
+                      onClick={() => handleFavoriteButtonSave(elem)}
+                      id="favbutton"
+                      alt="favorite-button-grey"
+                      src={favoriteButton}
+                    ></img>
+                  )}
+                </div>
               </div>
             </div>
             <div className="descriptionDiv">
@@ -178,7 +191,7 @@ function JobDetails() {
               <button className="contactButton">
                 <img src={mailIcon} alt="mail-icon" />
                 <h4 className="contactButtonText">Contact</h4>
-              </button>{' '}
+              </button>{" "}
             </a>
             <a
               rel="noreferrer"
