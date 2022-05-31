@@ -2,8 +2,9 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./signupform.css";
 import { useAuth } from "../../utils/auth";
+import { supabase } from "../../utils/supabaseClient";
 
-const SignupForm = ({ userState, setUser }) => {
+const SignupForm = ({ msg, setMsg, userState, setUser }) => {
   const auth = useAuth();
 
   const navigate = useNavigate();
@@ -25,13 +26,16 @@ const SignupForm = ({ userState, setUser }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    if (password != passwordConf) {
+      setMsg("your passwords do not match");
+      return;
+    }
     const signup = await auth.signup(firstName, email, password);
 
     console.log(signup);
 
     if (signup.error) {
-      console.log(signup.error.message);
+      setMsg(signup.error.message);
     } else {
       navigate("/");
     }
@@ -50,6 +54,7 @@ const SignupForm = ({ userState, setUser }) => {
       <div className="sign-up-input-container">
         <label htmlFor="name"></label>
         <input
+          required
           type="text"
           autoComplete="off"
           id="name"
@@ -63,7 +68,8 @@ const SignupForm = ({ userState, setUser }) => {
       <div className="sign-up-input-container">
         <label htmlFor="email"></label>
         <input
-          type="text"
+          required
+          type="email"
           autoComplete="off"
           id="email"
           value={email}
@@ -76,6 +82,7 @@ const SignupForm = ({ userState, setUser }) => {
       <div className="sign-up-input-container">
         <label htmlFor="password"></label>
         <input
+          required
           type="password"
           autoComplete="off"
           id="password"
@@ -89,6 +96,7 @@ const SignupForm = ({ userState, setUser }) => {
       <div className="sign-up-input-container">
         <label htmlFor="confirm"></label>
         <input
+          required
           type="password"
           autoComplete="off"
           id="confirm"
@@ -100,10 +108,13 @@ const SignupForm = ({ userState, setUser }) => {
         />
       </div>
       <div className="sign-up-button-container">
-        <button disabled={isFormInvalid()} className="sign-up-button">
-          Create account
-        </button>
+        <input
+          type="submit"
+          className="sign-up-button"
+          value="Create account"
+        />
       </div>
+
       <p className="have-account">
         Already have an account?{" "}
         <Link className="signin" to="/login">
