@@ -69,7 +69,11 @@ const Landing = ({ searchShow, setSearchShow }) => {
         <JobsMap combinedFilteredSearch={combinedFilteredSearch} />
       ) : (
         <span style={{ width: "100vw" }}>
-          <SwipeSection /> <ListCareersNew />
+          <SwipeSection />{" "}
+          <ListCareersNew
+            setPosition={setPosition}
+            setSearchShow={setSearchShow}
+          />
         </span>
       )}
     </main>
