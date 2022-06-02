@@ -1,7 +1,7 @@
 import "./SearchForm.css";
 import locationIcon from "./locationicon.png";
 import searchIcon from "./searchicon.png";
-
+// test
 function SearchForm({ setLocation, position, setPosition, setSearchShow }) {
   const handleChange = (e) => {
     setPosition(e.target.value);
