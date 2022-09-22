@@ -52,6 +52,16 @@
   width: 100%;
 }
 
+.locationInputMobile {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  border: none;
+  /* margin-left: 12px; */
+  width: auto;
+  width: 100%;
+}
+
 .searchContainerSearch select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -69,4 +79,8 @@
 
 .searchContainer-locationIcon {
   width: 25px;
+}
+
+.smallerFont {
+  font-size: 10px;
 }

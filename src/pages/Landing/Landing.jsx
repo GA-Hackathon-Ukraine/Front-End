@@ -5,12 +5,17 @@ import ListCareersNew from "../../components/ListCareers/ListCareersNew";
 import SwipeSection from "../../components/SwipeSection/SwipeSection";
 import { useState, useEffect } from "react";
 import { supabase } from "../../utils/supabaseClient";
+import { useMediaQueryHook } from "../../components/utils/useMediaQuery";
+
 
 const Landing = ({ searchShow, setSearchShow }) => {
   const [search, setSearch] = useState("");
   const [location, setLocation] = useState("");
   const [position, setPosition] = useState("");
   const [allJobs, setAlljobs] = useState([]);
+
+  const isMediaSize = useMediaQueryHook(934)
+  console.log(isMediaSize)
 
   const getData = async () => {
     const { data, error } = await supabase.from("Jobs").select();
@@ -41,6 +46,7 @@ const Landing = ({ searchShow, setSearchShow }) => {
     });
   };
 
+  console.log({allJobs})
   const filteredPosition1 = getFilteredPosition();
   const filteredLocation1 = getFilteredLocation();
 

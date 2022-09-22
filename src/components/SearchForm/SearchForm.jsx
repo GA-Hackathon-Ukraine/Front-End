@@ -1,11 +1,14 @@
 import "./SearchForm.css";
 import locationIcon from "./locationicon.png";
 import searchIcon from "./searchicon.png";
-// test
+import { useMediaQueryHook } from "../utils/useMediaQuery";
+
 function SearchForm({ setLocation, position, setPosition, setSearchShow }) {
   const handleChange = (e) => {
     setPosition(e.target.value);
   };
+
+  const isBreakPoint = useMediaQueryHook(934)
 
   const handleSetLocation = (e) => {
     if (e.target.value === "All") {
@@ -23,7 +26,7 @@ function SearchForm({ setLocation, position, setPosition, setSearchShow }) {
     <div className="searchContainer">
       <form className="searchContainer-form" onClick={handleClickRender}>
         <div className="searchContainerLocation">
-          <img className="searchContainer-searchIcon" src={searchIcon} alt="" />
+          <img className="searchContainer-searchIcon" src={searchIcon} />
 
           <input
             className="searchInput"
@@ -38,20 +41,19 @@ function SearchForm({ setLocation, position, setPosition, setSearchShow }) {
             <img
               className="searchContainer-locationIcon"
               src={locationIcon}
-              alt=""
+              alt="location icon"
             />
             <select
               defaultValue={"DEFAULT"}
-              className="locationInput"
+              className= {isBreakPoint ? "locationInputMobile" : "locationInput" }
               onChange={handleSetLocation}
               type="text"
               style={{ color: "grey" }}
             >
               <option value="DEFAULT" disabled hidden>
-                Choose Location
+                {isBreakPoint ? "Location" : "Choose Location"}
               </option>
               <option>All</option>
-              <option>Tacoma</option>
               <option>Seattle</option>
               <option>Olympia</option>
               <option>Vancouver</option>
@@ -68,30 +70,26 @@ function SearchForm({ setLocation, position, setPosition, setSearchShow }) {
             <img
               className="searchContainer-locationIcon"
               src={locationIcon}
-              alt=""
+              alt="location"
             />
             <select
               defaultValue={"DEFAULT"}
-              className="locationInput"
-              onChange={handleSetLocation}
+              className= {isBreakPoint ? "locationInputMobile" : "locationInput" }
+              onChange={""}
               type="text"
               style={{ color: "grey" }}
             >
-              <option value="DEFAULT" disabled hidden>
-                Choose Industry
+              <option className="smallerFont" value="DEFAULT" disabled hidden>
+              {isBreakPoint ? "Industry" : "Choose Industry"}
               </option>
-              <option>All</option>
-              <option>Tacoma</option>
-              <option>Seattle</option>
-              <option>Olympia</option>
-              <option>Vancouver</option>
-              <option>Bellevue</option>
-              <option>Kent</option>
-              <option>Federal Way</option>
-              <option>Auburn</option>
-              <option>Lakewood</option>
-              <option>Gig Harbor</option>
-              <option>Remote</option>
+              <option >All</option>
+              <option>Construction</option>
+              <option>Technology</option>
+              <option>Food</option>
+              <option>Transportation</option>
+              <option>Caretaking</option>
+              <option>Education</option>
+              <option>Cleaning</option>
             </select>
           </div>
         </div>

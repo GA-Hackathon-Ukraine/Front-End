@@ -12,12 +12,10 @@ import JobsNumber from '../JobsNumber/JobsNumber';
 
 
 
-const JobsMap = ({combinedFilteredSearch, allJobs}) => {
+const JobsMap = ({combinedFilteredSearch}) => {
 
   const mappedData = combinedFilteredSearch.map((elem, idx) => {
-
     let industry;
-    // This needs ot be refactored later. adding new images .. etc.
     switch (elem.industry) {
       case 'Technology':
         industry = technologyIcon;
