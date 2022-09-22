@@ -32,7 +32,7 @@ const SignupForm = ({ msg, setMsg, userState, setUser }) => {
     }
     const signup = await auth.signup(firstName, email, password);
 
-    console.log(signup);
+    
 
     if (signup.error) {
       setMsg(signup.error.message);

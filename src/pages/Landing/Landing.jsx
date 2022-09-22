@@ -14,8 +14,8 @@ const Landing = ({ searchShow, setSearchShow }) => {
   const [position, setPosition] = useState("");
   const [allJobs, setAlljobs] = useState([]);
 
-  const isMediaSize = useMediaQueryHook(934)
-  console.log(isMediaSize)
+  const isBreakPoint = useMediaQueryHook(934)
+  console.log({isBreakPoint})
 
   const getData = async () => {
     const { data, error } = await supabase.from("Jobs").select();
@@ -29,6 +29,8 @@ const Landing = ({ searchShow, setSearchShow }) => {
   useEffect(() => {
     getData();
   }, []);
+
+  // console.log({ allJobs })
 
   const getFilteredLocation = () => {
     let searchTerm = location.toLowerCase();
@@ -46,7 +48,6 @@ const Landing = ({ searchShow, setSearchShow }) => {
     });
   };
 
-  console.log({allJobs})
   const filteredPosition1 = getFilteredPosition();
   const filteredLocation1 = getFilteredLocation();
 
@@ -75,11 +76,13 @@ const Landing = ({ searchShow, setSearchShow }) => {
         <JobsMap combinedFilteredSearch={combinedFilteredSearch} />
       ) : (
         <span style={{ width: "100vw" }}>
-          <SwipeSection />{" "}
-          <ListCareersNew
-            setPosition={setPosition}
-            setSearchShow={setSearchShow}
-          />
+          <SwipeSection />
+
+            {!isBreakPoint &&
+              <ListCareersNew
+                setPosition={setPosition}
+                setSearchShow={setSearchShow}
+              />}
         </span>
       )}
     </main>
